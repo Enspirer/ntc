@@ -1,0 +1,241 @@
+.btn {
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    padding: 8px 32px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+.banner {
+    background-image: url('../images/banner.png');
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: 100% 90%;
+}
+.banner-text {
+    margin-top: 13.75rem;
+}
+.banner-carousel {
+    margin-top: 4rem;
+    background-color: #245808;
+    opacity: 90%;
+}
+.banner-carousel .carousel-caption {
+    position: absolute;
+    top: 100%;
+    padding-bottom: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+}
+.carousel-banner-indicators {
+    bottom: -2.7rem;
+}
+
+
+
+/* product range css */
+.banner-products {
+    background-image: url('../images/banner-1.png');
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: 100% 100%;
+}
+.banner-products h5 {
+    margin-top: 8rem;
+}
+.product-range-1{
+    background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../images/rice-milling-machine.svg);
+    height: 18rem;
+}
+.product-range-2 {
+    background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../images/rubber-rollers.svg);
+    height: 18rem;
+}
+.product-range-3 {
+    background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../images/electric-motors.svg);
+    height: 18rem;
+}
+.product-range-4 {
+    background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../images/spare-parts.svg);
+    height: 18rem;
+}
+.product-range-5 {
+    background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../images/other-machinery.svg);
+    height: 18rem;
+}
+.product-range-1:hover {
+    background: url(../images/rice-milling-machine.svg);
+    color: black;
+    animation-name: fadein;
+    animation-duration: 0.5s;
+}
+.product-range-2:hover {
+    background: url(../images/rubber-rollers.svg);
+    color: black;
+    animation-name: fadein;
+    animation-duration: 0.5s;
+}
+.product-range-3:hover {
+    background: url(../images/electric-motors.svg);
+    color: black;
+    animation-name: fadein;
+    animation-duration: 0.5s;
+}
+.product-range-4:hover {
+    background: url(../images/spare-parts.svg);
+    color: black;
+    animation-name: fadein;
+    animation-duration: 0.5s;
+    
+}
+.product-range-5:hover {
+    background: url(../images/other-machinery.svg);
+    color: black;
+    animation-name: fadein;
+    animation-duration: 0.5s;
+}
+[class*="product-range"]:hover h5 {
+    background-color: #68AE42;
+    margin-top: 7rem;
+    padding: 0.5rem;
+}
+.product-text a {
+    position: relative;
+    top: 5.6rem;
+}
+
+@keyframes fadein{
+    0% { filter: brightness(20%);}
+    100% { filter: brightness(100%);}
+}
+
+
+
+/* products carousel css */
+.products-carousel-1 {
+    background: linear-gradient(to bottom, rgba(0,0,0, 0), rgba(0,0,0, 100)),url(../images/banner-product-1.svg);
+    background-size: cover;
+    height: 500px;
+}
+.products-carousel-2 {
+    background: linear-gradient(to bottom, rgba(0,0,0, 0), rgba(0,0,0, 100)),url(../images/banner-product-2.svg);
+    background-size: cover;
+    height: 500px;
+}
+.products-carousel-3 {
+    background: linear-gradient(to bottom, rgba(0,0,0, 0), rgba(0,0,0, 100)),url(../images/banner-product-3.svg);
+    background-size: cover;
+    height: 500px;
+}
+.products-carousel-4 {
+    background: linear-gradient(to bottom, rgba(0,0,0, 0), rgba(0,0,0, 100)),url(../images/banner-product-4.svg);
+    background-size: cover;
+    height: 500px;
+}
+.products-carousel-1:hover {
+    background: url(../images/banner-product-1.svg);
+    background-size: cover;
+    height: 500px;
+    animation-name: fadein;
+    animation-duration: 0.5s;
+}
+.products-carousel-2:hover {
+    background: url(../images/banner-product-2.svg);
+    background-size: cover;
+    height: 500px;
+    animation-name: fadein;
+    animation-duration: 0.5s;
+}
+.products-carousel-3:hover {
+    background: url(../images/banner-product-3.svg);
+    background-size: cover;
+    height: 500px;
+    animation-name: fadein;
+    animation-duration: 0.5s;
+}
+.products-carousel-4:hover {
+    background: url(../images/banner-product-4.svg);
+    background-size: cover;
+    height: 500px;
+    animation-name: fadein;
+    animation-duration: 0.5s;
+}
+[class*="products-carousel"]:hover h5 {
+    background-color: #68AE42;
+    margin-top: 7rem;
+    padding: 0.5rem;
+}
+.carousel-control-next, .carousel-control-prev {
+    width: 3%;
+}
+.carousel-control-prev-icon {
+    height: 40px;
+    width: 40px;
+}
+.carousel-control-next-icon {
+    height: 40px;
+    width: 40px;
+}
+
+
+
+
+/* media-queries */
+@media screen and (max-width : 1200px) {
+    .banner .container-md {
+        text-align: center;
+    }
+    .banner-text {
+        float: none!important;
+        text-align: center;
+        top: 50px;
+        position: relative;
+        margin-top: 0;
+    }
+    .banner-text h2 {
+        font-size: 30px!important;
+        -webkit-text-stroke: 1.5px black;
+    }
+    .banner .float-end {
+        float: none!important;
+        top: 20px;
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+    }
+    .product-range-1 a {
+        top: 4.1rem;
+    }
+    #ntc-engineering .row {
+        justify-content: space-between!important;
+    }
+    .ntc-eng-btn {
+        padding: 10px 100px!important;
+    }
+}
+
+@media screen and (max-width : 992px) {
+    .we-care-btn {
+        padding: 10px 90px!important;
+    }
+    .call-us {
+        margin-top: 2rem;
+    }
+    .product-range-2 a {
+        top: 4.1rem;
+    }
+    .product-range-3 a {
+        top: 4.1rem;
+    }
+    .product-range-5 a {
+        top: 4.1rem;
+    }
+    #ntc-engineering .row {
+        justify-content: center!important;
+    }
+    .ntc-eng-btn {
+        padding: 10px 60px!important;
+    }
+}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="185" height="185" viewBox="0 0 185 185">
+  <defs>
+    <filter id="Ellipse_29" x="0" y="0" width="185" height="185" filterUnits="userSpaceOnUse">
+      <feOffset dy="10" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="7.5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Component_6_1" data-name="Component 6 – 1" transform="translate(22.5 12.5)">
+    <g transform="matrix(1, 0, 0, 1, -22.5, -12.5)" filter="url(#Ellipse_29)">
+      <circle id="Ellipse_29-2" data-name="Ellipse 29" cx="70" cy="70" r="70" transform="translate(22.5 12.5)" fill="#f9f9f9"/>
+    </g>
+    <path id="Icon_awesome-phone-alt" data-name="Icon awesome-phone-alt" d="M41.449,30.15l-9.333-4a2,2,0,0,0-2.333.575l-4.133,5.05A30.888,30.888,0,0,1,10.883,17.009l5.05-4.133a2,2,0,0,0,.575-2.333l-4-9.333A2.013,2.013,0,0,0,10.217.051l-8.667,2A2,2,0,0,0,0,4,38.662,38.662,0,0,0,38.667,42.666a2,2,0,0,0,1.95-1.55l2-8.667A2.024,2.024,0,0,0,41.449,30.15Z" transform="translate(46.334 49.063)" fill="#245808"/>
+  </g>
+</svg>

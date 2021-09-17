@@ -1,0 +1,6 @@
+.pagination > li > a,
+.pagination > li > span {
+  border: none !important;
+  color: black;
+  font-weight: 500;
+}
