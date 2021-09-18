@@ -6,3 +6,7 @@ Breadcrumbs::for('admin.dashboard', function ($trail) {
 
 require __DIR__.'/auth.php';
 require __DIR__.'/log-viewer.php';
+
+Breadcrumbs::for('admin.category.index', function ($trail) {
+    $trail->push('Category', route('admin.category.index'));
+});
