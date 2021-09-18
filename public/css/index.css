@@ -1,6 +1,6 @@
 .btn {
     border: 2px solid black;
-    background-color: white;
+    /* background-color: white; */
     color: black;
     padding: 8px 32px;
     font-size: 14px;
@@ -9,7 +9,7 @@
 
 
 .banner {
-    background-image: url('../images/banner.png');
+    background-image: url('../img/frontend/index/banner.png');
     background-repeat: no-repeat;
     width: 100%;
     background-size: 100% 90%;
@@ -37,7 +37,7 @@
 
 /* product range css */
 .banner-products {
-    background-image: url('../images/banner-1.png');
+    background-image: url('../img/frontend/index/banner-1.png');
     background-repeat: no-repeat;
     width: 100%;
     background-size: 100% 100%;
@@ -46,52 +46,52 @@
     margin-top: 8rem;
 }
 .product-range-1{
-    background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../images/rice-milling-machine.svg);
+    background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../img/frontend/index/rice-milling-machine.svg);
     height: 18rem;
 }
 .product-range-2 {
-    background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../images/rubber-rollers.svg);
+    background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../img/frontend/index/images/rubber-rollers.svg);
     height: 18rem;
 }
 .product-range-3 {
-    background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../images/electric-motors.svg);
+    background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../img/frontend/index/images/electric-motors.svg);
     height: 18rem;
 }
 .product-range-4 {
-    background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../images/spare-parts.svg);
+    background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../img/frontend/index/images/spare-parts.svg);
     height: 18rem;
 }
 .product-range-5 {
-    background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../images/other-machinery.svg);
+    background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../img/frontend/index/images/other-machinery.svg);
     height: 18rem;
 }
 .product-range-1:hover {
-    background: url(../images/rice-milling-machine.svg);
+    background: url(../img/frontend/index/rice-milling-machine.svg);
     color: black;
     animation-name: fadein;
     animation-duration: 0.5s;
 }
 .product-range-2:hover {
-    background: url(../images/rubber-rollers.svg);
+    background: url(../img/frontend/index/rubber-rollers.svg);
     color: black;
     animation-name: fadein;
     animation-duration: 0.5s;
 }
 .product-range-3:hover {
-    background: url(../images/electric-motors.svg);
+    background: url(../img/frontend/index/electric-motors.svg);
     color: black;
     animation-name: fadein;
     animation-duration: 0.5s;
 }
 .product-range-4:hover {
-    background: url(../images/spare-parts.svg);
+    background: url(../img/frontend/index/spare-parts.svg);
     color: black;
     animation-name: fadein;
     animation-duration: 0.5s;
     
 }
 .product-range-5:hover {
-    background: url(../images/other-machinery.svg);
+    background: url(../img/frontend/index/other-machinery.svg);
     color: black;
     animation-name: fadein;
     animation-duration: 0.5s;
@@ -100,6 +100,7 @@
     background-color: #68AE42;
     margin-top: 7rem;
     padding: 0.5rem;
+    color: white;
 }
 .product-text a {
     position: relative;
@@ -115,48 +116,48 @@
 
 /* products carousel css */
 .products-carousel-1 {
-    background: linear-gradient(to bottom, rgba(0,0,0, 0), rgba(0,0,0, 100)),url(../images/banner-product-1.svg);
+    background: linear-gradient(to bottom, rgba(0,0,0, 0), rgba(0,0,0, 100)),url(../img/frontend/index/banner-product-1.svg);
     background-size: cover;
     height: 500px;
 }
 .products-carousel-2 {
-    background: linear-gradient(to bottom, rgba(0,0,0, 0), rgba(0,0,0, 100)),url(../images/banner-product-2.svg);
+    background: linear-gradient(to bottom, rgba(0,0,0, 0), rgba(0,0,0, 100)),url(../img/frontend/index/banner-product-2.svg);
     background-size: cover;
     height: 500px;
 }
 .products-carousel-3 {
-    background: linear-gradient(to bottom, rgba(0,0,0, 0), rgba(0,0,0, 100)),url(../images/banner-product-3.svg);
+    background: linear-gradient(to bottom, rgba(0,0,0, 0), rgba(0,0,0, 100)),url(../img/frontend/index/banner-product-3.svg);
     background-size: cover;
     height: 500px;
 }
 .products-carousel-4 {
-    background: linear-gradient(to bottom, rgba(0,0,0, 0), rgba(0,0,0, 100)),url(../images/banner-product-4.svg);
+    background: linear-gradient(to bottom, rgba(0,0,0, 0), rgba(0,0,0, 100)),url(../img/frontend/index/banner-product-4.svg);
     background-size: cover;
     height: 500px;
 }
 .products-carousel-1:hover {
-    background: url(../images/banner-product-1.svg);
+    background: url(../img/frontend/index/banner-product-1.svg);
     background-size: cover;
     height: 500px;
     animation-name: fadein;
     animation-duration: 0.5s;
 }
 .products-carousel-2:hover {
-    background: url(../images/banner-product-2.svg);
+    background: url(../img/frontend/index/banner-product-2.svg);
     background-size: cover;
     height: 500px;
     animation-name: fadein;
     animation-duration: 0.5s;
 }
 .products-carousel-3:hover {
-    background: url(../images/banner-product-3.svg);
+    background: url(../img/frontend/index/banner-product-3.svg);
     background-size: cover;
     height: 500px;
     animation-name: fadein;
     animation-duration: 0.5s;
 }
 .products-carousel-4:hover {
-    background: url(../images/banner-product-4.svg);
+    background: url(../img/frontend/index/banner-product-4.svg);
     background-size: cover;
     height: 500px;
     animation-name: fadein;
