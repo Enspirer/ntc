@@ -8,6 +8,21 @@
 
 @section('content')
 
+@if ( session()->has('message') )
+
+    <div class="container" style="background-color: #98FB98; padding-top:5px; margin-bottom:50px; border-radius: 50px 50px; text-align:center;">
+
+        <h1 style="margin-top:150px;" class="fs-1">Thank You!</h1><br>
+        <p class="lead mb-3"><h4>We appreciate you for your inquiry. One of our member will get back in touch with you soon!<br><br> Have a great day!</h4></p>
+        <br><hr><br>    
+        <p class="lead">
+            <a class="btn btn-success btn-md mt-3 mb-3" href="{{url('/')}}" role="button">Go Back to Home Page</a>
+        </p>
+        <br>
+    </div>
+
+@else
+
 
     <!--navigation path-->
     <section id="path">
@@ -282,45 +297,47 @@
     <div class="modal fade" id="inquire" tabindex="-1" aria-labelledby="inquireLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-header text-white" style="background-color: #1D5001;">
-            <h5 class="modal-title" id="inquire-modal">Send an inquire</h5>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="mb-2">
-                <label for="product-name" class="form-label">Product Name</label>
-                <input type="text" class="form-control" id="product-name" aria-describedby="product-name" disabled placeholder="Destoner">
+
+          <form action="{{ route('frontend.product_rice_milling.inquire') }}" method="post" enctype="multipart/form-data">
+          {{csrf_field()}}
+              <div class="modal-header text-white" style="background-color: #1D5001;">
+                <h5 class="modal-title" id="inquire-modal">Send an Inquire</h5>
               </div>
-              <div class="mb-2">
-                <label for="product-id" class="form-label">Product ID</label>
-                <input type="text" class="form-control" id="product-id" disabled placeholder="TQSX85">
+              <div class="modal-body">
+                  <div class="mb-2">
+                    <label for="product-name" class="form-label">Product Name</label>
+                    <input type="text" class="form-control" name="product_name" aria-describedby="product-name" value="Destoner" readonly>
+                  </div>
+                  <div class="mb-2">
+                    <label for="product-id" class="form-label">Product ID</label>
+                    <input type="text" class="form-control" name="product_id" value="TQSX85" readonly>
+                  </div>
+                  <div class="mb-2">
+                    <label for="first-name" class="form-label">First Name</label>
+                    <input type="text" class="form-control" name="first_name" required>
+                  </div>
+                  <div class="mb-2">
+                    <label for="last-name" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" name="last_name" required>
+                  </div>
+                  <div class="mb-2">
+                    <label for="contact-number" class="form-label">Contact Number</label>
+                    <input type="number" class="form-control" name="contact_number" required>
+                  </div>
+                  <div class="mb-2">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" name="email" required>
+                  </div>
+                  <div class="mb-2">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" name="message" cols="30" rows="5" required></textarea>
+                  </div>
               </div>
-              <div class="mb-2">
-                <label for="first-name" class="form-label">First Name</label>
-                <input type="text" class="form-control" id="first-name">
+              <div class="modal-footer justify-content-center">
+                <button type="button" class="btn" data-bs-dismiss="modal" style="color: #68AE42;">Cancel</button>
+                <input type="submit" class="btn text-white px-5" style="background-color: #68AE42;" value="Send Request" />
               </div>
-              <div class="mb-2">
-                <label for="last-name" class="form-label">Last Name</label>
-                <input type="text" class="form-control" id="last-name">
-              </div>
-              <div class="mb-2">
-                <label for="contact-number" class="form-label">Contact Number</label>
-                <input type="text" class="form-control" id="contact-number">
-              </div>
-              <div class="mb-2">
-                <label for="email" class="form-label">Email Address</label>
-                <input type="email" class="form-control" id="email">
-              </div>
-              <div class="mb-2">
-                <label for="message" class="form-label">Message</label>
-                <textarea class="form-control" name="message" id="message" cols="30" rows="5"></textarea>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer justify-content-center">
-            <button type="button" class="btn" data-bs-dismiss="modal" style="color: #68AE42;">Cancel</button>
-            <button type="button" class="btn text-white px-5" style="background-color: #68AE42;">Send Request</button>
-          </div>
+          </form>  
         </div>
       </div>
     </div>
@@ -346,4 +363,6 @@
     </script>
 @endpush
 
+
+@endif
 

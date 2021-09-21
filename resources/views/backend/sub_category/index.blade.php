@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 
-@section('title', __('Category'))
+@section('title', __('Sub Category'))
 
 @section('content')
     
@@ -10,7 +10,7 @@
 
             <div class="card">
                 <div class="card-header">
-                    <strong>Category&nbsp;</strong>
+                    <strong>Sub Category&nbsp;</strong>
 
                     <div class="btn btn-info pull-right ml-3" data-toggle="modal" data-target="#exampleModalScrollable">Add New</div>
                    
@@ -22,8 +22,6 @@
                             <tr>
                                 <th scope="col">#ID</th>
                                 <th scope="col">Category Name</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Order</th>
                                 <th scope="col">Option</th>
                             </tr>
                         </thead>
@@ -42,7 +40,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
          
-                <form action="{{route('admin.category.store')}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('admin.sub_category.store')}}" method="post" enctype="multipart/form-data">
                 
                     {{csrf_field()}}
                     <div class="modal-header">
@@ -58,32 +56,8 @@
                         </div>
                         
                         <label>Description</label>
-                        <textarea class="form-control" name="description"  rows="2"></textarea>
-                        <br>
-
-                        <div class="form-group">
-                            <label>Image <span style="color:red">*<span></label>
-                            <input type="file" class="form-control" name="image" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Icon <span style="color:red">*<span></label>
-                            <input type="file" class="form-control" name="icon" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Status <span style="color:red">*<span></label>
-                            <select class="form-control" name="status" required>
-                                <option value="Enabled">Enable</option>   
-                                <option value="Disabled">Disable</option>                                
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Order <span style="color:red">*<span></label>
-                            <input type="number" class="form-control" name="order" required>
-                        </div>
-
+                        <textarea class="form-control" name="description" rows="3"></textarea>
+                        
                     </div>
                     <div class="modal-footer">
                         
@@ -98,11 +72,11 @@
 
 
     <!-- Modal edit -->
-    <!-- <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
             <span id="form_result"></span>
-                <form action="{{route('admin.category.update')}}" method="post">
+                <form action="{{route('admin.sub_category.update')}}" method="post">
                    
                     {{csrf_field()}}
                     <div class="modal-header">
@@ -113,26 +87,13 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>Name</label>
+                            <label>Name <span style="color:red">*<span></label>
                             <input type="text" class="form-control" name="name" id="name" required>
                         </div>
                         
                         <label>Description</label>
-                        <textarea class="form-control" name="description" id="description" rows="4"></textarea>
-                        <br>
-                        <div class="form-group">
-                            <label>Status</label>
-                            <select class="form-control" name="status" id="status" required>
-                                <option value="Enabled">Enable</option>   
-                                <option value="Disabled">Disable</option>                                
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Order</label>
-                            <input type="text" class="form-control" name="order" id="order" required>
-                        </div>
-
+                        <textarea class="form-control" name="description" id="description" rows="3"></textarea>
+                        
                     </div>
                     <div class="modal-footer">
                         <input type="hidden" name="hidden_id" id="hidden_id" />
@@ -143,7 +104,7 @@
 
             </div>
         </div>
-    </div> -->
+    </div>
 
      <!-- Modal delete -->
      <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="ModalDeleteLabel" aria-hidden="true">
@@ -159,7 +120,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <h5>Are you sure you want to remove this Category?</h5>
+                            <h5>Are you sure you want to remove this Sub Category?</h5>
                         </div>                        
 
                     </div>
@@ -179,39 +140,35 @@
         $(function () {
             var table = $('#villadatatable').DataTable({
                 processing: true,
-                ajax: "{{route('admin.category.getdetails')}}",
+                ajax: "{{route('admin.sub_category.getdetails')}}",
                 serverSide: true,
                 order: [[0, "desc"]],
                 columns: [
                     {data: 'id', name: 'id'},
                     {data: 'name', name: 'name'},
-                    {data: 'status', name: 'status'},
-                    {data: 'order', name: 'order'},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
             });
 
-            // $(document).on('click', '.edit', function(){
+            $(document).on('click', '.edit', function(){
 
-            // var user_id;
+            var user_id;
 
-            // var user_id = $(this).attr('id');
-            // $('#form_result').html('');
-            // $.ajax({
-            // url :"category/edit/"+user_id,
+            var user_id = $(this).attr('id');
+            $('#form_result').html('');
+            $.ajax({
+            url :"sub_category/edit/"+user_id,
 
-            // dataType:"json",
-            // success:function(data)
-            // {
-            //     $('#name').val(data.result.name);
-            //     $('#description').val(data.result.description);
-            //     $('#status').val(data.result.status);
-            //     $('#order').val(data.result.order);
-            //     $('#hidden_id').val(user_id);
-            //     $('#editModal').modal('show');
-            // }
-            // })
-            // });    
+            dataType:"json",
+            success:function(data)
+            {
+                $('#name').val(data.result.name);
+                $('#description').val(data.result.description);
+                $('#hidden_id').val(user_id);
+                $('#editModal').modal('show');
+            }
+            })
+            });    
 
             var user_id;
 
@@ -222,7 +179,7 @@
 
             $('#ok_button').click(function(){
             $.ajax({
-            url:"category/delete/"+user_id,
+            url:"sub_category/delete/"+user_id,
             
             success:function(data)
             {

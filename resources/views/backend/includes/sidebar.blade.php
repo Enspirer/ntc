@@ -13,10 +13,43 @@
                 </a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item nav-dropdown ">
+                <a class="nav-link nav-dropdown-toggle " href="#">
+                    <i class="nav-icon fas fa-list"></i>
+                    Products
+                </a>
+
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a class="nav-link {{active_class(Route::is('admin/category'))}}" href="{{ route('admin.category.index') }}">
+                            Category
+                        </a>
+                    </li>                    
+                    <li class="nav-item">
+                        <a class="nav-link {{active_class(Route::is('admin/sub_category'))}}" href="{{ route('admin.sub_category.index') }}">
+                            Sub Category
+                        </a>
+                    </li>   
+                    <li class="nav-item">
+                        <a class="nav-link {{active_class(Route::is('admin/products'))}}" href="{{ route('admin.products.index') }}">
+                            Products
+                        </a>
+                    </li>                 
+                        
+                </ul>
+            </li>  
+
+            <!-- <li class="nav-item">
                 <a class="nav-link {{active_class(Route::is('admin/category'))}}" href="{{ route('admin.category.index') }}">
                 <i class="nav-icon fas fa-list"></i>
                     Category
+                </a>
+            </li> -->
+
+            <li class="nav-item">
+                <a class="nav-link {{active_class(Route::is('admin/inquire'))}}" href="{{ route('admin.inquire.index') }}">
+                <i class="nav-icon far fa-question-circle"></i>
+                    Inquire
                 </a>
             </li>
 
