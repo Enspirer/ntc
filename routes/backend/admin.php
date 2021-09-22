@@ -5,6 +5,8 @@ use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Backend\InquireController;
 use App\Http\Controllers\Backend\ProductsController;
+use App\Http\Controllers\Backend\JobOpportunityController;
+use App\Http\Controllers\Backend\NewsController;
 
 // All route names are prefixed with 'admin.'.
 Route::redirect('/', '/admin/dashboard', 301);
@@ -22,7 +24,6 @@ Route::post('category/sub_category', [CategoryController::class, 'sub_catagory_s
 Route::get('category/sub_category/subcatgetdetails/{id}', [CategoryController::class, 'subcatgetdetails'])->name('category.getdetailssubcat');
 Route::get('category/sub_category/sc_delete/{id}', [CategoryController::class, 'sub_catagory_destroy'])->name('category.cuisine_destroy');
 
-
 Route::get('sub_category', [SubCategoryController::class, 'index'])->name('sub_category.index');
 Route::post('sub_category/store', [SubCategoryController::class, 'store'])->name('sub_category.store');
 Route::get('sub_category/getdetails', [SubCategoryController::class, 'getdetails'])->name('sub_category.getdetails');
@@ -38,4 +39,22 @@ Route::get('inquire/edit/{id}', [InquireController::class, 'edit'])->name('inqui
 Route::post('inquire/update', [InquireController::class, 'update'])->name('inquire.update');
 Route::get('inquire/delete/{id}', [InquireController::class, 'destroy'])->name('inquire.destroy');
 
+Route::get('careers', [JobOpportunityController::class, 'index'])->name('careers.index');
+Route::post('careers/insert', [JobOpportunityController::class, 'store'])->name('careers.store');
+Route::get('careers/getdetails', [JobOpportunityController::class, 'GetTableDetails'])->name('careers.GetTableDetails');
+Route::get('careers/edit/{id}', [JobOpportunityController::class, 'edit'])->name('careers.edit');
+Route::post('careers/update', [JobOpportunityController::class, 'update'])->name('careers.update');
+Route::get('careers/delete/{id}', [JobOpportunityController::class, 'destroy'])->name('careers.destroy');
 
+Route::get('candidate', [JobOpportunityController::class, 'candidate_index'])->name('candidate.candidate_index');
+Route::get('candidate/getdetails', [JobOpportunityController::class, 'candidate_GetTableDetails'])->name('candidate.candidate_GetTableDetails');
+Route::get('candidate/show/{id}', [JobOpportunityController::class, 'candidate_show'])->name('candidate.show');
+Route::get('candidate/delete/{id}', [JobOpportunityController::class, 'delete'])->name('candidate.delete');
+
+Route::get('news', [NewsController::class, 'index'])->name('news.index');
+Route::get('news/create', [NewsController::class, 'create'])->name('news.create');
+Route::post('news/store', [NewsController::class, 'store'])->name('news.store');
+Route::get('news/getdetails', [NewsController::class, 'getdetails'])->name('news.getdetails');
+Route::get('news/edit/{id}', [NewsController::class, 'edit'])->name('news.edit');
+Route::post('news/update', [NewsController::class, 'update'])->name('news.update');
+Route::get('news/delete/{id}', [NewsController::class, 'destroy'])->name('news.destroy');

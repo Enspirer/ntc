@@ -21,95 +21,51 @@
       <div class="container" style="margin-bottom: 5rem;">
         <div class="row justify-content-center">
           <div class="col-8">
-            <img src="{{ url('img/frontend/news/news-1.svg') }}" alt="" width="100%" height="auto" data-aos="fade-right" data-aos-duration="500">
-            <h1 class="mt-4" data-aos="fade-right" data-aos-duration="500" data-aos-delay="300">How to start rice mill business ?</h1>
-            <p class="text-secondary" data-aos="fade-right" data-aos-duration="500" data-aos-delay="500" style="font-size: 0.7rem;">Posted on 21.03.2021 &nbsp &nbsp By J.Mayanthan</p>
+            <img src="{{ url('files/news',$single_news->feature_image) }}" alt="" width="100%" height="350px" style="object-fit:cover;" data-aos="fade-right" data-aos-duration="500">
+            <h1 class="mt-4" data-aos="fade-right" data-aos-duration="500" data-aos-delay="300">{{ $single_news->title }}</h1>
+            <p class="text-secondary" data-aos="fade-right" data-aos-duration="500" data-aos-delay="500" style="font-size: 0.7rem;">
+              Posted on {{ $single_news->created_at->toDateString() }} &nbsp &nbsp
+
+              @if(App\Models\Auth\User::where('id',$single_news->user_id)->first() !== null) 
+                By {{App\Models\Auth\User::where('id',$single_news->user_id)->first()->first_name}} {{App\Models\Auth\User::where('id',$single_news->user_id)->first()->last_name}} 
+              @endif
+          
+            </p>
 
             <div class="row mt-3">
-              <div class="col-6" data-aos="fade-up" data-aos-duration="500" data-aos-delay="700">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi saepe sapiente esse necessitatibus voluptas voluptate accusantium hic voluptatibus architecto quasi. Corrupti adipisci illo repellat quidem iusto aperiam vel soluta error ratione, similique debitis suscipit? Expedita doloribus aperiam vitae perferendis unde quos debitis. Minus ex, voluptate inventore perspiciatis animi optio enim suscipit nulla accusantium praesentium nisi. Iste ad facilis dignissimos placeat molestiae id numquam necessitatibus aspernatur possimus blanditiis debitis est eligendi nisi, perferendis quae exercitationem. Similique animi saepe odio laudantium nihil!</p>
-              </div>
-              <div class="col-6" data-aos="fade-up" data-aos-duration="500" data-aos-delay="900">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi saepe sapiente esse necessitatibus voluptas voluptate accusantium hic voluptatibus architecto quasi. Corrupti adipisci illo repellat quidem iusto aperiam vel soluta error ratione, similique debitis suscipit? Expedita doloribus aperiam vitae perferendis unde quos debitis. Minus ex, voluptate inventore perspiciatis animi optio enim suscipit nulla accusantium praesentium nisi. Iste ad facilis dignissimos placeat molestiae id numquam necessitatibus aspernatur possimus blanditiis debitis est eligendi nisi, perferendis quae exercitationem. Similique animi saepe odio laudantium nihil!</p>
+              <div class="col-12" data-aos="fade-up" data-aos-duration="500" data-aos-delay="700">
+                <p>{!! $single_news->description !!}</p>
               </div>
             </div>
           </div>
           <div class="col-4">
             <h1 class="mb-5 ps-2" data-aos="fade-down" data-aos-duration="500">Recent News</h1>
 
-            <div class="container mb-4" data-aos="fade-up" data-aos-duration="500">
-              <div class="row border align-items-center">
-                <div class="col-5 p-0">
-                  <img src="{{ url('img/frontend/news/news-2.svg') }}" alt="" width="100%" height="auto">
-                </div>
-                <div class="col-7">
-                 <p class="fw-bold">Lorem ipsum dolor sit.</p>
-                 <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, iusto?</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="container mb-4" data-aos="fade-up" data-aos-duration="500" data-aos-delay="100">
-              <div class="row border align-items-center">
-                <div class="col-5 p-0">
-                  <img src="{{ url('img/frontend/news/news-2.svg') }}" alt="" width="100%" height="auto">
-                </div>
-                <div class="col-7">
-                 <p class="fw-bold">Lorem ipsum dolor sit.</p>
-                 <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, iusto?</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="container mb-4" data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
-              <div class="row border align-items-center">
-                <div class="col-5 p-0">
-                  <img src="{{ url('img/frontend/news/news-2.svg') }}" alt="" width="100%" height="auto">
-                </div>
-                <div class="col-7">
-                 <p class="fw-bold">Lorem ipsum dolor sit.</p>
-                 <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, iusto?</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="container mb-4" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
-              <div class="row border align-items-center">
-                <div class="col-5 p-0">
-                  <img src="{{ url('img/frontend/news/news-2.svg') }}" alt="" width="100%" height="auto">
-                </div>
-                <div class="col-7">
-                 <p class="fw-bold">Lorem ipsum dolor sit.</p>
-                 <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, iusto?</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="container mb-4" data-aos="fade-up" data-aos-duration="500" data-aos-delay="400">
-              <div class="row border align-items-center">
-                <div class="col-5 p-0">
-                  <img src="{{ url('img/frontend/news/news-2.svg') }}" alt="" width="100%" height="auto">
-                </div>
-                <div class="col-7">
-                 <p class="fw-bold">Lorem ipsum dolor sit.</p>
-                 <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, iusto?</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="container mb-4" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">
-              <div class="row border align-items-center">
-                <div class="col-5 p-0">
-                  <img src="{{ url('img/frontend/news/news-2.svg') }}" alt="" width="100%" height="auto">
-                </div>
-                <div class="col-7">
-                 <p class="fw-bold">Lorem ipsum dolor sit.</p>
-                 <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, iusto?</p>
-                </div>
-              </div>
-            </div>
-
+            @if(count($latest_news) == 0)
+              <h5 class="p-3 text-secondary" style="text-align: center">No Any Recent News</h5>
+            @else
+              @foreach($latest_news as $key => $news)
+                <a href="{{ route('frontend.single_news',$news->id) }}" class="text-reset text-decoration-none">
+                  <div class="container mb-4" data-aos="fade-up" data-aos-duration="500">
+                    <div class="row border align-items-center">
+                      <div class="col-5 p-0">
+                        <img src="{{ url('files/news',$news->feature_image) }}" alt="" width="100%" height="100px;" style="object-fit:cover">
+                      </div>
+                      <div class="col-7">
+                      <div style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
+                        <p class="fw-bold">{{ $news->title }}</p>
+                      </div>
+                      <div  style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
+                          <p class="mb-0" data-aos="fade-down-left" data-aos-duration="500" data-aos-delay="500">{!! $news->description !!}</p>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              @endforeach
+            @endif
             
+                  
           </div>
         </div>
       </div>

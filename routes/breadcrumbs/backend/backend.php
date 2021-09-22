@@ -31,3 +31,29 @@ Breadcrumbs::for('admin.inquire.index', function ($trail) {
 Breadcrumbs::for('admin.inquire.edit', function ($trail) {
     $trail->push('View Inquire', route('admin.inquire.edit',1));
 });
+
+Breadcrumbs::for('admin.careers.index', function ($trail) {
+    $trail->push('Job Opportunity', route('admin.careers.index'));
+});
+Breadcrumbs::for('admin.careers.edit', function ($trail) {
+    $trail->push('Edit Job Opportunity', route('admin.careers.edit',1));
+});
+Breadcrumbs::for('admin.candidate.candidate_index', function ($trail) {
+    $trail->push('Candidates', route('admin.candidate.candidate_index'));
+});
+
+Breadcrumbs::for('admin.news.index', function ($trail) {
+    $trail->push('News', route('admin.news.index'));
+});
+
+Breadcrumbs::for('admin.news.create', function ($trail) {
+    $trail->push('Create News', route('admin.news.create'));
+});
+
+Breadcrumbs::for('admin.news.edit', function ($trail) {
+    $trail->push('Edit News', route('admin.news.edit',1));
+});
+
+
+
+
