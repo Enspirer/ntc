@@ -142,6 +142,7 @@ class CategoryController extends Controller
 
     public function destroy($id)
     {
+        SubCategoryAttachement::where('category_id', $id)->delete();
         Category::where('id', $id)->delete(); 
     }
 

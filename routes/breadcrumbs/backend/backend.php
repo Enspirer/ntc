@@ -24,6 +24,13 @@ Breadcrumbs::for('admin.sub_category.index', function ($trail) {
 Breadcrumbs::for('admin.products.index', function ($trail) {
     $trail->push('Products', route('admin.products.index'));
 });
+Breadcrumbs::for('admin.products.create', function ($trail) {
+    $trail->push('Create Products', route('admin.products.create'));
+});
+Breadcrumbs::for('admin.products.edit', function ($trail) {
+    $trail->push('Edit Products', route('admin.products.edit',1));
+});
+
 
 Breadcrumbs::for('admin.inquire.index', function ($trail) {
     $trail->push('Inquire', route('admin.inquire.index'));

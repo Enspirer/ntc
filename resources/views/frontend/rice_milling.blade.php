@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 
-@section('title', app_name() . ' | ' . __('labels.frontend.contact.box_title'))
+@section('title', app_name() . ' | ' . __('Products'))
 
 @push('after-styles')
     <link href="{{ url('css/products.css') }}" rel="stylesheet">
@@ -34,13 +34,26 @@
 
     <div class="container text-white">
         <div class="row text-center">
-          <div class="col mx-2" data-aos="flip-left" data-aos-duration="500" style="background: linear-gradient(to bottom, rgba(104, 174, 66, 0.5), rgba(104, 174, 66, 0.5)),url(../img/frontend/index/rice-milling-machine.svg); height: 18rem;">
-            <div class="product-text" style="margin-top: 5rem;">
-                <img src="{{ url('img/frontend/products/products-rice-milling-machine.svg') }}" alt="" height="80">
-                <p class="lead fw-bold mt-4">Rice Milling Machine</p>
-            </div>
-          </div>
-          <div class="col mx-2" data-aos="flip-left" data-aos-duration="500" data-aos-delay="200" style="background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../img/frontend/index/rubber-rollers.svg); height: 18rem;">
+
+        <!-- {{ url('img/frontend/products/products-rice-milling-machine.svg') }} -->
+
+        @foreach($categories as $key => $category)
+       
+       
+          <div class="col mx-2" data-aos="flip-left" data-aos-duration="500" style="background: linear-gradient(to bottom, rgba(104, 174, 66, 0.5), rgba(104, 174, 66, 0.5)),url({{ url('files/category',$category->image) }}); height: 18rem;">
+            <a href="{{ route('frontend.product',$category->id) }}" style="text-decoration: none">
+              <div class="product-text" style="margin-top: 5rem;">
+                  <img src="{{ url('files/category',$category->icon) }}" alt="" height="80" style="filter: brightness(50)">
+                  <p class="lead fw-bold mt-4" style="color: white">{{$category->name}}</p>
+              </div>
+            </a>  
+          </div>    
+                 
+
+        @endforeach
+
+          
+          <!-- <div class="col mx-2" data-aos="flip-left" data-aos-duration="500" data-aos-delay="200" style="background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../img/frontend/index/rubber-rollers.svg); height: 18rem;">
             <div class="product-text">
               <h5 class="fw-bold">Rubber Rollers</h5>
             </div>
@@ -59,13 +72,14 @@
             <div class="product-text">
               <h5 class="fw-bold">Other Machinery</h5>
             </div>
-          </div>
+          </div> -->
+
         </div>
       </div>
 
 
     <!--filter-->
-    <section id="filters">
+    <!-- <section id="filters">
       <div class="container mt-5">
           <div class="clearfix">
               <div class="float-start">
@@ -79,10 +93,10 @@
               </div>
           </div>
       </div>
-    </section>
+    </section> -->
 
 
-    <div class="container" style="margin-bottom: 7rem;">
+    <div class="container mt-5" style="margin-bottom: 7rem;">
         <div class="row">
             <div class="col-3" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">
                 <div class="accordion" id="types">

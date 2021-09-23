@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use DB;
 use DataTables;
 use App\Models\SubCategory;
+use App\Models\SubCategoryAttachement;
 
 class SubCategoryController extends Controller
 {
@@ -75,7 +76,7 @@ class SubCategoryController extends Controller
     public function destroy($id)
     {        
 
-        // $projects = SubCategory::where('category',$id)->update(array('category' => null));
+        SubCategoryAttachement::where('sub_category_id', $id)->delete();
 
         $data = SubCategory::findOrFail($id);
         $data->delete();   

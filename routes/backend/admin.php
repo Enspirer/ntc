@@ -32,6 +32,15 @@ Route::post('sub_category/update', [SubCategoryController::class, 'update'])->na
 Route::get('sub_category/delete/{id}', [SubCategoryController::class, 'destroy'])->name('sub_category.destroy');
 
 Route::get('products', [ProductsController::class, 'index'])->name('products.index');
+Route::get('products/create', [ProductsController::class, 'create'])->name('products.create');
+Route::get('findSubcatWithCatID/{id}', [ProductsController::class, 'findSubcatWithCatID'])->name('findSubcatWithCatID');
+
+Route::post('products/store', [ProductsController::class, 'store'])->name('products.store');
+Route::get('products/getdetails', [ProductsController::class, 'getdetails'])->name('products.getdetails');
+Route::get('products/edit/{id}', [ProductsController::class, 'edit'])->name('products.edit');
+Route::post('products/update', [ProductsController::class, 'update'])->name('products.update');
+Route::get('products/delete/{id}', [ProductsController::class, 'destroy'])->name('products.destroy');
+
 
 Route::get('inquire', [InquireController::class, 'index'])->name('inquire.index');
 Route::get('inquire/getdetails', [InquireController::class, 'getdetails'])->name('inquire.getdetails');

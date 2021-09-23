@@ -8,6 +8,11 @@ use App\Mail\Frontend\Contact\SendContact;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use App\Models\Inquire;
+use DB;
+use App\Models\Category;
+use App\Models\SubCategory;
+use App\Models\SubCategoryAttachement;
+use App\Models\Products;
 
 /**
  * Class ProductController.
@@ -17,9 +22,16 @@ class ProductController extends Controller
     /**
      * @return \Illuminate\View\View
      */
-    public function riceMilling()
+    public function riceMilling($id)
     {
-        return view('frontend.rice_milling');
+        $categories = Category::where('status','=','Enabled')->get();
+
+        $products = Products::where('id',$id)->first();
+
+        return view('frontend.rice_milling',[
+            'products' => $products,
+            'categories' => $categories
+        ]);
     }
 
     public function inquire(Request $request)

@@ -17,17 +17,23 @@
           <div class="dropdown-menu" aria-labelledby="dropdown-menu">
             <div class="container justify-content-center">
               <div class="row text-center">
+
+
+              @foreach(App\Models\Category::where('status','=','Enabled')->get() as $key => $category)
                 <div class="col">
                   <div class="card py-5" data-aos="flip-right" data-aos-duration="500">
-                    <a href="{{ route('frontend.product_rice_milling') }}" class="text-decoration-none">
-                    <img src="{{ url('img/frontend/nav/nav-rice.svg') }}" class="card-img-top" alt="..." style="height: 6rem;">
+                    <a href="{{ route('frontend.product',$category->id) }}" class="text-decoration-none">
+                    <img src="{{ url('files/category',$category->icon) }}" class="card-img-top" alt="..." style="height: 6rem;">
                     <div class="card-body">
-                      <h5 class="card-title" style="color: #68AE42;">Rice Milling Machine</h5>
-                      <p class="card-text text-body">lorem ipsum</p>
+                      <h5 class="card-title" style="color: #68AE42;">{{ $category->name }}</h5>
+                      <!-- {{ url('img/frontend/nav/nav-rice.svg') }} -->
+                      <!-- <p class="card-text text-body">lorem ipsum</p> -->
                     </div></a>
                   </div>
                 </div>
-                <div class="col">
+              @endforeach  
+
+                <!-- <div class="col">
                   <div class="card py-5">
                     <img src="{{ url('img/frontend/nav/nav-rubber.svg') }}" class="card-img-top" alt="..." style="height: 6rem;">
                     <div class="card-body">
@@ -62,7 +68,8 @@
                       <p class="card-text">lorem ipsum
                     </div>
                   </div>
-                </div>
+                </div> -->
+
               </div>
             </div>
           </div>
