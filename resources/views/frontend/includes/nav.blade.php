@@ -20,17 +20,20 @@
 
 
               @foreach(App\Models\Category::where('status','=','Enabled')->get() as $key => $category)
-                <div class="col">
-                  <div class="card py-5" data-aos="flip-right" data-aos-duration="500">
-                    <a href="{{ route('frontend.product',$category->id) }}" class="text-decoration-none">
-                    <img src="{{ url('files/category',$category->icon) }}" class="card-img-top" alt="..." style="height: 6rem;">
-                    <div class="card-body">
-                      <h5 class="card-title" style="color: #68AE42;">{{ $category->name }}</h5>
-                      <!-- {{ url('img/frontend/nav/nav-rice.svg') }} -->
-                      <!-- <p class="card-text text-body">lorem ipsum</p> -->
-                    </div></a>
+                                  
+                  <div class="col">
+                    <div class="card py-5" data-aos="flip-right" data-aos-duration="500">
+                      <a href="{{ route('frontend.category.all_product',$category->id) }}" class="text-decoration-none">
+                      <img src="{{ url('files/category',$category->icon) }}" class="card-img-top" alt="..." style="height: 6rem;">
+                      <div class="card-body">
+                        <h5 class="card-title" style="color: #68AE42;">{{ $category->name }}</h5>
+                        <!-- {{ url('img/frontend/nav/nav-rice.svg') }} -->
+                        <!-- <p class="card-text text-body">lorem ipsum</p> -->
+                      </div>
+                      </a>
+                    </div>
                   </div>
-                </div>
+                
               @endforeach  
 
                 <!-- <div class="col">

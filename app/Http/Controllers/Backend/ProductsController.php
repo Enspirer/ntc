@@ -238,11 +238,7 @@ class ProductsController extends Controller
         $attribute_value = $request->attribute_value;
         // dd($attribute_name);
 
-        // if($attribute_name[0] == null){
-        //     $attribute = Products::where('id',$request->hidden_id)->first()->attributes;
-        //     dd($attribute);
-        //     $featuredstory = DB::table('products')->where('id',$request->hidden_id)->update(array('attributes' => $attribute));
-        // }else{
+        
             $final_array = [];
         
             foreach($attribute_name as $key => $name){
@@ -256,11 +252,7 @@ class ProductsController extends Controller
                 array_push($final_array,$item_group);
             }
             // dd($final_array);
-        // }
-
-        // dd($final_array);
-
-        
+                
 
         $update = new Products;
 
@@ -275,11 +267,12 @@ class ProductsController extends Controller
             $update->sub_category = $sub_category;
         }else{
             $update->sub_category=$request->sub_category;
-        }
+        }  
         
 
         $update->multiple_images=json_encode($json_images);
         $update->attributes=json_encode($final_array);
+        
 
         Products::whereId($request->hidden_id)->update($update->toArray());
 

@@ -21,7 +21,8 @@ Route::get('news', [NewsController::class, 'index'])->name('news');
 Route::get('news/single/{id}', [SingleNewsController::class, 'index'])->name('single_news');
 
 
-Route::get('product/category/{id}', [ProductController::class, 'riceMilling'])->name('product');
+Route::get('product/solo_product/{id}', [ProductController::class, 'solo_product'])->name('solo_product');
+Route::get('product/category/all_products/{id}', [ProductController::class, 'category_all_products'])->name('category.all_product');
 Route::post('product/inquire', [ProductController::class, 'inquire'])->name('product_rice_milling.inquire');
 
 

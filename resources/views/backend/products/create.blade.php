@@ -77,17 +77,26 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="" style="border-style: ridge;border-width: 3px;padding: 20px;">
-                                                      
+                                    
                             <div class="form-group">
                                 <label>Attributes</label>
-                                <div class="table-responsive">                                
-                                    <table class="table table-bordered table-striped" id="user_table">
-                                        
-                                        <tbody>
-                                        </tbody>
-                                        
-                                    </table>                                
-                                </div>
+
+                                    <div id="inputFormRow">
+                                        <div class="input-group mb-3">
+                                            
+                                            <input type="text" name="attribute_name[]" class="form-control m-input" placeholder="Name" autocomplete="off" required>
+                                            <input type="text" name="attribute_value[]" class="form-control m-input" placeholder="Value" autocomplete="off" required>
+                                            
+                                            <div class="input-group-append">                
+                                                <button id="removeRow" type="button" class="btn btn-danger">Remove</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="newRow"></div>
+                                    <button id="addRow" type="button" class="btn btn-info">Add Row</button>
+
+                                                            
                             </div>                           
                             
                         </div>
@@ -101,47 +110,26 @@
 
     </form>
 
-
-
-<script>
-$(document).ready(function(){
-
-    var count = 1;
-
-    dynamic_field(count);
-
-    function dynamic_field(number)
-    {
-    html = '<tr>';
-            html += '<td width="90%"><input type="text" class="form-control" name="attribute_name[]" class="mb-2" placeholder="Attribute Name" required/><input type="text" class="form-control" name="attribute_value[]" class="mb-2" placeholder="Value" required/></td>';
+    <script type="text/javascript">
         
-            if(number > 1)
-            {
-                html += '<td><button type="button" name="remove" id="" class="btn btn-warning remove mt-3"><i class="fas fa-minus"></i></button></td></tr>';
-                $('tbody').append(html);
-            }
-            else
-            {   
-                html += '<td><button type="button" name="add" id="add" class="btn btn-success mt-3"><i class="fas fa-plus"></i></button></td></tr>';
-                $('tbody').html(html);
-            }
-    }
+        $("#addRow").click(function () {
+            var html = '';
+            html += '<div id="inputFormRow">';
+            html += '<div class="input-group mb-3">';
+            html += '<input type="text" name="attribute_name[]" class="form-control m-input" placeholder="Name" autocomplete="off" required><input type="text" name="attribute_value[]" class="form-control m-input" placeholder="Value" autocomplete="off" required>';
+            html += '<div class="input-group-append">';
+            html += '<button id="removeRow" type="button" class="btn btn-danger">Remove</button>';
+            html += '</div>';
+            html += '</div>';
 
-    $(document).on('click', '#add', function(){
-    count++;
-    dynamic_field(count);
-    });
+            $('#newRow').append(html);
+        });
 
-    $(document).on('click', '.remove', function(){
-    count--;
-    $(this).closest("tr").remove();
-    });
-
-
-});
-</script>
-
-
+    
+        $(document).on('click', '#removeRow', function () {
+            $(this).closest('#inputFormRow').remove();
+        });
+    </script>
 
    
     <script>

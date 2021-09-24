@@ -22,15 +22,76 @@ class ProductController extends Controller
     /**
      * @return \Illuminate\View\View
      */
-    public function riceMilling($id)
+    
+
+    public function category_all_products($id)
+    {
+        
+        $categories = Category::where('status','=','Enabled')->get();
+
+        $products = Products::where('category',$id)->where('status','=','Enabled')->orderBy('id','DESC')->get();
+        // dd($products);
+
+        $sub_cat_attachment = SubCategoryAttachement::where('category_id',$id)->get();
+        // dd($sub_cat_attachment);
+
+        $output_array = [];
+
+        foreach($sub_cat_attachment as $key => $sub_cat){
+
+            $sub_cat_details = SubCategory::where('id',$sub_cat->sub_category_id)->first();
+
+            $array_out = [
+                'category_id' => $sub_cat->category_id,
+                'sub_category_id' => $sub_cat->sub_category_id,
+                'sub_category_name' => $sub_cat_details->name
+            ];
+
+            array_push($output_array,$array_out);
+        }
+        // dd($output_array);
+
+        return view('frontend.products',[
+            'products' => $products,
+            'categories' => $categories,
+            'category_id' => $id,
+            'output_array' => $output_array
+        ]);
+    }
+
+    public function solo_product($id)
     {
         $categories = Category::where('status','=','Enabled')->get();
 
-        $products = Products::where('id',$id)->first();
+        $product = Products::where('id',$id)->first();
 
-        return view('frontend.rice_milling',[
-            'products' => $products,
-            'categories' => $categories
+        $cat = Category::where('id',$product->category)->first();
+        
+        $sub_cat_attachment = SubCategoryAttachement::where('category_id',$cat->id)->get();
+        // dd($sub_cat_attachment);
+
+        $output_array = [];
+
+        foreach($sub_cat_attachment as $key => $sub_cat){
+
+            $sub_cat_details = SubCategory::where('id',$sub_cat->sub_category_id)->first();
+
+            $array_out = [
+                'category_id' => $sub_cat->category_id,
+                'sub_category_id' => $sub_cat->sub_category_id,
+                'sub_category_name' => $sub_cat_details->name
+            ];
+
+            array_push($output_array,$array_out);
+        }
+        // dd($output_array);
+
+
+        return view('frontend.solo_product',[
+            'product' => $product,
+            'categories' => $categories,
+            'category_id' => $cat->id,
+            'output_array' => $output_array
         ]);
     }
 
