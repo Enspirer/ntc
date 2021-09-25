@@ -21,7 +21,7 @@
       <div class="container" style="margin-bottom: 5rem;">
         <div class="row justify-content-center">
           <div class="col-8">
-            <img src="{{ url('files/news',$single_news->feature_image) }}" alt="" width="100%" height="350px" style="object-fit:cover;" data-aos="fade-right" data-aos-duration="500">
+            <img src="{{uploaded_asset($single_news->feature_image) }}" alt="" width="100%" height="350px" style="object-fit:cover;" data-aos="fade-right" data-aos-duration="500">
             <h1 class="mt-4" data-aos="fade-right" data-aos-duration="500" data-aos-delay="300">{{ $single_news->title }}</h1>
             <p class="text-secondary" data-aos="fade-right" data-aos-duration="500" data-aos-delay="500" style="font-size: 0.7rem;">
               Posted on {{ $single_news->created_at->toDateString() }} &nbsp &nbsp
@@ -49,7 +49,7 @@
                   <div class="container mb-4" data-aos="fade-up" data-aos-duration="500">
                     <div class="row border align-items-center">
                       <div class="col-5 p-0">
-                        <img src="{{ url('files/news',$news->feature_image) }}" alt="" width="100%" height="100px;" style="object-fit:cover">
+                        <img src="{{uploaded_asset($news->feature_image) }}" alt="" width="100%" height="100px;" style="object-fit:cover">
                       </div>
                       <div class="col-7">
                       <div style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">

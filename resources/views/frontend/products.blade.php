@@ -41,16 +41,16 @@
         @foreach($categories as $key => $category)
        
           @if($category->id == $category_id)
-            <div class="col mx-2" data-aos="flip-left" data-aos-duration="500" style="background: linear-gradient(to bottom, rgba(104, 174, 66, 0.5), rgba(104, 174, 66, 0.5)),url({{ url('files/category',$category->image) }}); height: 18rem;">
+            <div class="col mx-2" data-aos="flip-left" data-aos-duration="500" style="background: linear-gradient(to bottom, rgba(104, 174, 66, 0.5), rgba(104, 174, 66, 0.5)),url({{ url(uploaded_asset($category->image)) }}); height: 18rem;">
               <a href="{{ route('frontend.category.all_product',$category->id) }}" style="text-decoration: none">
                 <div class="product-text" style="margin-top: 5rem;">
-                    <img src="{{ url('files/category',$category->icon) }}" alt="" height="80" style="filter: brightness(50)">
+                    <img src="{{uploaded_asset($category->icon) }}" alt="" height="80" style="filter: brightness(50)">
                     <p class="lead fw-bold mt-4" style="color: white">{{$category->name}}</p>
                 </div>
               </a>  
             </div>  
           @else
-            <div class="col mx-2" data-aos="flip-left" data-aos-duration="500" data-aos-delay="400" style="background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url({{ url('files/category',$category->image) }}); height: 18rem;">
+            <div class="col mx-2" data-aos="flip-left" data-aos-duration="500" data-aos-delay="400" style="background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url({{ url(uploaded_asset($category->image)) }}); height: 18rem;">
               <a href="{{ route('frontend.category.all_product',$category->id) }}" style="text-decoration: none">
                 <div class="product-text">
                   <h5 class="fw-bold text-white">{{$category->name}}</h5>
@@ -178,7 +178,7 @@
                             @foreach($products as $key => $product)
                               <div class="col-4 p-1">
                                   <div class="card" style="min-height: 390px; max-height: 390px;">
-                                      <img src="{{url('files/products',json_decode($product->multiple_images)[0]->image1 )}}" style="height: 200px; object-fit:cover;" class="card-img-top" alt="...">
+                                      <img src="{{uploaded_asset(json_decode($product->multiple_images)[0]->image1) }}" style="height: 200px; object-fit:cover;" class="card-img-top" alt="...">
                                       <div class="card-body">
                                         <h5 class="card-title" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; font-size:18px;">{{ $product->product_name }}</h5>
                                         <p class="card-text" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">{{ $product->description }}</p>

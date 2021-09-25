@@ -39,26 +39,24 @@
 
         @foreach($categories as $key => $category)
        
-       
           @if($category->id == $category_id)
-            <div class="col mx-2" data-aos="flip-left" data-aos-duration="500" style="background: linear-gradient(to bottom, rgba(104, 174, 66, 0.5), rgba(104, 174, 66, 0.5)),url({{ url('files/category',$category->image) }}); height: 18rem;">
+            <div class="col mx-2" data-aos="flip-left" data-aos-duration="500" style="background: linear-gradient(to bottom, rgba(104, 174, 66, 0.5), rgba(104, 174, 66, 0.5)),url({{ url(uploaded_asset($category->image)) }}); height: 18rem;">
               <a href="{{ route('frontend.category.all_product',$category->id) }}" style="text-decoration: none">
                 <div class="product-text" style="margin-top: 5rem;">
-                    <img src="{{ url('files/category',$category->icon) }}" alt="" height="80" style="filter: brightness(50)">
+                    <img src="{{uploaded_asset($category->icon) }}" alt="" height="80" style="filter: brightness(50)">
                     <p class="lead fw-bold mt-4" style="color: white">{{$category->name}}</p>
                 </div>
               </a>  
             </div>  
           @else
-            <div class="col mx-2" data-aos="flip-left" data-aos-duration="500" data-aos-delay="400" style="background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url({{ url('files/category',$category->image) }}); height: 18rem;">
+            <div class="col mx-2" data-aos="flip-left" data-aos-duration="500" data-aos-delay="400" style="background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url({{ url(uploaded_asset($category->image)) }}); height: 18rem;">
               <a href="{{ route('frontend.category.all_product',$category->id) }}" style="text-decoration: none">
                 <div class="product-text">
                   <h5 class="fw-bold text-white">{{$category->name}}</h5>
                 </div>
               </a>  
             </div>
-          @endif     
-                 
+          @endif   
 
         @endforeach
 
@@ -166,17 +164,17 @@
             <div class="col-9">
                 <div class="row">
                   <div class="col-7 text-center">
-                    <img src="{{ url('files/products',json_decode($product->multiple_images)[0]->image1 ) }}" id="main-image" alt="" style="height: 30rem; object-fit:cover; width:400px;">
+                    <img src="{{uploaded_asset(json_decode($product->multiple_images)[0]->image1) }}" id="main-image" alt="" style="height: 30rem; object-fit:cover; width:400px;">
 
                     <div class="row justify-content-center mt-3">
                       <div class="col-3">
-                        <img src="{{ url('files/products',json_decode($product->multiple_images)[0]->image1 ) }}" id="image1" alt="" style="height: 5rem; width: 80px; object-fit:cover; box-shadow: 0px 6px 12px #888888;">
+                        <img src="{{uploaded_asset(json_decode($product->multiple_images)[0]->image1) }}" id="image1" alt="" style="height: 5rem; width: 80px; object-fit:cover; box-shadow: 0px 6px 12px #888888;">
                       </div>
                       <div class="col-3">
-                        <img src="{{ url('files/products',json_decode($product->multiple_images)[1]->image2 ) }}" alt="" id="image2" style="height: 5rem; width: 80px; object-fit:cover; box-shadow: 0px 6px 12px #888888;">
+                        <img src="{{uploaded_asset(json_decode($product->multiple_images)[1]->image2) }}" alt="" id="image2" style="height: 5rem; width: 80px; object-fit:cover; box-shadow: 0px 6px 12px #888888;">
                       </div>
                       <div class="col-3">
-                        <img src="{{ url('files/products',json_decode($product->multiple_images)[2]->image3 ) }}" id="image3" alt="" style="height: 5rem; width: 80px; object-fit:cover; box-shadow: 0px 6px 12px #888888;">
+                        <img src="{{uploaded_asset(json_decode($product->multiple_images)[2]->image3) }}" id="image3" alt="" style="height: 5rem; width: 80px; object-fit:cover; box-shadow: 0px 6px 12px #888888;">
                       </div>
                     </div>
                   </div>
@@ -274,15 +272,15 @@
     <script>
       $(document).ready(function(){
         $("#image1").click(function(){
-        $("#main-image").attr("src", "{{ url('files/products',json_decode($product->multiple_images)[0]->image1 ) }}");
+        $("#main-image").attr("src", "{{uploaded_asset(json_decode($product->multiple_images)[0]->image1) }}");
         });
 
         $("#image2").click(function(){
-        $("#main-image").attr("src", "{{ url('files/products',json_decode($product->multiple_images)[1]->image2 ) }}");
+        $("#main-image").attr("src", "{{uploaded_asset(json_decode($product->multiple_images)[1]->image2) }}");
         });
 
         $("#image3").click(function(){
-        $("#main-image").attr("src", "{{ url('files/products',json_decode($product->multiple_images)[2]->image3 ) }}");
+        $("#main-image").attr("src", "{{uploaded_asset(json_decode($product->multiple_images)[2]->image3) }}");
         });
       });
     </script>

@@ -4,6 +4,7 @@
 
 @section('content')
     
+<link rel="stylesheet" href="{{url('css/vendors.css')}}">
 
 <div class="row">
         <div class="col">
@@ -47,8 +48,8 @@
                     {{csrf_field()}}
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalScrollableTitle">Add New</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                            <!-- <span aria-hidden="true">&times;</span> -->
                         </button>
                     </div>
                     <div class="modal-body">
@@ -61,15 +62,37 @@
                         <textarea class="form-control" name="description"  rows="2"></textarea>
                         <br>
 
+                        
                         <div class="form-group">
-                            <label>Image <span style="color:red">*<span></label>
-                            <input type="file" class="form-control" name="image" required>
-                        </div>
+                            <label>Image
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="input-group" data-toggle="aizuploader" data-type="image">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
+                                </div>
+                                <div class="form-control file-amount">Choose File</div>
+                                <input type="hidden" name="image" class="selected-files" >
+                            </div>
+                            <div class="file-preview box sm">
+                            </div>
+                        </div> 
 
+                      
                         <div class="form-group">
-                            <label>Icon <span style="color:red">*<span></label>
-                            <input type="file" class="form-control" name="icon" required>
-                        </div>
+                            <label>Icon
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="input-group" data-toggle="aizuploader" data-type="image">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
+                                </div>
+                                <div class="form-control file-amount">Choose File</div>
+                                <input type="hidden" name="icon" class="selected-files" >
+                            </div>
+                            <div class="file-preview box sm">
+                            </div>
+                        </div> 
 
                         <div class="form-group">
                             <label>Status <span style="color:red">*<span></label>
@@ -95,55 +118,7 @@
             </div>
         </div>
     </div>
-
-
-    <!-- Modal edit -->
-    <!-- <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <span id="form_result"></span>
-                <form action="{{route('admin.category.update')}}" method="post">
-                   
-                    {{csrf_field()}}
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" class="form-control" name="name" id="name" required>
-                        </div>
-                        
-                        <label>Description</label>
-                        <textarea class="form-control" name="description" id="description" rows="4"></textarea>
-                        <br>
-                        <div class="form-group">
-                            <label>Status</label>
-                            <select class="form-control" name="status" id="status" required>
-                                <option value="Enabled">Enable</option>   
-                                <option value="Disabled">Disable</option>                                
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Order</label>
-                            <input type="text" class="form-control" name="order" id="order" required>
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <input type="hidden" name="hidden_id" id="hidden_id" />
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <input type="submit" class="btn btn-success" name="action_button" id="action_button" value="Update">
-                    </div>
-                </form>
-
-            </div>
-        </div>
-    </div> -->
+    
 
      <!-- Modal delete -->
      <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="ModalDeleteLabel" aria-hidden="true">
@@ -153,8 +128,8 @@
                     {{csrf_field()}}
                     <div class="modal-header">
                         <h3 class="modal-title" id="ModalDeleteLabel">Delete</h3>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                            <!-- <span aria-hidden="true">&times;</span> -->
                         </button>
                     </div>
                     <div class="modal-body">

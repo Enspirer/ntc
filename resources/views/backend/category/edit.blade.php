@@ -3,6 +3,10 @@
 @section('title', __('Edit'))
 
 @section('content')
+
+<link rel="stylesheet" href="{{url('css/vendors.css')}}">
+
+
     <form action="{{route('admin.category.update')}}" method="post" enctype="multipart/form-data">
         {{csrf_field()}}
         <div class="row">
@@ -18,18 +22,39 @@
                             <label>Description</label>
                             <textarea type="text" class="form-control" name="description" rows="2"> {{ $categories->description }} </textarea>
                         </div> 
+                        
                         <div class="form-group">
-                            <label>Image</label>
-                            <input type="file" class="form-control" name="image">
-                            <br>
-                            <img src="{{url('files/category',$categories->image)}}" style="width: 18%;" alt="" >
-                        </div>
+                            <label>Image
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="input-group" data-toggle="aizuploader" data-type="image">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
+                                </div>
+                                <div class="form-control file-amount">Choose File</div>
+                                <input type="hidden" name="image" value="{{ $categories->image }}" class="selected-files" >
+                            </div>
+                            <div class="file-preview box sm">
+                            </div>
+                        </div> 
+
+
                         <div class="form-group">
-                            <label>Icon</label>
-                            <input type="file" class="form-control" name="icon">
-                            <br>
-                            <img src="{{url('files/category',$categories->icon)}}" style="width: 18%;" alt="" >
-                        </div>
+                            <label>Icon
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="input-group" data-toggle="aizuploader" data-type="image">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
+                                </div>
+                                <div class="form-control file-amount">Choose File</div>
+                                <input type="hidden" name="icon" value="{{ $categories->icon }}" class="selected-files" >
+                            </div>
+                            <div class="file-preview box sm">
+                            </div>
+                        </div> 
+
+
                         <div class="form-group">
                             <label>Status <span style="color:red">*<span></label>
                             <select class="form-control" name="status" required>

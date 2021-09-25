@@ -22,15 +22,7 @@ class ProductsController extends Controller
 
     public function create()
     {
-        // $country_list  = SubCategoryAttachement::select('category_id', DB::raw('count(*) as total'))->groupBy('category_id')->get();
-        
-        // $country_list = DB::table('sub_category_attachements')
-        //          ->select('category_id', DB::raw('count(*) as total'))
-        //          ->groupBy('category_id')
-        //          ->get();
-
-        // dd($country_list );
-
+      
         $categories = Category::where('status','=','Enabled')->get();
 
         return view('backend.products.create',[
@@ -98,81 +90,63 @@ class ProductsController extends Controller
     {        
         // dd($request);
 
-        // if($request->description == null){
-        //     return back()->withErrors('Please Fill Description Section');
-        // }else{
-
-        if($request->file('image1'))
-        {            
-            $preview_fileName1 = time().'_'.rand(1000,10000).'.'.$request->image1->getClientOriginalExtension();
-            $fullURLsPreviewFile1 = $request->image1->move(public_path('files/products'), $preview_fileName1);
-            $image_url1 = $preview_fileName1;
+        if($request->image1 == null){
+            return back()->withErrors('Please Select Feature Image');
         }else{
-            $image_url1 = null;
-        } 
 
-        if($request->file('image2'))
-        {            
-            $preview_fileName2 = time().'_'.rand(1000,10000).'.'.$request->image2->getClientOriginalExtension();
-            $fullURLsPreviewFile2 = $request->image2->move(public_path('files/products'), $preview_fileName2);
-            $image_url2 = $preview_fileName2;
-        }else{
-            $image_url2 = null;
-        } 
-
-        if($request->file('image3'))
-        {            
-            $preview_fileName3 = time().'_'.rand(1000,10000).'.'.$request->image3->getClientOriginalExtension();
-            $fullURLsPreviewFile3 = $request->image3->move(public_path('files/products'), $preview_fileName3);
-            $image_url3 = $preview_fileName3;
-        }else{
-            $image_url3 = null;
-        } 
-        
-        $json_images_one = ['image1' => $image_url1];
-        $json_images_two = ['image2' => $image_url2];
-        $json_images_three = ['image3' => $image_url3];
-
-        $json_images = [
-            $json_images_one,$json_images_two,$json_images_three
-        ];
+            if($request->image2 == null){
+                return back()->withErrors('Please Select an Image 2');
+            }else{
+                if($request->image3 == null){
+                    return back()->withErrors('Please Select an Image 3');
+                }else{
 
         
-        $attribute_name = $request->attribute_name;
-        $attribute_value = $request->attribute_value;
-        // dd($attribute_value);
+                    $json_images_one = ['image1' => $request->image1];
+                    $json_images_two = ['image2' => $request->image2];
+                    $json_images_three = ['image3' => $request->image3];
 
-        $final_array = [];
-        
-        foreach($attribute_name as $key => $name){
+                    $json_images = [
+                        $json_images_one,$json_images_two,$json_images_three
+                    ];
 
-            $item_group = [
-                
-                'name' => $name,
-                'value' => $attribute_value[$key],
-            ];
+                    
+                    $attribute_name = $request->attribute_name;
+                    $attribute_value = $request->attribute_value;
+                    // dd($attribute_value);
 
-            array_push($final_array,$item_group);
+                    $final_array = [];
+                    
+                    foreach($attribute_name as $key => $name){
+
+                        $item_group = [
+                            
+                            'name' => $name,
+                            'value' => $attribute_value[$key],
+                        ];
+
+                        array_push($final_array,$item_group);
+                    }
+                    // dd($final_array);
+
+                    $add = new Products;
+
+                    $add->product_name=$request->product_name; 
+                    $add->model_number=$request->model_number;        
+                    $add->description=$request->description;
+                    $add->status=$request->status;
+                    $add->category=$request->category;
+                    $add->sub_category=$request->sub_category;
+
+                    $add->multiple_images=json_encode($json_images);
+                    $add->attributes=json_encode($final_array);
+
+                    $add->save();
+
+                    return redirect()->route('admin.products.index')->withFlashSuccess('Added Successfully');  
+                }
+            }
         }
-        // dd($final_array);
-
-        $add = new Products;
-
-        $add->product_name=$request->product_name; 
-        $add->model_number=$request->model_number;        
-        $add->description=$request->description;
-        $add->status=$request->status;
-        $add->category=$request->category;
-        $add->sub_category=$request->sub_category;
-
-        $add->multiple_images=json_encode($json_images);
-        $add->attributes=json_encode($final_array);
-
-        $add->save();
-
-        return redirect()->route('admin.products.index')->withFlashSuccess('Added Successfully');  
-
-        // }
     }
 
     public function edit($id)
@@ -191,94 +165,74 @@ class ProductsController extends Controller
     {        
         // dd($request);
 
-        // if($request->description == null){
-        //     return back()->withErrors('Please Fill Description Section');
-        // }else{
-
-        if($request->file('image1'))
-        {            
-            $preview_fileName1 = time().'_'.rand(1000,10000).'.'.$request->image1->getClientOriginalExtension();
-            $fullURLsPreviewFile1 = $request->image1->move(public_path('files/products'), $preview_fileName1);
-            $image_url1 = $preview_fileName1;
+        if($request->image1 == null){
+            return back()->withErrors('Please Select Feature Image');
         }else{
-            $detail = Products::where('id',$request->hidden_id)->first();
-            $image_url1 = json_decode($detail->multiple_images)[0]->image1; 
-        } 
 
-        if($request->file('image2'))
-        {            
-            $preview_fileName2 = time().'_'.rand(1000,10000).'.'.$request->image2->getClientOriginalExtension();
-            $fullURLsPreviewFile2 = $request->image2->move(public_path('files/products'), $preview_fileName2);
-            $image_url2 = $preview_fileName2;
-        }else{
-            $detail = Products::where('id',$request->hidden_id)->first();
-            $image_url2 = json_decode($detail->multiple_images)[1]->image2; 
-        } 
-
-        if($request->file('image3'))
-        {            
-            $preview_fileName3 = time().'_'.rand(1000,10000).'.'.$request->image3->getClientOriginalExtension();
-            $fullURLsPreviewFile3 = $request->image3->move(public_path('files/products'), $preview_fileName3);
-            $image_url3 = $preview_fileName3;
-        }else{
-            $detail = Products::where('id',$request->hidden_id)->first();
-            $image_url3 = json_decode($detail->multiple_images)[2]->image3; 
-        } 
-        
-        $json_images_one = ['image1' => $image_url1];
-        $json_images_two = ['image2' => $image_url2];
-        $json_images_three = ['image3' => $image_url3];
-
-        $json_images = [
-            $json_images_one,$json_images_two,$json_images_three
-        ];
+            if($request->image2 == null){
+                return back()->withErrors('Please Select an Image 2');
+            }else{
+                if($request->image3 == null){
+                    return back()->withErrors('Please Select an Image 3');
+                }else{
 
         
-        $attribute_name = $request->attribute_name;
-        $attribute_value = $request->attribute_value;
-        // dd($attribute_name);
+                    $json_images_one = ['image1' => $request->image1];
+                    $json_images_two = ['image2' => $request->image2];
+                    $json_images_three = ['image3' => $request->image3];
 
-        
-            $final_array = [];
-        
-            foreach($attribute_name as $key => $name){
-    
-                $item_group = [
+                    $json_images = [
+                        $json_images_one,$json_images_two,$json_images_three
+                    ];
+
                     
-                    'name' => $name,
-                    'value' => $attribute_value[$key],
-                ];
-    
-                array_push($final_array,$item_group);
-            }
-            // dd($final_array);
+                    $attribute_name = $request->attribute_name;
+                    $attribute_value = $request->attribute_value;
+                    // dd($attribute_name);
+
+                    
+                        $final_array = [];
+                    
+                        foreach($attribute_name as $key => $name){
                 
+                            $item_group = [
+                                
+                                'name' => $name,
+                                'value' => $attribute_value[$key],
+                            ];
+                
+                            array_push($final_array,$item_group);
+                        }
+                        // dd($final_array);
+                            
 
-        $update = new Products;
+                    $update = new Products;
 
-        $update->product_name=$request->product_name; 
-        $update->model_number=$request->model_number;        
-        $update->description=$request->description;
-        $update->status=$request->status;
-        $update->category=$request->category;
+                    $update->product_name=$request->product_name; 
+                    $update->model_number=$request->model_number;        
+                    $update->description=$request->description;
+                    $update->status=$request->status;
+                    $update->category=$request->category;
 
-        if($request->sub_category == null){
-            $sub_category = Products::where('id',$request->hidden_id)->first()->sub_category;
-            $update->sub_category = $sub_category;
-        }else{
-            $update->sub_category=$request->sub_category;
-        }  
-        
+                    if($request->sub_category == null){
+                        $sub_category = Products::where('id',$request->hidden_id)->first()->sub_category;
+                        $update->sub_category = $sub_category;
+                    }else{
+                        $update->sub_category=$request->sub_category;
+                    }  
+                    
 
-        $update->multiple_images=json_encode($json_images);
-        $update->attributes=json_encode($final_array);
-        
+                    $update->multiple_images=json_encode($json_images);
+                    $update->attributes=json_encode($final_array);
+                    
 
-        Products::whereId($request->hidden_id)->update($update->toArray());
+                    Products::whereId($request->hidden_id)->update($update->toArray());
 
-        return redirect()->route('admin.products.index')->withFlashSuccess('Updated Successfully');  
-
-        // }
+                    return redirect()->route('admin.products.index')->withFlashSuccess('Updated Successfully'); 
+                }
+            }
+        }
+         
     }
 
     public function destroy($id)

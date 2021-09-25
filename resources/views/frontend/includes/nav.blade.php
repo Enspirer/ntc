@@ -24,7 +24,7 @@
                   <div class="col">
                     <div class="card py-5" data-aos="flip-right" data-aos-duration="500">
                       <a href="{{ route('frontend.category.all_product',$category->id) }}" class="text-decoration-none">
-                      <img src="{{ url('files/category',$category->icon) }}" class="card-img-top" alt="..." style="height: 6rem;">
+                      <img src="{{uploaded_asset($category->icon) }}" class="card-img-top px-5" alt="..." style="height: 6rem;" >
                       <div class="card-body">
                         <h5 class="card-title" style="color: #68AE42;">{{ $category->name }}</h5>
                         <!-- {{ url('img/frontend/nav/nav-rice.svg') }} -->
@@ -79,10 +79,7 @@
         </li>
         <li class="nav-item mx-2" data-aos="fade-left" data-aos-duration="900">
           <a href="{{ route('frontend.news') }}" class="nav-link">News</a>
-        </li>
-        <li class="nav-item mx-2" data-aos="fade-left" data-aos-duration="1200">
-          <a href="{{ route('frontend.portfolio') }}" class="nav-link">Portfolio</a>
-        </li>
+        </li>       
         <li class="nav-item mx-2" data-aos="fade-left" data-aos-duration="1500">
           <a href="{{ route('frontend.about_us') }}" class="nav-link">About Us</a>
         </li>

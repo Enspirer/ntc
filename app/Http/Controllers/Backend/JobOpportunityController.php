@@ -115,7 +115,7 @@ class JobOpportunityController extends Controller
                     ->addColumn('action', function($data){
                         
                         $button = '<button type="button" name="edit" id="'.$data->id.'" class="edit btn btn-secondary btn-sm"><i class="fas fa-info-circle"></i> View</button>';
-                        $button .= '<a href="'.url('files/cv',$data->cv).'" name="download" id="'.$data->id.'" class="edit btn btn-warning btn-sm ml-3" style="margin-right: 10px" target="_blank"><i class="fas fa-download"></i> Download </a>';
+                        $button .= '<a href="'.url('files/cv',$data->cv).'" name="download" id="'.$data->id.'" class="download btn btn-warning btn-sm ml-3" style="margin-right: 10px" target="_blank"><i class="fas fa-download"></i> Download </a>';
                         $button .= '&nbsp;&nbsp;&nbsp;<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm"><i class="fas fa-trash"></i> Delete</button>';
                         return $button;
                     })

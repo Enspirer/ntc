@@ -4,9 +4,14 @@
 
 @section('content')
 
+
+<link rel="stylesheet" href="{{url('css/vendors.css')}}">
+
+
+
 <script src="https://cdn.ckeditor.com/ckeditor5/29.0.0/classic/ckeditor.js"></script>
 
-    <form action="{{route('admin.news.store')}}" method="post" enctype="multipart/form-data">
+    <form action="{{route('admin.news.store')}}" method="post" enctype="multipart/form-data" >
         {{csrf_field()}}
         <div class="row">
             <div class="col-md-12">
@@ -23,10 +28,25 @@
                             <textarea class="form-control" id="editor" name="description" rows="4"></textarea>
                         </div>
 
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label>Feature Image <span style="color:red">*<span></label>
                             <input type="file" class="form-control" name="image" required>
-                        </div>                                               
+                        </div>  -->
+                        
+                        <div class="form-group">
+                            <label>Feature Image
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="input-group" data-toggle="aizuploader" data-type="image">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
+                                </div>
+                                <div class="form-control file-amount">Choose File</div>
+                                <input type="hidden" name="image" class="selected-files" >
+                            </div>
+                            <div class="file-preview box sm">
+                            </div>
+                        </div> 
 
                         <div class="form-group">
                             <label>Status <span style="color:red">*<span></label>
@@ -43,7 +63,7 @@
                         
                     </div>
                 </div>
-                <button type="submit" class="btn btn-success pull-right">Create New</button><br>
+                <input type="submit" class="btn btn-success pull-right" value="Create New" /><br>
             </div><br>       
             
         </div>
@@ -64,7 +84,10 @@
 		.catch( err => {
 			console.error( err.stack );
 		} );
+
+    
 </script>
+
 
 
 @endsection

@@ -11,6 +11,7 @@ use App\Http\Controllers\Frontend\CareersController;
 use App\Http\Controllers\Frontend\User\AccountController;
 use App\Http\Controllers\Frontend\User\DashboardController;
 use App\Http\Controllers\Frontend\User\ProfileController;
+use App\Http\Controllers\Frontend\AizUploadController;
 
 /*
  * Frontend Controllers
@@ -36,6 +37,19 @@ Route::post('careers/job_candidate', [CareersController::class, 'job_candidate']
 Route::get('contact-us', [ContactController::class, 'index'])->name('contact_us');
 Route::post('contact/send', [ContactController::class, 'send'])->name('contact.send');
 
+
+Route::post('/aiz-uploader', [AizUploadController::class, 'show_uploader']);
+Route::post('/aiz-uploader/upload', [AizUploadController::class, 'upload']);
+Route::get('/aiz-uploader/get_uploaded_files', [AizUploadController::class, 'get_uploaded_files']);
+Route::post('/aiz-uploader/get_file_by_ids', [AizUploadController::class, 'get_preview_files']);
+Route::get('/aiz-uploader/download/{id}', [AizUploadController::class, 'attachment_download'])->name('download_attachment');
+Route::get('uploads/all/{file_name}',[AizUploadController::class,'get_image_content']);
+
+
+
+
+
+
 /*
  * These frontend controllers require the user to be logged in
  * All route names are prefixed with 'frontend.'
@@ -53,3 +67,5 @@ Route::group(['middleware' => ['auth', 'password_expires']], function () {
         Route::patch('profile/update', [ProfileController::class, 'update'])->name('profile.update');
     });
 });
+
+

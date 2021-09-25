@@ -53,37 +53,30 @@ class CategoryController extends Controller
         // dd($data);
         if( $data == null ){
 
-            if($request->file('image'))
-            {            
-                $preview_fileName = time().'_'.rand(1000,10000).'.'.$request->image->getClientOriginalExtension();
-                $fullURLsPreviewFile = $request->image->move(public_path('files/category'), $preview_fileName);
-                $image_url = $preview_fileName;
+            if($request->image == null){
+                return back()->withErrors('Please Select an Image');
             }else{
-                $image_url = null;
-            } 
+    
+                if($request->icon == null){
+                    return back()->withErrors('Please Select an Icon');
+                }else{            
 
-            if($request->file('icon'))
-            {            
-                $preview_fileName2= time().'_'.rand(1000,10000).'.'.$request->icon->getClientOriginalExtension();
-                $fullURLsPreviewFile2 = $request->icon->move(public_path('files/category'), $preview_fileName2);
-                $image_url2 = $preview_fileName2;
-            }else{
-                $image_url2 = null;
-            } 
+                    $add = new Category;
 
-            $add = new Category;
+                    $add->image = $request->image;
+                    $add->icon = $request->icon;
+                    $add->user_id = auth()->user()->id;
+                    $add->name = $request->name;        
+                    $add->description = $request->description;
+                    $add->order = $request->order;
+                    $add->status = $request->status;
 
-            $add->image = $image_url;
-            $add->icon = $image_url2;
-            $add->user_id = auth()->user()->id;
-            $add->name = $request->name;        
-            $add->description = $request->description;
-            $add->order = $request->order;
-            $add->status = $request->status;
+                    $add->save();
 
-            $add->save();
+                    return back()->withFlashSuccess('Added Successfully'); 
+                }
+            }
 
-            return back()->withFlashSuccess('Added Successfully'); 
         }else{
             return back()->withErrors('You Already Added This Category');
         }              
@@ -102,41 +95,30 @@ class CategoryController extends Controller
     public function update(Request $request)
     {        
         // dd($request);  
-
-
-        if($request->file('image'))
-        {            
-            $preview_fileName = time().'_'.rand(1000,10000).'.'.$request->image->getClientOriginalExtension();
-            $fullURLsPreviewFile = $request->image->move(public_path('files/category'), $preview_fileName);
-            $image_url = $preview_fileName;
+        if($request->image == null){
+            return back()->withErrors('Please Select an Image');
         }else{
-            $detail = Category::where('id',$request->hidden_id)->first();
-            $image_url = $detail->image; 
-        } 
 
-        if($request->file('icon'))
-        {            
-            $preview_fileName2= time().'_'.rand(1000,10000).'.'.$request->icon->getClientOriginalExtension();
-            $fullURLsPreviewFile2 = $request->icon->move(public_path('files/category'), $preview_fileName2);
-            $image_url2 = $preview_fileName2;
-        }else{
-            $detail = Category::where('id',$request->hidden_id)->first();
-            $image_url2 = $detail->icon; 
-        } 
+            if($request->icon == null){
+                return back()->withErrors('Please Select an Icon');
+            }else{   
 
-        $update = new Category;
+        
+                $update = new Category;
 
-        $update->image = $image_url;
-        $update->icon = $image_url2;
-        $update->user_id = auth()->user()->id;
-        $update->name = $request->name;        
-        $update->description = $request->description;
-        $update->order = $request->order;
-        $update->status = $request->status;
+                $update->image = $request->image;
+                $update->icon = $request->icon;
+                $update->user_id = auth()->user()->id;
+                $update->name = $request->name;        
+                $update->description = $request->description;
+                $update->order = $request->order;
+                $update->status = $request->status;
 
-        Category::whereId($request->hidden_id)->update($update->toArray());
+                Category::whereId($request->hidden_id)->update($update->toArray());
 
-        return redirect()->route('admin.category.index')->withFlashSuccess('Updated Successfully');                   
+                return redirect()->route('admin.category.index')->withFlashSuccess('Updated Successfully'); 
+            }
+        }                  
 
     }
 

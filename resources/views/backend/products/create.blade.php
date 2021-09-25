@@ -4,6 +4,7 @@
 
 @section('content')
 
+<link rel="stylesheet" href="{{url('css/vendors.css')}}">
 
 <form action="{{route('admin.products.store')}}" method="post" enctype="multipart/form-data">
         {{csrf_field()}}
@@ -63,12 +64,52 @@
                     <div class="card-body">
                         <div class="" style="border-style: ridge;border-width: 3px;padding: 20px;">
                             
-                            <div class="form-group">
-                                <label>Product Images</label>
-                                <input type="file" class="form-control" name="image1" required>
-                                <input type="file" class="form-control mt-3" name="image2" required>
-                                <input type="file" class="form-control mt-3" name="image3" required>
-                            </div>
+                            
+                                <div class="form-group">
+                                    <label>Feature Image
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="input-group" data-toggle="aizuploader" data-type="image">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
+                                        </div>
+                                        <div class="form-control file-amount">Choose File</div>
+                                        <input type="hidden" name="image1" class="selected-files" >
+                                    </div>
+                                    <div class="file-preview box sm">
+                                    </div>
+                                </div> 
+
+                                <div class="form-group">
+                                    <label>Image 2
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="input-group" data-toggle="aizuploader" data-type="image">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
+                                        </div>
+                                        <div class="form-control file-amount">Choose File</div>
+                                        <input type="hidden" name="image2" class="selected-files" >
+                                    </div>
+                                    <div class="file-preview box sm">
+                                    </div>
+                                </div> 
+
+                                <div class="form-group">
+                                    <label>Image 3
+                                        <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="input-group" data-toggle="aizuploader" data-type="image">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
+                                        </div>
+                                        <div class="form-control file-amount">Choose File</div>
+                                        <input type="hidden" name="image3" class="selected-files" >
+                                    </div>
+                                    <div class="file-preview box sm">
+                                    </div>
+                                </div> 
+                               
 
                         </div>
                     </div>

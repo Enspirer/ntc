@@ -59,26 +59,34 @@ class NewsController extends Controller
             return back()->withErrors('Please Fill Description Section');
         }else{
 
-            if($request->file('image'))
-            {            
-                $preview_fileName = time().'_'.rand(1000,10000).'.'.$request->image->getClientOriginalExtension();
-                $fullURLsPreviewFile = $request->image->move(public_path('files/news'), $preview_fileName);
-                $image_url = $preview_fileName;
+            if($request->image == null){
+                return back()->withErrors('Please Select Feature Image');
             }else{
-                $image_url = null;
-            } 
 
-            $add = new News;
+                // if($request->file('image'))
+                // {            
+                //     $preview_fileName = time().'_'.rand(1000,10000).'.'.$request->image->getClientOriginalExtension();
+                //     $fullURLsPreviewFile = $request->image->move(public_path('files/news'), $preview_fileName);
+                //     $image_url = $preview_fileName;
+                // }else{
+                //     $image_url = null;
+                // } 
 
-            $add->title=$request->title; 
-            $add->description=$request->description;        
-            $add->feature_image=$image_url;
-            $add->user_id = auth()->user()->id;
-            $add->order=$request->order;
-            $add->status=$request->status;
-            $add->save();
+                $add = new News;
 
-            return redirect()->route('admin.news.index')->withFlashSuccess('Added Successfully');  
+                $add->title=$request->title; 
+                $add->description=$request->description;        
+                $add->feature_image=$request->image;
+                $add->user_id = auth()->user()->id;
+                $add->order=$request->order;
+                $add->status=$request->status;
+                $add->save();
+
+                return redirect()->route('admin.news.index')->withFlashSuccess('Added Successfully');  
+
+            }
+
+            
         }
     }
 
@@ -98,49 +106,34 @@ class NewsController extends Controller
         if($request->description == null){
             return back()->withErrors('Please Fill Description Section');
         }else{
-
-            if($request->file('image'))
-            {            
-                $preview_fileName = time().'_'.rand(1000,10000).'.'.$request->image->getClientOriginalExtension();
-                $fullURLsPreviewFile = $request->image->move(public_path('files/news'), $preview_fileName);
-                $image_url = $preview_fileName;
+            if($request->image == null){
+                return back()->withErrors('Please Select Feature Image');
             }else{
-                $detail = News::where('id',$request->hidden_id)->first();
-                $image_url = $detail->feature_image; 
-            } 
 
-            $update = new News;
+            // if($request->file('image'))
+            // {            
+            //     $preview_fileName = time().'_'.rand(1000,10000).'.'.$request->image->getClientOriginalExtension();
+            //     $fullURLsPreviewFile = $request->image->move(public_path('files/news'), $preview_fileName);
+            //     $image_url = $preview_fileName;
+            // }else{
+            //     $detail = News::where('id',$request->hidden_id)->first();
+            //     $image_url = $detail->feature_image; 
+            // } 
 
-            $update->title=$request->title; 
-            $update->description=$request->description;        
-            $update->feature_image=$image_url;
-            $update->user_id = auth()->user()->id;
-            $update->order=$request->order;
-            $update->status=$request->status;
-            
-            News::whereId($request->hidden_id)->update($update->toArray());
+                $update = new News;
 
-            return redirect()->route('admin.news.index')->withFlashSuccess('Updated Successfully');        
-        }
+                $update->title=$request->title; 
+                $update->description=$request->description;        
+                $update->feature_image=$request->image;
+                $update->user_id = auth()->user()->id;
+                $update->order=$request->order;
+                $update->status=$request->status;
+                
+                News::whereId($request->hidden_id)->update($update->toArray());
 
-        $updatcountry = new News;
-
-        $updatcountry->country_name=$request->country_name; 
-        $updatcountry->slug=$request->slug;        
-        $updatcountry->currency=$request->currency;
-        $updatcountry->currency_rate=$request->currency_rate;
-        $updatcountry->country_id=$request->country_id;
-        $updatcountry->user_id = auth()->user()->id;
-
-        $updatcountry->country_manager=$user->id;
-
-        $updatcountry->features_flag=$request->features_flag;
-        $updatcountry->status=$request->status;
-        // $updatcountry->features_manager=$request->features_manager;
-   
-        News::whereId($request->hidden_id)->update($updatcountry->toArray());
-
-        return redirect()->route('admin.country.index')->withFlashSuccess('Updated Successfully');                      
+                return redirect()->route('admin.news.index')->withFlashSuccess('Updated Successfully');  
+            }      
+        }                            
 
     }
 
