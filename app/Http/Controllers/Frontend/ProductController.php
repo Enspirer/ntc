@@ -29,7 +29,7 @@ class ProductController extends Controller
         
         $categories = Category::where('status','=','Enabled')->get();
 
-        $products = Products::where('category',$id)->where('status','=','Enabled')->orderBy('id','DESC')->get();
+        $products = Products::where('category',$id)->where('status','=','Enabled')->orderBy('id','DESC')->get()->unique('product_name');
         // dd($products);
 
         $sub_cat_attachment = SubCategoryAttachement::where('category_id',$id)->get();
@@ -59,6 +59,72 @@ class ProductController extends Controller
         ]);
     }
 
+
+
+
+    public function product_model($id)
+    {
+        // dd($id);
+        
+        $categories = Category::where('status','=','Enabled')->get();        
+        // dd($categories);
+        $product_cat = Products::where('product_name',$id)->first();
+
+        $cat = Category::where('id',$product_cat->category)->first();
+        // dd($cat);
+
+        
+        $products = Products::where('product_name',$id)->where('status','=','Enabled')->orderBy('id','DESC')->get();
+        // dd($products);
+
+        $output_array_model = [];
+
+        foreach($products as $key => $pro_models){
+
+            $array_output = [
+                'model_number' => $pro_models->model_number,
+                'product_name' => $pro_models->product_name,
+                'product_id' => $pro_models->id,
+                'description' => $pro_models->description,
+                'product_image' => json_decode($pro_models->multiple_images)[0]->image1,
+            ];
+
+            array_push($output_array_model,$array_output);
+        }
+        
+            // dd($output_array_model);
+
+            $products_cat = Products::where('product_name',$id)->first();
+            // dd($products_cat);
+        
+            $sub_cat_attachment = SubCategoryAttachement::where('category_id',$products_cat->category)->get();
+            // dd($sub_cat_attachment);
+    
+            $output_array = [];
+    
+            foreach($sub_cat_attachment as $key => $sub_cat){
+    
+                $sub_cat_details = SubCategory::where('id',$sub_cat->sub_category_id)->first();
+    
+                $array_out = [
+                    'category_id' => $sub_cat->category_id,
+                    'sub_category_id' => $sub_cat->sub_category_id,
+                    'sub_category_name' => $sub_cat_details->name
+                ];
+    
+                array_push($output_array,$array_out);
+            }
+            // dd($output_array);
+
+        return view('frontend.products_model',[
+            'categories' => $categories,
+            'category_id' => $cat->id,
+            'output_array' => $output_array,
+            'output_array_model' => $output_array_model
+        ]);
+    }
+
+    
     public function solo_product($id)
     {
         $categories = Category::where('status','=','Enabled')->get();

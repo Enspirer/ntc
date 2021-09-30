@@ -120,7 +120,7 @@
                         </h2>
                     
                   
-                      <div id="collapseTwo{{ $sub_category['sub_category_id'] }}" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#types">
+                      <div id="collapseTwo{{ $sub_category['sub_category_id'] }}" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#types">
                           <div class="accordion-body">
 
                               <div class="accordion" id="heavy-machinery">
@@ -129,17 +129,15 @@
                                       <div class="accordion-item rounded p-1">
                                         <h2 class="accordion-header" id="heavy-machinery-one">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#heavy-machinery-collapse-one{{$single_product->id}}" aria-expanded="false" aria-controls="heavy-machinery-collapse-one">
-                                                
-                                    
+                                                                                    
                                                 {{$single_product->product_name}}
-                                                
-                                                
+                                                                                                
                                             </button>
                                         </h2>
                                         <div id="heavy-machinery-collapse-one{{$single_product->id}}" class="accordion-collapse collapse" aria-labelledby="heavy-machinery-one" data-bs-parent="#heavy-machinery-one">
                                             <div class="accordion-body ps-5">
 
-                                            @foreach(App\Models\Products::where('product_name',$single_product->product_name)->get() as $key => $model_number)
+                                            @foreach(App\Models\Products::where('product_name',$single_product->product_name)->where('sub_category',$sub_category['sub_category_id'])->get() as $key => $model_number)
 
                                               <a href="{{ route('frontend.solo_product',$model_number->id) }}" onMouseOver="this.style.color='green'" onMouseOut="this.style.color='black'" style="text-decoration: none; color:black">
                                                 <p >{{ $model_number->model_number }}</p>

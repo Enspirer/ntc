@@ -167,22 +167,30 @@
                   <div class="tab-content">
                       <div class="tab-pane fade active show" id="destoner" aria-labelledby="destoner-tab">
                           <div class="row align-items-center">
-                            @if(count($products) == 0)
+                            @if(count(array($output_array_model)) == 0)
                                 @include('frontend.includes.not_found',[
                                     'not_found_title' => 'Products Not Found',
                                 ])
                             @else
 
-                            @foreach($products as $key => $product)
-                            
+                            @foreach($output_array_model as $key => $product_model)
                               <div class="col-4 p-1">
-                                  <div class="card" style="min-height: 360px; max-height: 360px;">
-                                      <img src="{{uploaded_asset(json_decode($product->multiple_images)[0]->image1) }}" style="height: 200px; object-fit:cover;" class="card-img-top" alt="...">
+                                  <div class="card" style="min-height: 390px; max-height: 390px;">
+                                  <img src="{{uploaded_asset($product_model['product_image']) }}" style="height: 200px; object-fit:cover;" class="card-img-top" alt="...">
                                       <div class="card-body">
-                                      <a href="{{ route('frontend.product_model',$product->product_name) }}" class="text-decoration-none" style="color: #68AE42;"><h5 class="card-title" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; font-size:18px;">{{ $product->product_name }}</h5></a>
-                                        <p class="card-text" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;">{{ $product->description }}</p>
+                                        <h5 class="card-title" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; font-size:18px;">{{ $product_model['model_number'] }}</h5>
+                                        <p class="card-text" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">{{ $product_model['description'] }}</p>
 
-                                                                                  
+                                        <div class="row align-items-center justify-content-between">
+                                          <div class="col">
+                                            <a href="{{ route('frontend.solo_product',$product_model['product_id']) }}" class="text-decoration-none" style="color: #68AE42;">Learn more</a>
+                                          </div>
+                                          <div class="col">
+                                            <a href="" class="btn d-block text-white fw-bold" data-bs-toggle="modal" data-bs-target="#inquire{{$product_model['product_id']}}" style="background-color: #68AE42;">Inquire Now</a>
+                                            <!-- <button class="btn" style="background-color: #68AE42;">Inquire now</button> -->
+                                          </div>
+                                        </div>
+                                          
                                       </div>
                                   </div>
                               </div>
@@ -202,8 +210,8 @@
 
 
     <!-- Modal -->
-    @foreach($products as $key => $product)
-      <div class="modal fade" id="inquire{{$product->id}}" tabindex="-1" aria-labelledby="inquireLabel" aria-hidden="true">
+    @foreach($output_array_model as $key => $product_model)
+      <div class="modal fade" id="inquire{{$product_model['product_id']}}" tabindex="-1" aria-labelledby="inquireLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
 
@@ -215,11 +223,11 @@
                 <div class="modal-body">
                     <div class="mb-2">
                       <label for="product-name" class="form-label">Product Name</label>
-                      <input type="text" class="form-control" name="product_name" aria-describedby="product-name" value="{{$product->product_name}}" readonly>
+                      <input type="text" class="form-control" name="product_name" aria-describedby="product-name" value="{{$product_model['product_name']}}" readonly>
                     </div>
                     <div class="mb-2">
                       <label for="product-id" class="form-label">Model Number</label>
-                      <input type="text" class="form-control" name="product_id" value="{{$product->model_number}}" readonly>
+                      <input type="text" class="form-control" name="product_id" value="{{$product_model['model_number']}}" readonly>
                     </div>
                     <div class="mb-2">
                       <label for="first-name" class="form-label">First Name</label>
