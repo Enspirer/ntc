@@ -10,6 +10,10 @@ require __DIR__.'/log-viewer.php';
 Breadcrumbs::for('admin.category.index', function ($trail) {
     $trail->push('Category', route('admin.category.index'));
 });
+Breadcrumbs::for('admin.category.create', function ($trail) {
+    $trail->push('Create Category', route('admin.category.create'));
+});
+
 Breadcrumbs::for('admin.category.edit', function ($trail) {
     $trail->push('Edit Category', route('admin.category.edit',1));
 });

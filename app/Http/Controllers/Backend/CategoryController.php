@@ -19,6 +19,11 @@ class CategoryController extends Controller
         return view('backend.category.index');
     }
 
+    public function create()
+    {
+        return view('backend.category.create');
+    }
+
     public function getdetails(Request $request)
     {
        
@@ -73,7 +78,7 @@ class CategoryController extends Controller
 
                     $add->save();
 
-                    return back()->withFlashSuccess('Added Successfully'); 
+                    return redirect()->route('admin.category.index')->withFlashSuccess('Added Successfully');
                 }
             }
 

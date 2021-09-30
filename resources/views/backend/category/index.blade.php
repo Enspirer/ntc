@@ -4,7 +4,6 @@
 
 @section('content')
     
-<link rel="stylesheet" href="{{url('css/vendors.css')}}">
 
 <div class="row">
         <div class="col">
@@ -13,8 +12,8 @@
                 <div class="card-header">
                     <strong>Category&nbsp;</strong>
 
-                    <div class="btn btn-info pull-right ml-3" data-toggle="modal" data-target="#exampleModalScrollable">Add New</div>
-                   
+                    <a href="{{route('admin.category.create')}}" class="btn btn-primary pull-right ml-4">Create New</a>
+
                 </div><!--card-header-->
 
                 <div class="card-body">
@@ -37,88 +36,7 @@
         </div><!--col-->
     </div><!--row-->
 
-
-    <!-- Modal insert -->
-    <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">>
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-         
-                <form action="{{route('admin.category.store')}}" method="post" enctype="multipart/form-data">
-                
-                    {{csrf_field()}}
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalScrollableTitle">Add New</h5>
-                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
-                            <!-- <span aria-hidden="true">&times;</span> -->
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label>Name <span style="color:red">*<span></label>
-                            <input type="text" class="form-control" name="name" required>
-                        </div>
-                        
-                        <label>Description</label>
-                        <textarea class="form-control" name="description"  rows="2"></textarea>
-                        <br>
-
-                        
-                        <div class="form-group">
-                            <label>Image
-                                <span class="text-danger">*</span>
-                            </label>
-                            <div class="input-group" data-toggle="aizuploader" data-type="image">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
-                                </div>
-                                <div class="form-control file-amount">Choose File</div>
-                                <input type="hidden" name="image" class="selected-files" >
-                            </div>
-                            <div class="file-preview box sm">
-                            </div>
-                        </div> 
-
-                      
-                        <div class="form-group">
-                            <label>Icon
-                                <span class="text-danger">*</span>
-                            </label>
-                            <div class="input-group" data-toggle="aizuploader" data-type="image">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text bg-soft-secondary font-weight-medium">Browse</div>
-                                </div>
-                                <div class="form-control file-amount">Choose File</div>
-                                <input type="hidden" name="icon" class="selected-files" >
-                            </div>
-                            <div class="file-preview box sm">
-                            </div>
-                        </div> 
-
-                        <div class="form-group">
-                            <label>Status <span style="color:red">*<span></label>
-                            <select class="form-control" name="status" required>
-                                <option value="Enabled">Enable</option>   
-                                <option value="Disabled">Disable</option>                                
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Order <span style="color:red">*<span></label>
-                            <input type="number" class="form-control" name="order" required>
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <input type="submit" class="btn btn-success" value="Add New">
-                    </div>
-                </form>
-
-            </div>
-        </div>
-    </div>
-    
+      
 
      <!-- Modal delete -->
      <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="ModalDeleteLabel" aria-hidden="true">
