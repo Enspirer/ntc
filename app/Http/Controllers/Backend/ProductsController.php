@@ -132,7 +132,13 @@ class ProductsController extends Controller
                     $add = new Products;
 
                     $add->product_name=$request->product_name; 
-                    $add->model_number=$request->model_number;        
+
+                    if($request->model_number == null){
+                        $add->model_number='No Model Number';
+                    }else{
+                        $add->model_number=$request->model_number;
+                    }
+                            
                     $add->description=$request->description;
                     $add->status=$request->status;
                     $add->category=$request->category;
@@ -208,8 +214,14 @@ class ProductsController extends Controller
 
                     $update = new Products;
 
-                    $update->product_name=$request->product_name; 
-                    $update->model_number=$request->model_number;        
+                    $update->product_name=$request->product_name;      
+                    
+                    if($request->model_number == null){
+                        $update->model_number='No Model Number';
+                    }else{
+                        $update->model_number=$request->model_number;
+                    }
+
                     $update->description=$request->description;
                     $update->status=$request->status;
                     $update->category=$request->category;
