@@ -194,9 +194,20 @@
                                   <div class="card" style="min-height: 360px; max-height: 360px;">
                                       <img src="{{uploaded_asset(json_decode($product->multiple_images)[0]->image1) }}" style="height: 200px; object-fit:cover;" class="card-img-top" alt="...">
                                       <div class="card-body">
-                                      <a href="{{ route('frontend.product_model',$product->product_name) }}" class="text-decoration-none" style="color: #68AE42;"><h5 class="card-title" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; font-size:18px;">{{ $product->product_name }}</h5></a>
-                                        <p class="card-text" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;">{{ $product->description }}</p>
 
+                                      @if($product->group_by_name == 0 )
+                                        <a href="{{ route('frontend.solo_product',$product->id) }}" class="text-decoration-none" style="color: #68AE42;">
+                                          <h5 class="card-title" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; font-size:18px;">
+                                            {{ $product->product_name }}</h5>
+                                        </a>
+                                      @else
+                                        <a href="{{ route('frontend.product_model',$product->product_name) }}" class="text-decoration-none" style="color: #68AE42;">
+                                          <h5 class="card-title" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; font-size:18px;">
+                                            {{ $product->product_name }}</h5>
+                                        </a>
+                                      @endif
+                                      
+                                        <p class="card-text" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;">{{ $product->description }}</p>
                                                                                   
                                       </div>
                                   </div>
