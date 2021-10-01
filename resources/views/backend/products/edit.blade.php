@@ -38,7 +38,7 @@
                             
                         <div class="form-group">
                             <label>Sub Category</label>
-                            <select name="sub_category" class="form-control" id="sub_category">
+                            <select name="sub_category" class="form-control" id="sub_category" >
 
                             </select>
                         </div>
@@ -170,42 +170,46 @@
 
         
         $(document).on('click', '#removeRow', function () {
-            $(this).closest('#inputFormRow').remove();
+            // $(this).closest('#inputFormRow').remove();
+            $(this).parents('.input-group').remove();
         });
+        
+        
     </script>
 
-
     <script>
-         $(document).ready(function() {
-        $('#category').on('change', function() {
-            var CatID = $(this).val();
-            // console.log(CatID);
+         
+            $(document).ready(function() {
+                $('#category').on('change', function() {
+                    var CatID = $(this).val();
+                    // console.log(CatID);
 
-                $.ajax({
+                        $.ajax({
+                            
+                            url: "{{url('/')}}/admin/findSubcatWithCatID/" + CatID,
+                            method: "GET",
+                            dataType: "json",
+                            success:function(data) {
+                                // console.log(data);
+                            if(data){
+                                $('#sub_category').empty();
+                                $('#sub_category').focus;
+                                $('#sub_category').append('<option value="" selected disabled>-- Select Sub Category --</option>'); 
+                                $.each(data, function(key, value){
+                                    // console.log(value);
+                                $('select[name="sub_category"]').append('<option value="'+ value.sub_category_id +'">' + value.sub_category_name+ '</option>');
+                                
+                            });
+
+                            }else{
+                                $('#sub_category').empty();
+                            }
+                        }
+                        });
                     
-                    url: "{{url('/')}}/admin/findSubcatWithCatID/" + CatID,
-                    method: "GET",
-                    dataType: "json",
-                    success:function(data) {
-                        // console.log(data);
-                    if(data){
-                        $('#sub_category').empty();
-                        $('#sub_category').focus;
-                        $('#sub_category').append('<option value="" selected disabled>-- Select Sub Category --</option>'); 
-                        $.each(data, function(key, value){
-                            // console.log(value);
-                        $('select[name="sub_category"]').append('<option value="'+ value.sub_category_id +'">' + value.sub_category_name+ '</option>');
-                        
-                    });
-
-                    }else{
-                        $('#sub_category').empty();
-                    }
-                  }
                 });
-            
-        });
-    });
+            });
+        
     </script>
 
 

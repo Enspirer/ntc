@@ -50,19 +50,19 @@
     height: 18rem;
 }
 .product-range-2 {
-    background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../img/frontend/index/images/rubber-rollers.svg);
+    background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../img/frontend/index/rubber-rollers.svg);
     height: 18rem;
 }
 .product-range-3 {
-    background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../img/frontend/index/images/electric-motors.svg);
+    background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../img/frontend/index/electric-motors.svg);
     height: 18rem;
 }
 .product-range-4 {
-    background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../img/frontend/index/images/spare-parts.svg);
+    background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../img/frontend/index/spare-parts.svg);
     height: 18rem;
 }
 .product-range-5 {
-    background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../img/frontend/index/images/other-machinery.svg);
+    background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../img/frontend/index/other-machinery.svg);
     height: 18rem;
 }
 .product-range-1:hover {
