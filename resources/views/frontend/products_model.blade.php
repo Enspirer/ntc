@@ -156,7 +156,7 @@
                                 @foreach(App\Models\Products::where('sub_category',$sub_category['sub_category_id'])->where('group_by_name',0)->get()->unique('product_name') as $key => $single_product)
                                     <div class="accordion-item rounded p-1">
                                       <h2 class="accordion-header" id="heavy-machinery-one">
-                                          <a href="{{ route('frontend.solo_product',$single_product->id) }}" class="accordion-button collapsed" aria-expanded="false" aria-controls="heavy-machinery-collapse-one">                                                  
+                                          <a href="{{ route('frontend.solo_product',$single_product->id) }}" class="btn" onMouseOver="this.style.color='green'" onMouseOut="this.style.color='black'" aria-expanded="false" aria-controls="heavy-machinery-collapse-one">                                                  
                                   
                                               {{$single_product->product_name}}                                                  
                                               
