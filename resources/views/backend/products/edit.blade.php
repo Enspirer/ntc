@@ -43,7 +43,13 @@
                             </select>
                         </div>
                             
-                     
+                        <div class="form-group">
+                            <label>Group By Name</label>
+                            <select class="form-control" name="group_by_name" required>
+                                <option value="1" {{ $products->group_by_name == 1 ? "selected" : "" }}>Enable</option>   
+                                <option value="0" {{ $products->group_by_name == 0 ? "selected" : "" }}>Disable</option>                                
+                            </select>
+                        </div>
 
                         <div class="form-group">
                             <label>Status</label>

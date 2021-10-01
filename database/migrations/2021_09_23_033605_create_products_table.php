@@ -18,7 +18,8 @@ class CreateProductsTable extends Migration
             $table->text('product_name');
             $table->text('model_number')->nullable();
             $table->text('category');
-            $table->text('sub_category');            
+            $table->text('sub_category'); 
+            $table->text('group_by_name')->nullable();           
             $table->text('attributes')->nullable();            
             $table->text('multiple_images');
             $table->text('description');
