@@ -7,6 +7,19 @@ Breadcrumbs::for('admin.dashboard', function ($trail) {
 require __DIR__.'/auth.php';
 require __DIR__.'/log-viewer.php';
 
+
+Breadcrumbs::for('admin.best_selling.index', function ($trail) {
+    $trail->push('Best Selling', route('admin.best_selling.index'));
+});
+Breadcrumbs::for('admin.best_selling.create', function ($trail) {
+    $trail->push('Create Best Selling', route('admin.best_selling.create'));
+});
+Breadcrumbs::for('admin.best_selling.edit', function ($trail) {
+    $trail->push('Edit Best Selling', route('admin.best_selling.edit',1));
+});
+
+
+
 Breadcrumbs::for('admin.category.index', function ($trail) {
     $trail->push('Category', route('admin.category.index'));
 });

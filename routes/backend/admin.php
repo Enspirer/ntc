@@ -7,10 +7,22 @@ use App\Http\Controllers\Backend\InquireController;
 use App\Http\Controllers\Backend\ProductsController;
 use App\Http\Controllers\Backend\JobOpportunityController;
 use App\Http\Controllers\Backend\NewsController;
+use App\Http\Controllers\Backend\HomePageController;
 
 // All route names are prefixed with 'admin.'.
 Route::redirect('/', '/admin/dashboard', 301);
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+
+Route::get('best_selling', [HomePageController::class, 'index'])->name('best_selling.index');
+Route::get('best_selling/create', [HomePageController::class, 'create'])->name('best_selling.create');
+Route::post('best_selling/store', [HomePageController::class, 'store'])->name('best_selling.store');
+Route::get('best_selling/getdetails', [HomePageController::class, 'getdetails'])->name('best_selling.getdetails');
+Route::get('best_selling/edit/{id}', [HomePageController::class, 'edit'])->name('best_selling.edit');
+Route::post('best_selling/update', [HomePageController::class, 'update'])->name('best_selling.update');
+Route::get('best_selling/delete/{id}', [HomePageController::class, 'destroy'])->name('best_selling.destroy');
+
+
 
 Route::get('category', [CategoryController::class, 'index'])->name('category.index');
 Route::get('category/create', [CategoryController::class, 'create'])->name('category.create');
