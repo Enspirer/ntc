@@ -68,13 +68,15 @@ class ProductController extends Controller
         
         $categories = Category::where('status','=','Enabled')->get();        
         // dd($categories);
-        $product_cat = Products::where('product_name',$id)->first();
 
-        $cat = Category::where('id',$product_cat->category)->first();
+        $product = Products::where('id',$id)->first();
+
+        $cat = Category::where('id',$product->category)->first();
+
         // dd($cat);
 
         
-        $products = Products::where('product_name',$id)->where('status','=','Enabled')->orderBy('id','DESC')->get();
+        $products = Products::where('product_name',$product->product_name)->where('category',$product->category)->where('status','=','Enabled')->orderBy('id','DESC')->get();
         // dd($products);
 
         $output_array_model = [];
@@ -94,7 +96,7 @@ class ProductController extends Controller
         
             // dd($output_array_model);
 
-            $products_cat = Products::where('product_name',$id)->first();
+            $products_cat = Products::where('id',$id)->first();
             // dd($products_cat);
         
             $sub_cat_attachment = SubCategoryAttachement::where('category_id',$products_cat->category)->get();

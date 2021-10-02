@@ -190,7 +190,7 @@
 
                             @foreach($output_array_model as $key => $product_model)
                               <div class="col-4 p-1">
-                                  <div class="card" style="min-height: 390px; max-height: 390px;">
+                                  <div class="card" style="min-height: 365px; max-height: 365px;">
                                   <img src="{{uploaded_asset($product_model['product_image']) }}" style="height: 200px; object-fit:cover;" class="card-img-top" alt="...">
                                       <div class="card-body">
                                         <h5 class="card-title" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; font-size:18px;">{{ $product_model['model_number'] }}</h5>
@@ -201,7 +201,7 @@
                                             <a href="{{ route('frontend.solo_product',$product_model['product_id']) }}" class="text-decoration-none" style="color: #68AE42;">Learn more</a>
                                           </div>
                                           <div class="col">
-                                            <a href="" class="btn d-block text-white fw-bold" data-bs-toggle="modal" data-bs-target="#inquire{{$product_model['product_id']}}" style="background-color: #68AE42;">Inquire Now</a>
+                                            <a href="" class="btn d-block text-white fw-bold" data-bs-toggle="modal" data-bs-target="#inquire{{$product_model['product_id']}}" style="background-color: #68AE42; font-size:13px;">Inquire Now</a>
                                             <!-- <button class="btn" style="background-color: #68AE42;">Inquire now</button> -->
                                           </div>
                                         </div>

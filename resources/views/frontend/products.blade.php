@@ -201,7 +201,7 @@
                                             {{ $product->product_name }}</h5>
                                         </a>
                                       @else
-                                        <a href="{{ route('frontend.product_model',$product->product_name) }}" class="text-decoration-none" style="color: #68AE42;">
+                                        <a href="{{ route('frontend.product_model',$product->id) }}" class="text-decoration-none" style="color: #68AE42;">
                                           <h5 class="card-title" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; font-size:18px;">
                                             {{ $product->product_name }}</h5>
                                         </a>
