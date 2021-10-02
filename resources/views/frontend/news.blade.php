@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 
-@section('title', app_name() . ' | ' . __('labels.frontend.contact.box_title'))
+@section('title', app_name() . ' | ' . __('News'))
 
 @push('after-styles')
     <link href="{{ url('css/news.css') }}" rel="stylesheet">
@@ -45,7 +45,7 @@
                 @foreach($news as $key => $new)
                     <div class="col-4 p-1 p-0">
                         <div class="card" data-aos="flip-right" data-aos-duration="500" style="min-height: 410px; max-height: 410px;">
-                            <img src="{{uploaded_asset($news_latest->feature_image) }}" style="height:220px; object-fit:cover" class="card-img-top" alt="...">
+                            <img src="{{uploaded_asset($new->feature_image) }}" style="height:220px; object-fit:cover" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <a href="{{ route('frontend.single_news',$new->id) }}" class="text-reset text-decoration-none">
                                     <div style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">

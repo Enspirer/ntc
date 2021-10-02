@@ -45,11 +45,11 @@
 .banner-products h5 {
     margin-top: 8rem;
 }
-.product-range-1{
+/* .product-range-1{
     background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../img/frontend/index/rice-milling-machine.svg);
     height: 18rem;
-}
-.product-range-2 {
+} */
+/* .product-range-2 {
     background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../img/frontend/index/rubber-rollers.svg);
     height: 18rem;
 }
@@ -64,14 +64,14 @@
 .product-range-5 {
     background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../img/frontend/index/other-machinery.svg);
     height: 18rem;
-}
-.product-range-1:hover {
+} */
+/* .product-range-1:hover {
     background: url(../img/frontend/index/rice-milling-machine.svg);
     color: black;
     animation-name: fadein;
     animation-duration: 0.5s;
-}
-.product-range-2:hover {
+} */
+/* .product-range-2:hover {
     background: url(../img/frontend/index/rubber-rollers.svg);
     color: black;
     animation-name: fadein;
@@ -95,7 +95,7 @@
     color: black;
     animation-name: fadein;
     animation-duration: 0.5s;
-}
+} */
 [class*="product-range"]:hover h5 {
     background-color: #68AE42;
     margin-top: 7rem;

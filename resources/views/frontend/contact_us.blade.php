@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 
-@section('title', app_name() . ' | ' . __('labels.frontend.contact.box_title'))
+@section('title', app_name() . ' | ' . __('Contact Us'))
 
 @push('after-styles')
     <link href="{{ url('css/contact-us.css') }}" rel="stylesheet">

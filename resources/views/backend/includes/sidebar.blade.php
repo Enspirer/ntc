@@ -13,6 +13,34 @@
                 </a>
             </li>
 
+            <li class="nav-item nav-dropdown">
+                <a class="nav-link nav-dropdown-toggle " href="#">
+                    <i class="nav-icon fas fa-house-user"></i>
+                    Home Page
+                </a>
+
+                <ul class="nav-dropdown-items">
+                    @if(App\Models\BestSelling::first() == null)
+                        <li class="nav-item">
+                            <a class="nav-link {{active_class(Route::is('admin/best_selling'))}}" href="{{ route('admin.best_selling.create') }}">                          
+                                Best Selling
+                            </a>
+                        </li>
+                    @else
+                        @php
+                            $best_selling = App\Models\BestSelling::first();
+                        @endphp
+                        <li class="nav-item">
+                            <a class="nav-link {{active_class(Route::is('admin/best_selling'))}}" href="{{ route('admin.best_selling.edit',$best_selling->id) }}">                          
+                                Best Selling
+                            </a>
+                        </li>
+                    @endif
+                    
+                        
+                </ul>
+            </li>
+
             <li class="nav-item nav-dropdown ">
                 <a class="nav-link nav-dropdown-toggle " href="#">
                     <i class="nav-icon fas fa-list"></i>
