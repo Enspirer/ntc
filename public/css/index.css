@@ -181,7 +181,7 @@
 }
 
 .mySwiper img {
-    height: 25rem;
+    height: 17rem;
     width: 100%;
     object-fit: cover;
     filter: brightness(60%);
@@ -203,9 +203,11 @@
 
 .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
     color: white!important;
+    font-size: 1.7rem!important;
 }
 .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
     color: white!important;
+    font-size: 1.7rem!important;
 }
 
 
