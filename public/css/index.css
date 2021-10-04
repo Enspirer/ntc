@@ -180,6 +180,34 @@
     width: 40px;
 }
 
+.mySwiper img {
+    height: 25rem;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(60%);
+    margin-bottom: 1rem;
+    transition: filter 1s;
+}
+.slider-hover {
+    filter: brightness(100%)!important;
+}
+.mySwiper h5 {
+    color: black;
+    font-weight: 600;
+    text-align: center;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    top: 45%!important;
+}
+
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
+    color: white!important;
+}
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+    color: white!important;
+}
+
 
 
 

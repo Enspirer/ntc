@@ -243,7 +243,7 @@
             <img src="{{ url('img/frontend/index/team.svg') }}" alt="" height="400px" style="box-shadow: -5px 10px 10px #888888;">
           </div>
       </div>
-      </div>
+    </div>
 
 
 
@@ -260,70 +260,31 @@
     
 
     <div class="container text-white" style="margin-top: 7rem; margin-bottom: 3rem;">
-      <div id="banner-products" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner text-center">
-
-          <!-- @foreach($news as $key => $new)
-            <div class="carousel-item active">
-              <div class="row justify-content-between">
-                <div class="col m-1 products-carousel-1" data-aos="fade-down" data-aos-duration="700" data-aos-offset="300">
-                  <h5 style="margin-top: 25rem;">Lorem ipsum news title</h5>
-                </div>
-                <div class="col m-1 products-carousel-2" data-aos="fade-down" data-aos-duration="700" data-aos-offset="300">
-                  <h5 style="margin-top: 25rem;">Lorem ipsum news title</h5>
-                </div>
-                <div class="col m-1 products-carousel-3" data-aos="fade-up" data-aos-duration="700" data-aos-offset="300">
-                  <h5 style="margin-top: 25rem;">Lorem ipsum news title</h5>
-                </div>
-                <div class="col m-1 products-carousel-4" data-aos="fade-up" data-aos-duration="700" data-aos-offset="300">
-                  <h5 style="margin-top: 25rem;">Lorem ipsum news title</h5>
-                </div>
-              </div>
-            </div>
-          @endforeach -->
-
-          <div class="carousel-item active">
-              <div class="row justify-content-between">
-                <div class="col m-1 products-carousel-1" data-aos="fade-down" data-aos-duration="700" data-aos-offset="300">
-                  <h5 style="margin-top: 25rem;">Lorem ipsum news title</h5>
-                </div>
-                <div class="col m-1 products-carousel-2" data-aos="fade-down" data-aos-duration="700" data-aos-offset="300">
-                  <h5 style="margin-top: 25rem;">Lorem ipsum news title</h5>
-                </div>
-                <div class="col m-1 products-carousel-3" data-aos="fade-up" data-aos-duration="700" data-aos-offset="300">
-                  <h5 style="margin-top: 25rem;">Lorem ipsum news title</h5>
-                </div>
-                <div class="col m-1 products-carousel-4" data-aos="fade-up" data-aos-duration="700" data-aos-offset="300">
-                  <h5 style="margin-top: 25rem;">Lorem ipsum news title</h5>
-                </div>
-              </div>
-            </div>
-
-          <div class="carousel-item">
-            <div class="row justify-content-between">
-              <div class="col m-1 products-carousel-1" data-aos="fade-down" data-aos-duration="700" data-aos-offset="300">
-                <h5 style="margin-top: 25rem;">Lorem ipsum news title</h5>
-              </div>
-              <div class="col m-1 products-carousel-2" data-aos="fade-down" data-aos-duration="700" data-aos-offset="300">
-                <h5 style="margin-top: 25rem;">Lorem ipsum news title</h5>
-              </div>
-              <div class="col m-1 products-carousel-3" data-aos="fade-up" data-aos-duration="700" data-aos-offset="300">
-                <h5 style="margin-top: 25rem;">Lorem ipsum news title</h5>
-              </div>
-              <div class="col m-1 products-carousel-4" data-aos="fade-up" data-aos-duration="700" data-aos-offset="300">
-                <h5 style="margin-top: 25rem;">Lorem  news title</h5>
-              </div>
-            </div>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+              <img src="{{ url('img/frontend/index/banner-product-1.svg') }}" alt="">
+              <h5 style="">Lorem ipsum news title</h5>
+          </div>
+          <div class="swiper-slide">
+              <img src="{{ url('img/frontend/index/banner-product-2.svg') }}" alt="">
+              <h5 style="">Lorem ipsum news title</h5>
+          </div>
+          <div class="swiper-slide">
+              <img src="{{ url('img/frontend/index/banner-product-3.svg') }}" alt="">
+              <h5 style="">Lorem ipsum news title</h5>
+          </div>
+          <div class="swiper-slide">
+              <img src="{{ url('img/frontend/index/banner-product-4.svg') }}" alt="">
+              <h5 style="">Lorem ipsum news title</h5>
+          </div>
+          <div class="swiper-slide">
+              <img src="{{ url('img/frontend/index/banner-product-1.svg') }}" alt="">
+              <h5 style="">Lorem ipsum news title</h5>
           </div>
         </div>
-    
-        <a class="carousel-control-prev" href="#banner-products" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </a>
-    
-        <a class="carousel-control-next" href="#banner-products" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </a>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
       </div>
     </div>
     
@@ -386,5 +347,26 @@
         setTimeout(changeText, 5000)
       }
       changeText(); 
+    </script>
+
+
+
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+
+    <script>
+      $('.swiper-slide img').hover(function() {
+        $(this).addClass('slider-hover');
+      }, function() {
+        $(this).removeClass('slider-hover');
+      });
     </script>
 @endpush
