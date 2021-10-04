@@ -244,11 +244,6 @@
           </div>
       </div>
     </div>
-
-
-
-    
-    
     
   @if(count($news) != 0)
 
