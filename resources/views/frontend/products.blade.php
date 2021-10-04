@@ -28,7 +28,14 @@
     <!--navigation path-->
     <section id="path">
         <div class="container mb-3" style="margin-top: 6.5rem;">
-            <p class="mb-0">Home / Products / Rice Milling Machine</p>
+            <p class="mb-0">
+              <a href="{{url('/')}}" style="color:black;">Home</a> / Products / 
+              @foreach($categories as $key => $cat)
+                @if($cat->id == $category_id)
+                  {{$cat->name}}
+                @endif  
+              @endforeach()
+            </p>
         </div>
     </section>
 
@@ -36,7 +43,6 @@
     <div class="container text-white">
         <div class="row text-center">
 
-        <!-- {{ url('img/frontend/products/products-rice-milling-machine.svg') }} -->
 
         @foreach($categories as $key => $category)
        
@@ -188,11 +194,19 @@
                                 ])
                             @else
 
+                        
                             @foreach($products as $key => $product)
-                            
+                               
                               <div class="col-4 p-1">
                                   <div class="card" style="min-height: 360px; max-height: 360px;">
+                                  
+                                    @if( App\Models\Products::where('product_name',$product->product_name)->where('feature_image','=','1')->first())
+                                      
+                                      <img src="{{uploaded_asset(json_decode(App\Models\Products::where('product_name',$product->product_name)->where('feature_image','=','1')->first()->multiple_images)[0]->image1) }}" style="height: 200px; object-fit:cover;" class="card-img-top" alt="...">
+                                    @else
                                       <img src="{{uploaded_asset(json_decode($product->multiple_images)[0]->image1) }}" style="height: 200px; object-fit:cover;" class="card-img-top" alt="...">
+                                    @endif
+                                      
                                       <div class="card-body">
 
                                       @if($product->group_by_name == 0 )

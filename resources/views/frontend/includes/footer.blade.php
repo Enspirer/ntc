@@ -9,12 +9,16 @@
                 Innovative. Focused.</p>
             </div>
             <div class="col-sm-3 text-center" data-aos="fade-up" data-aos-duration="1000">
-              <h4>Our Products</h4>
-              <a href="#" class="d-block">lorem ipsum link</a>
-              <a href="#" class="d-block">lorem ipsum link</a>
-              <a href="#" class="d-block">lorem ipsum link</a>
-              <a href="#" class="d-block">lorem ipsum link</a>
-              <a href="#" class="d-block">lorem ipsum link</a>
+              <h4 class="mb-3">Our Products</h4>
+              
+                @if(count(App\Models\Category::where('status','Enabled')->get()) == 0)
+                  No Any Products
+                @else
+                  @foreach(App\Models\Category::where('status','=','Enabled')->get() as $key => $category)
+                    <a href="{{ route('frontend.category.all_product',$category->id) }}" style="text-decoration: none; color: white" class="d-block mt-2">{{ $category->name }}</a>
+                  @endforeach
+                @endif
+                
             </div>
             <div class="col-sm-3 pl-5" data-aos="fade-up" data-aos-duration="1000">
               <h4>Contact Us</h4>

@@ -129,6 +129,11 @@ class ProductsController extends Controller
                     }
                     // dd($final_array);
 
+                    if($request->feature_image == 1)
+                    {            
+                        $feature_image = DB::table('products')->where('product_name',$request->product_name)->where('feature_image', '=', 1)->update(array('feature_image' => 0));           
+                    } 
+
                     $add = new Products;
 
                     $add->product_name=$request->product_name; 
@@ -146,6 +151,7 @@ class ProductsController extends Controller
                     $add->sub_category=$request->sub_category;
 
                     $add->multiple_images=json_encode($json_images);
+                    $add->feature_image=$request->feature_image;
                     $add->attributes=json_encode($final_array);
 
                     $add->save();
@@ -211,6 +217,11 @@ class ProductsController extends Controller
                             array_push($final_array,$item_group);
                         }
                         // dd($final_array);
+
+                    if($request->feature_image == 1)
+                    {            
+                        $feature_image = DB::table('products')->where('product_name',$request->product_name)->where('feature_image', '=', 1)->update(array('feature_image' => 0));           
+                    }    
                             
 
                     $update = new Products;
@@ -237,6 +248,7 @@ class ProductsController extends Controller
                     
 
                     $update->multiple_images=json_encode($json_images);
+                    $update->feature_image=$request->feature_image;
                     $update->attributes=json_encode($final_array);
                     
 

@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration
             $table->text('group_by_name')->nullable();           
             $table->text('attributes')->nullable();            
             $table->text('multiple_images');
+            $table->text('feature_image')->nullable()->comment('feature image in product page');
             $table->text('description');
             $table->text('status');
             $table->timestamps();

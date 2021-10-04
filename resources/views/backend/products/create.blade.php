@@ -41,16 +41,8 @@
                             <select name="sub_category" class="form-control" id="sub_category" required>
 
                             </select>
-                        </div>
-                            
-                        <div class="form-group">
-                            <label>Group By Name</label>
-                            <select class="form-control" name="group_by_name" required>
-                                <option value="1">Enable</option>   
-                                <option value="0">Disable</option>                                
-                            </select>
-                        </div>
-
+                        </div>                          
+                        
                         <div class="form-group">
                             <label>Status</label>
                             <select class="form-control" name="status" required>
@@ -61,6 +53,7 @@
                         
                     </div>
                 </div>
+                
                 <button type="submit" class="btn btn-success pull-right">Create New Product</button><br>
             </div><br>
             
@@ -114,8 +107,32 @@
                                     </div>
                                     <div class="file-preview box sm">
                                     </div>
-                                </div> 
-                               
+                                </div>                                                            
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div class="" style="border-style: ridge;border-width: 3px;padding: 20px;">
+                       
+                            <div class="form-group">
+                                <label>Group By Name</label>
+                                <select class="form-control" name="group_by_name" onchange="yesnoCheck(this);" required>
+                                    <option value="" selected disabled>Select...</option> 
+                                    <option value="1">Enable</option>   
+                                    <option value="0">Disable</option>                                
+                                </select>
+                            </div>
+
+                            <div class="form-group" id="ifYes" style="display: none;">
+                                <label>Feature Image in Product Page</label>
+                                <select class="form-control" name="feature_image" required>
+                                    <option value="1">Enable</option>   
+                                    <option value="0" selected>Disable</option>                                
+                                </select>
+                            </div>                               
 
                         </div>
                     </div>
@@ -211,6 +228,17 @@
         });
     });
     </script>
+
+    <script>
+        function yesnoCheck(that) {
+            if (that.value == 1) {
+        // alert("check");
+                document.getElementById("ifYes").style.display = "block";
+            } else {
+                document.getElementById("ifYes").style.display = "none";
+            }
+        }
+    </script> 
 
 
 
