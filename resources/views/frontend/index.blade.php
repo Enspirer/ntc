@@ -157,7 +157,7 @@
 
         @foreach($categories as $key => $single_category)
           <div class="col m-2 p-0 product-range-{{$single_category->id}}" style="background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url('{{url(uploaded_asset($single_category->image))}}'); height: 18rem;" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
-            <div class="product-text">
+            <div class="product-text position-relative">
               <h5 class="fw-bold">{{$single_category->name}}</h5>
               <div class="clearfix">
                 <div class="float-end">

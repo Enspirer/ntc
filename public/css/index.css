@@ -98,13 +98,15 @@
 } */
 [class*="product-range"]:hover h5 {
     background-color: #68AE42;
-    margin-top: 7rem;
+    margin-top: 8rem;
     padding: 0.5rem;
     color: white;
 }
 .product-text a {
-    position: relative;
-    top: 5.6rem;
+    position: absolute;
+    z-index: 1;
+    top: 7.4rem;
+    left: 8.4rem;
 }
 
 @keyframes fadein{
