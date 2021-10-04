@@ -11,7 +11,7 @@
     <!--navigation path-->
     <section id="path">
         <div class="container mb-3" style="margin-top: 6.5rem;">
-            <p class="mb-0">Home / News / Lorem ipsum</p>
+            <p class="mb-0"><a href="{{url('/')}}" style="color:black;">Home</a> / News / {{$single_news->title}}</p>
         </div>
     </section>
 

@@ -49,6 +49,14 @@
                         </div> 
 
                         <div class="form-group">
+                            <label>Featurered News <span style="color:red">*<span></label>
+                            <select class="form-control" name="featured_news" required>
+                                <option value="Enabled">Enable</option>   
+                                <option value="Disabled">Disable</option>                                
+                            </select>
+                        </div>
+
+                        <div class="form-group">
                             <label>Status <span style="color:red">*<span></label>
                             <select class="form-control" name="status" required>
                                 <option value="Enabled">Enable</option>   
