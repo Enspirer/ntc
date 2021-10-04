@@ -247,6 +247,11 @@
 
 
 
+    
+    
+    
+  @if(count($news) != 0)
+
     <div class="container text-center" data-aos="fade-up" data-aos-duration="500" style="margin-top: 7rem;">
       <h1>What's new on NTC</h1>
       <div class="row justify-content-center">
@@ -257,9 +262,8 @@
         </div>
       </div>
     </div>
-    
-    
-  @if($news != null)
+
+
     <div class="container text-white" style="margin-top: 7rem; margin-bottom: 3rem;">
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
@@ -277,12 +281,15 @@
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
       </div>
-    </div>
-    
+    </div>    
 
     <div class="container text-center justify-content-center" data-aos="flip-up" data-aos-duration="700">
       <a href="{{ route('frontend.news') }}" class="btn text-white m-5" style="padding: 10px 150px; font-size: 20px; background-color: #68AE42;">Discover More</a>
     </div>
+
+  @else  
+
+    <div class="container text-white" style="margin-bottom: 3rem;"></div>
 
   @endif
     
