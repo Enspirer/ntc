@@ -9,11 +9,11 @@
 
     <div class="collapse navbar-collapse" id="navbar">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item active mx-2" data-aos="fade-left" data-aos-duration="300">
-          <a href="{{ route('frontend.index') }}" class="nav-link">Home</a>
+        <li class="nav-item {{ Request::is('/') ? 'active' : '' }} mx-2" data-aos="fade-left" data-aos-duration="300">
+          <a href="{{ url('/') }}" class="nav-link">Home</a>
         </li>
         <li class="nav-item dropdown mx-2" data-aos="fade-left" data-aos-duration="600">
-          <a class="nav-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">Products</a>
+          <a class="nav-link {{ Request::segment(1)=='product' ? 'active' : '' }}" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">Products</a>
           <div class="dropdown-menu" aria-labelledby="dropdown-menu">
             <div class="container justify-content-center">
               <div class="row text-center">
@@ -27,8 +27,6 @@
                       <img src="{{uploaded_asset($category->icon) }}" class="card-img-top px-5" alt="..." style="height: 6rem;" >
                       <div class="card-body">
                         <h5 class="card-title" style="color: #68AE42;">{{ $category->name }}</h5>
-                        <!-- {{ url('img/frontend/nav/nav-rice.svg') }} -->
-                        <!-- <p class="card-text text-body">lorem ipsum</p> -->
                       </div>
                       </a>
                     </div>
@@ -77,17 +75,17 @@
             </div>
           </div>
         </li>
-        <li class="nav-item mx-2" data-aos="fade-left" data-aos-duration="900">
-          <a href="{{ route('frontend.news') }}" class="nav-link">News</a>
+        <li class="nav-item {{ Request::segment(1)=='news' ? 'active' : '' }} mx-2" data-aos="fade-left" data-aos-duration="900">
+          <a href="{{ url('news') }}" class="nav-link">News</a>
         </li>       
-        <li class="nav-item mx-2" data-aos="fade-left" data-aos-duration="1500">
-          <a href="{{ route('frontend.about_us') }}" class="nav-link">About Us</a>
+        <li class="nav-item {{ Request::is('about-us') ? 'active' : '' }} mx-2" data-aos="fade-left" data-aos-duration="1500">
+          <a href="{{ url('about-us') }}" class="nav-link">About Us</a>
         </li>
-        <li class="nav-item mx-2" data-aos="fade-left" data-aos-duration="1800">
-          <a href="{{ route('frontend.careers') }}" class="nav-link">Careers</a>
+        <li class="nav-item {{ Request::is('careers') ? 'active' : '' }} mx-2" data-aos="fade-left" data-aos-duration="1800">
+          <a href="{{ url('careers') }}" class="nav-link">Careers</a>
         </li>
-        <li class="nav-item mx-2" data-aos="fade-left" data-aos-duration="2100">
-          <a href="{{ route('frontend.contact_us') }}" class="nav-link">Contact Us</a>
+        <li class="nav-item {{ Request::is('contact-us') ? 'active' : '' }} mx-2" data-aos="fade-left" data-aos-duration="2100">
+          <a href="{{ url('contact-us') }}" class="nav-link">Contact Us</a>
         </li>
       </ul>
     </div>

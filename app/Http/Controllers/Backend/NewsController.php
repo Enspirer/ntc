@@ -62,15 +62,7 @@ class NewsController extends Controller
             if($request->image == null){
                 return back()->withErrors('Please Select Feature Image');
             }else{
-
-                // if($request->file('image'))
-                // {            
-                //     $preview_fileName = time().'_'.rand(1000,10000).'.'.$request->image->getClientOriginalExtension();
-                //     $fullURLsPreviewFile = $request->image->move(public_path('files/news'), $preview_fileName);
-                //     $image_url = $preview_fileName;
-                // }else{
-                //     $image_url = null;
-                // } 
+               
 
                 $add = new News;
 
@@ -79,6 +71,7 @@ class NewsController extends Controller
                 $add->feature_image=$request->image;
                 $add->user_id = auth()->user()->id;
                 $add->order=$request->order;
+                $add->featured_news=$request->featured_news;
                 $add->status=$request->status;
                 $add->save();
 

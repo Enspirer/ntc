@@ -8,42 +8,42 @@
               <p>Servicing and Selling Top Tier Agricultural Machinery &amp; Equipment to Sri Lanka Since 1975. Quality.
                 Innovative. Focused.</p>
             </div>
-            <div class="col-sm-3 text-center" data-aos="fade-up" data-aos-duration="1000">
-              <h4 class="mb-3">Our Products</h4>
+            <div class="col-sm-3 text-left" data-aos="fade-up" data-aos-duration="1000">
+              <h4 class="mb-3 ml-5">Our Products</h4>
               
                 @if(count(App\Models\Category::where('status','Enabled')->get()) == 0)
-                  No Any Products
+                  <p class="ml-5">No Any Products</p>
                 @else
                   @foreach(App\Models\Category::where('status','=','Enabled')->get() as $key => $category)
-                    <a href="{{ route('frontend.category.all_product',$category->id) }}" style="text-decoration: none; color: white" class="d-block mt-2">{{ $category->name }}</a>
+                    <a href="{{ route('frontend.category.all_product',$category->id) }}" style="text-decoration: none; color: white" class="d-block mt-2 ml-5">{{ $category->name }}</a>
                   @endforeach
                 @endif
                 
             </div>
             <div class="col-sm-3 pl-5" data-aos="fade-up" data-aos-duration="1000">
               <h4>Contact Us</h4>
-              <div class="row">
-                <div class="col-1">
+              <div class="row mt-3">
+                <div class="col-2">
                   <i class="bi bi-geo-alt-fill"></i>
                 </div>
-                <div class="col-11">
-                  <p>lorem ipsum address</p>
+                <div class="col-10">
+                  <p>lorem ipsum lorem ipsum lorem ipsum</p>
                 </div>
               </div>
               <div class="row">
-                <div class="col-1">
+                <div class="col-2">
                   <i class="bi bi-telephone-fill"></i>
                 </div>
-                <div class="col-11">
+                <div class="col-10">
                   <p class="mb-0">0112 xxxxxxxx</p>
                   <p>0112 xxxxxxxx</p>
                 </div>
               </div>
               <div class="row">
-                <div class="col-1">
+                <div class="col-2">
                   <i class="bi bi-envelope"></i>
                 </div>
-                <div class="col-11">
+                <div class="col-10">
                   <p>lorem@loremipsum.com</p>
                 </div>
               </div>

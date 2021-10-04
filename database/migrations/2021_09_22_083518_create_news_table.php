@@ -19,6 +19,7 @@ class CreateNewsTable extends Migration
             $table->text('title');
             $table->text('description')->nullable();
             $table->text('feature_image');
+            $table->text('featured_news')->nullable();
             $table->text('status');
             $table->integer('order');
             $table->timestamps();

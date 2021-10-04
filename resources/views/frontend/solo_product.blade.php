@@ -27,7 +27,15 @@
     <!--navigation path-->
     <section id="path">
         <div class="container mb-3" style="margin-top: 6.5rem;">
-            <p class="mb-0">Home / Products / Rice Milling Machine</p>
+            <p class="mb-0">
+            <a href="{{url('/')}}" style="color:black;">Home</a> / Products / 
+                @foreach($categories as $key => $cat)
+                  @if($cat->id == $category_id)
+                    {{$cat->name}}
+                  @endif  
+                @endforeach()
+                / Product Review
+            </p>
         </div>
     </section>
 
