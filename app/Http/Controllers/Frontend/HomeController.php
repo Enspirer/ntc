@@ -29,7 +29,7 @@ class HomeController extends Controller
             $categories = Category::where('status','Enabled')->get();
             // dd($categories);
 
-            $news = News::where('status','=','Enabled')->orderBy('id','DESC')->get(); 
+            $news = News::where('status','=','Enabled')->orderBy('id','DESC')->latest()->take(8)->get(); 
             // dd($news);            
 
             $product1 = Products::where('id',$best_selling->prod_1)->first();
@@ -59,7 +59,7 @@ class HomeController extends Controller
             $categories = Category::where('status','Enabled')->get();
             // dd($categories);
 
-            $news = News::where('status','=','Enabled')->orderBy('id','DESC')->get(); 
+            $news = News::where('status','=','Enabled')->orderBy('id','DESC')->latest()->take(8)->get(); 
             // dd($news);
 
             return view('frontend.index',[
