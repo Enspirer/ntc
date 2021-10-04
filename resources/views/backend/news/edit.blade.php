@@ -43,8 +43,8 @@
                         <div class="form-group">
                             <label>Featurered News <span style="color:red">*<span></label>
                             <select class="form-control" name="featured_news" required>
-                                <option value="Enabled" { $news->featured_news == 'Enabled' ? "selected" : "" }}>Enable</option>   
-                                <option value="Disabled" { $news->featured_news == 'Enabled' ? "selected" : "" }}>Disable</option>                                
+                                <option value="1" {{ $news->featured_news == '1' ? "selected" : "" }}>Enable</option>   
+                                <option value="0" {{ $news->featured_news == '0' ? "selected" : "" }}>Disable</option>                                
                             </select>
                         </div>
 

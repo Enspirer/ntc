@@ -35,6 +35,16 @@ class NewsController extends Controller
                         return $button;
                     })
 
+                    ->addColumn('featured_news', function($data){
+                        if($data->featured_news == '1'){
+                            $featured_news = '<span class="badge badge-success">Enabled</span>';
+                        }
+                        else{
+                            $featured_news = '<span class="badge badge-danger">Disable</span>';
+                        }   
+                        return $featured_news;
+                    })
+
                     ->addColumn('status', function($data){
                         if($data->status == 'Enabled'){
                             $status = '<span class="badge badge-success">Enabled</span>';
@@ -45,7 +55,7 @@ class NewsController extends Controller
                         return $status;
                     })
                     
-                    ->rawColumns(['action','status'])
+                    ->rawColumns(['action','status','featured_news'])
                     ->make(true);
         }
         return back();
@@ -62,6 +72,11 @@ class NewsController extends Controller
             if($request->image == null){
                 return back()->withErrors('Please Select Feature Image');
             }else{
+
+                if($request->featured_news == 1)
+                {            
+                    $featured_news = DB::table('news')->where('featured_news', '=', 1)->update(array('featured_news' => 0));           
+                } 
                
 
                 $add = new News;
@@ -103,15 +118,10 @@ class NewsController extends Controller
                 return back()->withErrors('Please Select Feature Image');
             }else{
 
-            // if($request->file('image'))
-            // {            
-            //     $preview_fileName = time().'_'.rand(1000,10000).'.'.$request->image->getClientOriginalExtension();
-            //     $fullURLsPreviewFile = $request->image->move(public_path('files/news'), $preview_fileName);
-            //     $image_url = $preview_fileName;
-            // }else{
-            //     $detail = News::where('id',$request->hidden_id)->first();
-            //     $image_url = $detail->feature_image; 
-            // } 
+                if($request->featured_news == 1)
+                {            
+                    $featured_news = DB::table('news')->where('featured_news', '=', 1)->update(array('featured_news' => 0));           
+                } 
 
                 $update = new News;
 
@@ -120,6 +130,7 @@ class NewsController extends Controller
                 $update->feature_image=$request->image;
                 $update->user_id = auth()->user()->id;
                 $update->order=$request->order;
+                $update->featured_news=$request->featured_news;
                 $update->status=$request->status;
                 
                 News::whereId($request->hidden_id)->update($update->toArray());
