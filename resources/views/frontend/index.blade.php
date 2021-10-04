@@ -258,30 +258,21 @@
       </div>
     </div>
     
-
+    
+  @if($news != null)
     <div class="container text-white" style="margin-top: 7rem; margin-bottom: 3rem;">
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
-              <img src="{{ url('img/frontend/index/banner-product-1.svg') }}" alt="">
-              <h5 style="">Lorem ipsum news title</h5>
-          </div>
-          <div class="swiper-slide">
-              <img src="{{ url('img/frontend/index/banner-product-2.svg') }}" alt="">
-              <h5 style="">Lorem ipsum news title</h5>
-          </div>
-          <div class="swiper-slide">
-              <img src="{{ url('img/frontend/index/banner-product-3.svg') }}" alt="">
-              <h5 style="">Lorem ipsum news title</h5>
-          </div>
-          <div class="swiper-slide">
-              <img src="{{ url('img/frontend/index/banner-product-4.svg') }}" alt="">
-              <h5 style="">Lorem ipsum news title</h5>
-          </div>
-          <div class="swiper-slide">
-              <img src="{{ url('img/frontend/index/banner-product-1.svg') }}" alt="">
-              <h5 style="">Lorem ipsum news title</h5>
-          </div>
+          @foreach($news as $key => $new)
+          
+            <div class="swiper-slide">
+            <a href="{{route('frontend.single_news',$new->id)}}" style="text-decoration:none">
+                <img src="{{ uploaded_asset($new->feature_image) }}" alt="">
+                <h5 style="">{{$new->title}}</h5>
+                </a>
+            </div>
+      
+          @endforeach  
         </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
@@ -292,37 +283,9 @@
     <div class="container text-center justify-content-center" data-aos="flip-up" data-aos-duration="700">
       <a href="{{ route('frontend.news') }}" class="btn text-white m-5" style="padding: 10px 150px; font-size: 20px; background-color: #68AE42;">Discover More</a>
     </div>
-    
 
+  @endif
     
-    <div class="container-fluid px-0" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="150" style="margin-top: 3rem;">
-      <div id="banner-ads" class="carousel slide" data-bs-ride="carousel">
-
-        <ul class="carousel-indicators">
-          <li data-bs-target="#banner-ads" data-bs-slide-to="0" class="active"></li>
-          <li data-bs-target="#banner-ads" data-bs-slide-to="1"></li>
-          <li data-bs-target="#banner-ads" data-bs-slide-to="2"></li>
-          <li data-bs-target="#banner-ads" data-bs-slide-to="3"></li>
-        </ul>
-      
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="{{ url('img/frontend/index/banner-2021.svg') }}" alt="" class="img-fluid">
-          </div>
-          <div class="carousel-item">
-            <img src="{{ url('img/frontend/index/banner-2022.svg') }}" alt="" class="img-fluid">
-          </div>
-        </div>
-        
-        <a class="carousel-control-prev" href="#banner-ads" role="button" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
-        </a>
-  
-        <a class="carousel-control-next" href="#banner-ads" role="button" data-bs-slide="next">
-          <span class="carousel-control-next-icon"></span>
-        </a>
-      </div>
-    </div>
 
 @endsection
 

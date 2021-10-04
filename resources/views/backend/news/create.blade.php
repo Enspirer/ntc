@@ -51,8 +51,8 @@
                         <div class="form-group">
                             <label>Featurered News <span style="color:red">*<span></label>
                             <select class="form-control" name="featured_news" required>
-                                <option value="Enabled">Enable</option>   
-                                <option value="Disabled">Disable</option>                                
+                                <option value="1">Enable</option>   
+                                <option value="0">Disable</option>                                
                             </select>
                         </div>
 

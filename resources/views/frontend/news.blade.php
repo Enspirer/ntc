@@ -14,31 +14,32 @@
         </div>
     </section>
     
-    @if($news_latest == null)
-        @include('frontend.includes.not_found',[
-            'not_found_title' => 'News Not Found',
-        ])
-    @else
+    @if($featured_news != null)
         <div class="container mb-5">
             <div class="row">
                 <div class="col-7" data-aos="zoom-in-right" data-aos-duration="500">
-                    <img src="{{uploaded_asset($news_latest->feature_image) }}" alt="" width="100%" height="350px" style="object-fit:cover;">
+                    <img src="{{uploaded_asset($featured_news->feature_image) }}" alt="" width="100%" height="350px" style="object-fit:cover;">
                 </div>
                 <div class="col-5 p-5">
-                    <h1 data-aos="fade-down-left" data-aos-duration="500" data-aos-delay="300">{{ $news_latest->title }}</h1>
+                    <h1 data-aos="fade-down-left" data-aos-duration="500" data-aos-delay="300">{{ $featured_news->title }}</h1>
                     <div style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical;">
-                        <p class="mt-4" data-aos="fade-down-left" data-aos-duration="500" data-aos-delay="500">{!! $news_latest->description !!}</p>
+                        <p class="mt-4" data-aos="fade-down-left" data-aos-duration="500" data-aos-delay="500">{!! $featured_news->description !!}</p>
                     </div>
                     <div class="clearfix">
                         <div class="float-end mt-4">
-                            <a href="{{ route('frontend.single_news',$news_latest->id) }}" class="btn px-5" style="background-color: #68AE42;" data-aos="flip-down" data-aos-duration="500" data-aos-delay="700">View More</a>
+                            <a href="{{ route('frontend.single_news',$featured_news->id) }}" class="btn px-5" style="background-color: #68AE42;" data-aos="flip-down" data-aos-duration="500" data-aos-delay="700">View More</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    @endif
         
-
+    @if(count($news) == 0)
+        @include('frontend.includes.not_found',[
+            'not_found_title' => 'News Not Found in This Section',
+        ])
+    @else
         <div class="container" style="margin-top: 7rem;">
             <div class="row">
 

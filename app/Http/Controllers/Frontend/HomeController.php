@@ -29,15 +29,14 @@ class HomeController extends Controller
             $categories = Category::where('status','Enabled')->get();
             // dd($categories);
 
-            $news = News::where('status','Enabled')->orderBy('id','DESC')->get(); 
-            // dd($news);
-            
+            $news = News::where('status','=','Enabled')->orderBy('id','DESC')->get(); 
+            // dd($news);            
 
             $product1 = Products::where('id',$best_selling->prod_1)->first();
             $product2 = Products::where('id',$best_selling->prod_2)->first();
             $product3 = Products::where('id',$best_selling->prod_3)->first();
             $product4 = Products::where('id',$best_selling->prod_4)->first();
-            $product5 = Products::where('id',$best_selling->prod_5)->first();
+            $product5 = Products::where('id',$best_selling->prod_5)->first();            
 
             return view('frontend.index',[
                 'category' => $category,
@@ -60,9 +59,8 @@ class HomeController extends Controller
             $categories = Category::where('status','Enabled')->get();
             // dd($categories);
 
-            $news = News::where('status','Enabled')->orderBy('id','DESC')->get(); 
+            $news = News::where('status','=','Enabled')->orderBy('id','DESC')->get(); 
             // dd($news);
-
 
             return view('frontend.index',[
                 'category' => $category,
