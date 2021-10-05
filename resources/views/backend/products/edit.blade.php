@@ -28,17 +28,19 @@
                                                    
                         <div class="form-group">
                             <label>Category</span></label>
-                            <select name="category" class="form-control" id="category">
+                            <select name="category" class="form-control" id="category" required>
                                 <option value="" selected disabled>-- Select Category --</option>
                                     @foreach ($categories as $category)
                                         <option value="{{ $category->id }}" {{ $products->category == $category->id ? "selected" : "" }}>{{ $category->name }}</option>
                                     @endforeach
                             </select>
                         </div>
+
+                        <input type="hidden" class="form-control" value="{{ $products->sub_category }}" id="sub_cat_received" >
                             
                         <div class="form-group">
                             <label>Sub Category</label>
-                            <select name="sub_category" class="form-control" id="sub_category" >
+                            <select name="sub_category" class="form-control" id="sub_category" required>
 
                             </select>
                         </div>                           
@@ -119,7 +121,7 @@
                        
                             <div class="form-group">
                                 <label>Group By Name</label>
-                                <select class="form-control" name="group_by_name" onload="yesnoCheck()" onchange="yesnoCheck(this);" required>
+                                <select class="form-control" id="group_by_name" name="group_by_name" onload="yesnoCheck()" onchange="yesnoCheck(this);" required>
                                     <option value="" selected disabled>Select...</option> 
                                     <option value="1" {{ $products->group_by_name == 1 ? "selected" : "" }}>Enable</option>   
                                     <option value="0" {{ $products->group_by_name == 0 ? "selected" : "" }}>Disable</option>                                
@@ -233,8 +235,57 @@
                     
                 });
             });
+
+
         
     </script>
+
+    <script>
+
+            $(document).ready(function() {
+                // $('#category').on('change', function() {
+
+                    var CatID = $('#category').val();
+                    // console.log(CatID);
+                    var SubCatID = $('#sub_cat_received').val();
+                    // console.log(SubCatID);
+                    
+
+                        $.ajax({
+                            
+                            url: "{{url('/')}}/admin/findSubcatWithCatID/" + CatID,
+                            method: "GET",
+                            dataType: "json",
+                            success:function(data) {
+                                // console.log(data);
+                            if(data){
+                                $('#sub_category').empty();
+                                $('#sub_category').focus;
+                                // $('#sub_category').append('<option value="" selected disabled>-- Select Sub Category --</option>'); 
+                                $.each(data, function(key, value){
+                                    // console.log(value);
+                                    if(SubCatID == value.sub_category_id){
+                                        // console.log('selected');                                        
+                                        $('#sub_category').append('<option value="'+ value.sub_category_id +'">' + value.sub_category_name+ '</option>');
+                                    }
+                                    
+                                    $('select[name="sub_category"]').append('<option value="'+ value.sub_category_id +'">' + value.sub_category_name+ '</option>');
+                                                                       
+                                
+                                });
+
+                            }else{
+                                $('#sub_category').empty();
+                            }
+                        }
+                        });
+                    
+                // });
+            });
+
+
+
+        </script>
 
     <script>
         function yesnoCheck(that) {
@@ -245,6 +296,17 @@
                 document.getElementById("ifYes").style.display = "none";
             }
         }
+
+        $(document).ready(function(){
+            if($('#group_by_name').val() == 1){
+                $('#ifYes').css('display','block');
+            }
+            else{
+                $('#ifYes').css('display','none');
+            }
+            
+        });
+        
     </script> 
 
 

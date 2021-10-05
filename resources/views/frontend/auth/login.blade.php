@@ -3,20 +3,27 @@
 @section('title', app_name() . ' | ' . __('labels.frontend.auth.login_box_title'))
 
 @section('content')
-    <div class="row justify-content-center align-items-center">
-        <div class="col col-sm-8 align-self-center">
-            <div class="card">
-                <div class="card-header">
-                    <strong>
+   
+
+
+<br>
+<div class="container" style="padding: 0 300px 0 300px;">
+<div class="jumbotron text-center mt-30" style="margin-top:100px; background-color: #335E33; border-style: solid; border-color: #b8860b; border-radius: 25px; padding:0">
+    
+        <!-- <div class="card text-center"> -->
+
+                
+                <div class="card-header ">
+                    <strong style="color: white;">
                         @lang('labels.frontend.auth.login_box_title')
                     </strong>
                 </div><!--card-header-->
-
+                <br>
                 <div class="card-body">
                     {{ html()->form('POST', route('frontend.auth.login.post'))->open() }}
                         <div class="row">
                             <div class="col">
-                                <div class="form-group">
+                                <div class="form-group" align="left" style="color: white;">
                                     {{ html()->label(__('validation.attributes.frontend.email'))->for('email') }}
 
                                     {{ html()->email('email')
@@ -30,7 +37,7 @@
 
                         <div class="row">
                             <div class="col">
-                                <div class="form-group">
+                                <div class="form-group" align="left" style="color: white;">
                                     {{ html()->label(__('validation.attributes.frontend.password'))->for('password') }}
 
                                     {{ html()->password('password')
@@ -43,7 +50,7 @@
 
                         <div class="row">
                             <div class="col">
-                                <div class="form-group">
+                                <div class="form-group" align="left" style="color: white;">
                                     <div class="checkbox">
                                         {{ html()->label(html()->checkbox('remember', true, 1) . ' ' . __('labels.frontend.auth.remember_me'))->for('remember') }}
                                     </div>
@@ -53,7 +60,7 @@
 
                         <div class="row">
                             <div class="col">
-                                <div class="form-group clearfix">
+                                <div class="form-group clearfix btn btn-success btn-md">
                                     {{ form_submit(__('labels.frontend.auth.login_button')) }}
                                 </div><!--form-group-->
                             </div><!--col-->
@@ -71,7 +78,7 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-group text-right">
-                                    <a href="{{ route('frontend.auth.password.reset') }}">@lang('labels.frontend.passwords.forgot_password')</a>
+                                    <a href="{{ route('frontend.auth.password.reset') }}" style="color: white;">@lang('labels.frontend.passwords.forgot_password')</a>
                                 </div><!--form-group-->
                             </div><!--col-->
                         </div><!--row-->
@@ -84,10 +91,17 @@
                             </div>
                         </div><!--col-->
                     </div><!--row-->
-                </div><!--card body-->
-            </div><!--card-->
-        </div><!-- col-md-8 -->
-    </div><!-- row -->
+                
+                </div> <!-- body -->
+            
+        <!-- </div> -->
+     
+</div>
+</div>
+
+
+<br>
+
 @endsection
 
 @push('after-scripts')

@@ -242,7 +242,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
 
-          <form action="{{ route('frontend.product_rice_milling.inquire') }}" method="post" enctype="multipart/form-data">
+          <form action="{{ route('frontend.product.inquire') }}" method="post" enctype="multipart/form-data">
           {{csrf_field()}}
               <div class="modal-header text-white" style="background-color: #1D5001;">
                 <h5 class="modal-title" id="inquire-modal">Send an Inquire</h5>

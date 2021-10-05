@@ -25,7 +25,7 @@ Route::get('news/single/{id}', [SingleNewsController::class, 'index'])->name('si
 Route::get('product/solo_product/{id}', [ProductController::class, 'solo_product'])->name('solo_product');
 Route::get('product/product_model/{id}', [ProductController::class, 'product_model'])->name('product_model');
 Route::get('product/category/all_products/{id}', [ProductController::class, 'category_all_products'])->name('category.all_product');
-Route::post('product/inquire', [ProductController::class, 'inquire'])->name('product_rice_milling.inquire');
+Route::post('product/inquire', [ProductController::class, 'inquire'])->name('product.inquire');
 
 
 Route::get('portfolio', [PortfolioController::class, 'index'])->name('portfolio');

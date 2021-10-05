@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Frontend\Contact\SendContactRequest;
 use App\Mail\Frontend\Contact\SendContact;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use App\Models\Inquire;
 use DB;
@@ -13,6 +12,8 @@ use App\Models\Category;
 use App\Models\SubCategory;
 use App\Models\SubCategoryAttachement;
 use App\Models\Products;
+use Mail;  
+use \App\Mail\InquireMail;
 
 /**
  * Class ProductController.
@@ -180,6 +181,19 @@ class ProductController extends Controller
         $add->status='Pending'; 
 
         $add->save();
+
+        $details = [
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'product_name' => $request->product_name,
+            'product_id' => $request->product_id,
+            'contact_number' => $request->contact_number,
+            'email' => $request->email,          
+            'message' => $request->message,
+        ];
+
+        \Mail::to([$request->email,'nihsaan.enspirer@gmail.com'])->send(new InquireMail($details));
+
        
         session()->flash('message','Thanks!');
 

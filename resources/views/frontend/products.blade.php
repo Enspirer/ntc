@@ -241,56 +241,6 @@
     </div>
 
 
-    <!-- Modal -->
-    @foreach($products as $key => $product)
-      <div class="modal fade" id="inquire{{$product->id}}" tabindex="-1" aria-labelledby="inquireLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-
-            <form action="{{ route('frontend.product_rice_milling.inquire') }}" method="post" enctype="multipart/form-data">
-            {{csrf_field()}}
-                <div class="modal-header text-white" style="background-color: #1D5001;">
-                  <h5 class="modal-title" id="inquire-modal">Send an Inquire</h5>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-2">
-                      <label for="product-name" class="form-label">Product Name</label>
-                      <input type="text" class="form-control" name="product_name" aria-describedby="product-name" value="{{$product->product_name}}" readonly>
-                    </div>
-                    <div class="mb-2">
-                      <label for="product-id" class="form-label">Model Number</label>
-                      <input type="text" class="form-control" name="product_id" value="{{$product->model_number}}" readonly>
-                    </div>
-                    <div class="mb-2">
-                      <label for="first-name" class="form-label">First Name</label>
-                      <input type="text" class="form-control" name="first_name" required>
-                    </div>
-                    <div class="mb-2">
-                      <label for="last-name" class="form-label">Last Name</label>
-                      <input type="text" class="form-control" name="last_name" required>
-                    </div>
-                    <div class="mb-2">
-                      <label for="contact-number" class="form-label">Contact Number</label>
-                      <input type="number" class="form-control" name="contact_number" required>
-                    </div>
-                    <div class="mb-2">
-                      <label for="email" class="form-label">Email Address</label>
-                      <input type="email" class="form-control" name="email" required>
-                    </div>
-                    <div class="mb-2">
-                      <label for="message" class="form-label">Message</label>
-                      <textarea class="form-control" name="message" cols="30" rows="5" required></textarea>
-                    </div>
-                </div>
-                <div class="modal-footer justify-content-center">
-                  <button type="button" class="btn" data-bs-dismiss="modal" style="color: #68AE42;">Cancel</button>
-                  <input type="submit" class="btn text-white px-5" style="background-color: #68AE42;" value="Send Request" />
-                </div>
-            </form>  
-          </div>
-        </div>
-      </div>
-    @endforeach
 @endsection
 
 @push('after-scripts')
