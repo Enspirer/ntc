@@ -41,7 +41,7 @@
                     <div class="card-body">
                         <i class="bi bi-telephone-fill fs-3 position-relative d-inline rounded-circle contact-icons"></i>
                         <h5 class="card-title mt-3">Telephone</h5>
-                        <p class="card-text mt-4">011 - 2xxxxxx <br> 011 - 2xxxxxx</p>
+                        <p class="card-text mt-4">011-2942939 <br> 0773344391</p>
                     </div>
                     </div>
             </div>
@@ -50,7 +50,7 @@
                     <div class="card-body">
                         <i class="bi bi-envelope-fill fs-3 position-relative d-inline rounded-circle contact-icons"></i>
                         <h5 class="card-title mt-3">Email</h5>
-                        <p class="card-text mt-4">hellontc@ntc.lk</p>
+                        <p class="card-text mt-4">info@ntc.lk</p>
                     </div>
                     </div>
             </div>

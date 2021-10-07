@@ -27,7 +27,7 @@
                   <i class="bi bi-geo-alt-fill"></i>
                 </div>
                 <div class="col-10">
-                  <p>lorem ipsum lorem ipsum lorem ipsum</p>
+                  <p>No 25/13, New Nuge Road, Peliyagoda, Sri Lanka</p>
                 </div>
               </div>
               <div class="row ml-1 ml-md-0">
@@ -35,8 +35,8 @@
                   <i class="bi bi-telephone-fill"></i>
                 </div>
                 <div class="col-10">
-                  <p class="mb-0">0112 xxxxxxxx</p>
-                  <p>0112 xxxxxxxx</p>
+                  <p class="mb-0">011-2942939</p>
+                  <p>0773344391</p>
                 </div>
               </div>
               <div class="row ml-1 ml-md-0">
@@ -44,17 +44,33 @@
                   <i class="bi bi-envelope"></i>
                 </div>
                 <div class="col-10">
-                  <p>lorem@loremipsum.com</p>
+                  <p>info@ntc.lk</p>
                 </div>
               </div>
             </div>
             <div class="col-12 col-md-3 text-center">
               <h5>Follow Us</h5>
-              <a href="" class="d-inline-block m-2 text-white fs-3"><i class="bi bi-facebook"></i></a>
-              <a href="" class="d-inline-block m-2 text-white fs-3"><i class="bi bi-instagram"></i></a>
-              <a href="" class="d-inline-block m-2 text-white fs-3"><i class="bi bi-linkedin"></i></a>
-              <a href="" class="d-inline-block m-2 text-white fs-3"><i class="bi bi-youtube"></i></a>
+              <a href="https://www.facebook.com/ntcslr" class="d-inline-block m-2 text-white fs-3" target="_blank"><i class="bi bi-facebook"></i></a>
+              <a href="https://www.instagram.com/ntcprivateltd/" class="d-inline-block m-2 text-white fs-3" target="_blank"><i class="bi bi-instagram"></i></a>
+              <a href="https://www.linkedin.com/company/ntc-trading-company" class="d-inline-block m-2 text-white fs-3" target="_blank"><i class="bi bi-linkedin"></i></a>
+              <a class="d-inline-block m-2 text-white fs-3" target="_blank"><i class="bi bi-youtube"></i></a>
             </div>
+
+
+
+              <div class="col-12">
+                <hr>
+              </div>
+            
+
+
+                <div class="col-12 text-center col-md-6 text-md-left">
+                    <small>© All Rights Reserved | NTC 2021</small>
+                </div>
+                <div class="col-12 text-center col-md-6 text-md-right">
+                    <small>Powered by <a href="https://www.enspirer.com/" class="text-black fw-bold">Enspirer</a></small>
+                </div>
+
           </div>
         </div>
         
