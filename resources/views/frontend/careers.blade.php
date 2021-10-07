@@ -24,16 +24,16 @@
 
 @else  
 
-    <div class="container-fluid banner p-5" style="margin-top: 6.5rem;" data-aos="zoom-out" data-aos-duration="500">
+    <div class="container-fluid banner p-2 p-md-5" style="margin-top: 6.5rem;" data-aos="fade-up" data-aos-duration="500">
         <div class="container-md text-center text-white">
           <h1 class="fs-1 mt-5 mb-3" data-aos="fade-down" data-aos-duration="500" data-aos-delay="700">Join Our Team</h1>
           <div class="row justify-content-center">
-            <div class="col-sm-6" data-aos="fade-up" data-aos-duration="500" data-aos-delay="700">
+            <div class="col-12 col-md-6" data-aos="fade-up" data-aos-duration="500" data-aos-delay="700">
               <p>Our biggest asset is our workforce. We value our employees and their expertise as we believe it is the
                 influence of Success. We are on the lookout for the experienced as well as the new.</p>
             </div>
           </div>
-          <a href="#" class="btn m-5 text-white" role="button" data-aos="flip-down" data-aos-duration="500" data-aos-delay="1100" style="background-color: #68AE42;">Show latest job openings</a>
+          <a href="#" class="btn m-1 m-md-5 text-white" role="button" data-aos="flip-down" data-aos-duration="500" data-aos-delay="1100" style="background-color: #68AE42;">Show latest job openings</a>
         </div>
     </div>
 
@@ -41,17 +41,17 @@
 
     <div class="container" style="margin-top: 4rem;">
       <div class="row justify-content-center align-items-center">
-        <div class="col-sm-5" data-aos="zoom-out-right" data-aos-duration="500">
+        <div class="col-12 col-md-5 mb-3 mb-md-0" data-aos="fade-up" data-aos-duration="500">
           <video id="video" width="480" height="280" controls>
             <source src="{{ url('img/frontend/careers/video.mp4') }}" type="video/mp4">
             <track label="English" kind="subtitles" srclang="en" src="{{ url('img/frontend/careers/video.vtt') }}" default>
           </video>
         </div>
-        <div class="col-sm-5 px-5">
-          <h1 data-aos="zoom-out-left mb-2" data-aos-duration="500">Life at NTC</h1>
-          <p data-aos="zoom-out-left mb-4" data-aos-duration="500" data-aos-delay="500">We welcome young energetic employees and we train them to be skilled and experienced. at NTC we ensure our employees are enjoying and committed to our organization as we pride ourselves as a faithful employer.</p>
+        <div class="col-12 col-md-5 px-md-5">
+          <h1 data-aos="fade-up" data-aos-duration="500">Life at NTC</h1>
+          <p data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">We welcome young energetic employees and we train them to be skilled and experienced. at NTC we ensure our employees are enjoying and committed to our organization as we pride ourselves as a faithful employer.</p>
 
-          <h1 data-aos="zoom-out-left" data-aos-duration="500" data-aos-delay="500">Stay connected with us</h1>
+          <h1 data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">Stay connected with us</h1>
               <a href="" class="d-inline-block mx-3 text-body fs-2" data-aos="fade-up" data-aos-duration="500" data-aos-delay="600"><i class="bi bi-facebook"></i></a>
               <a href="" class="d-inline-block mx-3 text-body fs-2" data-aos="fade-up" data-aos-duration="500" data-aos-delay="700"><i class="bi bi-instagram"></i></a>
               <a href="" class="d-inline-block mx-3 text-body fs-2" data-aos="fade-up" data-aos-duration="500" data-aos-delay="800"><i class="bi bi-linkedin"></i></a>
@@ -62,17 +62,17 @@
 
 
 
-    <div class="container" style="margin-top: 6rem; margin-bottom: 6rem">
+    <div class="container latest" style="margin-top: 6rem; margin-bottom: 6rem">
       <div class="row justify-content-between">
         <div class="col-sm-7">
-          <h2 data-aos="fade-right" data-aos-duration="500">Latest</h2>
-          <h1 data-aos="fade-right" data-aos-duration="500" data-aos-delay="200">Job Openings</h1>
-          <p class="mt-4" data-aos="fade-right" data-aos-duration="500" data-aos-delay="400">NTC HR policy ensures that people who will contribute positively to the company’s vision, mission, and objectives are selected, trained motivated, retained and  adequately rewarded. Follow this space for available Career Openings at NTC Group of Companies.</p>
+          <h2 data-aos="fade-up" data-aos-duration="500">Latest</h2>
+          <h1 data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">Job Openings</h1>
+          <p class="mt-4" data-aos="fade-up" data-aos-duration="500" data-aos-delay="400">NTC HR policy ensures that people who will contribute positively to the company’s vision, mission, and objectives are selected, trained motivated, retained and  adequately rewarded. Follow this space for available Career Openings at NTC Group of Companies.</p>
 
           <div class="accordion mt-5" id="jobs" data-aos="flip-up" data-aos-duration="500" data-aos-delay="600">
 
           @if(count($jobs) == 0)
-            <h1 class="text-center" data-aos="fade-down" data-aos-duration="500" data-aos-delay="200" style="color:grey; margin-top:100px;">No any job vacancy openings for now. But we would love to here your talents, send us your application and we will contact you.</h1>
+            <h1 class="text-center career-alert-info" data-aos="fade-down" data-aos-duration="500" data-aos-delay="200" style="color:grey; margin-top:100px;">No any job vacancy openings for now. But we would love to here your talents, send us your application and we will contact you.</h1>
                         
           @else
 
@@ -111,24 +111,24 @@
           {{csrf_field()}}
 
             <div class="mb-2">
-              <label for="name" class="form-label" data-aos="fade-right" data-aos-duration="500" data-aos-delay="300">Name</label>
-              <input type="text" class="form-control border-0" name="name" data-aos="fade-left" data-aos-duration="500" data-aos-delay="500" style="background-color: #587d45;" required>
+              <label for="name" class="form-label" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">Name</label>
+              <input type="text" class="form-control border-0" name="name" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500" style="background-color: #587d45;" required>
             </div>
             <div class="mb-2">
-              <label for="contact-number" class="form-label" data-aos="fade-right" data-aos-duration="500" data-aos-delay="300">Contact number</label>
-              <input type="text" class="form-control border-0" name="contact_number" data-aos="fade-left" data-aos-duration="500" data-aos-delay="500" style="background-color: #587d45;" required>
+              <label for="contact-number" class="form-label" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">Contact number</label>
+              <input type="text" class="form-control border-0" name="contact_number" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500" style="background-color: #587d45;" required>
             </div>
             <div class="mb-2">
-              <label for="email" class="form-label" data-aos="fade-right" data-aos-duration="500" data-aos-delay="300">Email</label>
-              <input type="email" class="form-control border-0" name="email" data-aos="fade-left" data-aos-duration="500" data-aos-delay="500" style="background-color: #587d45;" required>
+              <label for="email" class="form-label" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">Email</label>
+              <input type="email" class="form-control border-0" name="email" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500" style="background-color: #587d45;" required>
             </div>
             <div class="mb-2">
-              <label for="upload-cv" class="form-label" data-aos="fade-right" data-aos-duration="500" data-aos-delay="300">Upload your cv</label>
-              <input type="file" class="form-control border-0" name="cv_upload" data-aos="fade-left" data-aos-duration="500" data-aos-delay="500" style="background-color: #587d45;" required>
+              <label for="upload-cv" class="form-label" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">Upload your cv</label>
+              <input type="file" class="form-control border-0" name="cv_upload" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500" style="background-color: #587d45;" required>
             </div>
             <div class="mb-4">
-              <label for="message" class="form-label" data-aos="fade-right" data-aos-duration="500" data-aos-delay="300">Message</label>
-              <input type="text" class="form-control border-0" name="message" data-aos="fade-left" data-aos-duration="500" data-aos-delay="500" style="background-color: #587d45;" required>
+              <label for="message" class="form-label" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">Message</label>
+              <input type="text" class="form-control border-0" name="message" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500" style="background-color: #587d45;" required>
             </div>
             <div class="mb-2 text-center" data-aos="flip-down" data-aos-duration="500" data-aos-delay="700">
               <button type="submit" class="btn btn-secondary px-5">Apply</button>

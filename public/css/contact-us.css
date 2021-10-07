@@ -4,3 +4,43 @@
     top: -30px;
     color: #245808;
 }
+
+
+
+/* media queries */
+@media screen and (max-width: 992px) {
+    
+  }
+  
+  @media screen and (max-width: 768px) {
+    
+    
+  }
+  
+  @media screen and (max-width: 576px) {
+    #gmap_canvas {
+      height: 270px!important;
+    }
+    .get-in-touch {
+        left: 0px!important;
+        top: 170px!important;
+    }
+    .get-in-touch h1 {
+        padding-left: 0.5rem;
+    }
+    .get-in-touch p {
+        font-size: 0.9rem;
+    }
+
+    .contact-information {
+        margin-top: 3rem!important;
+        margin-bottom: 4rem!important;
+    }
+    .contact-information .card {
+        width: 100%!important;
+        height: 11rem!important;
+    }
+    .contact-information .col-12 {
+        margin-bottom: 4rem;
+    }
+  }

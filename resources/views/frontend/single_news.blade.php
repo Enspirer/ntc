@@ -20,10 +20,10 @@
     <section id="content">
       <div class="container" style="margin-bottom: 5rem;">
         <div class="row justify-content-center">
-          <div class="col-8">
+          <div class="col-12 col-md-8 mb-4 mb-md-0">
             <img src="{{uploaded_asset($single_news->feature_image) }}" alt="" width="100%" height="350px" style="object-fit:cover;" data-aos="fade-right" data-aos-duration="500">
             <h1 class="mt-4" data-aos="fade-right" data-aos-duration="500" data-aos-delay="300">{{ $single_news->title }}</h1>
-            <p class="text-secondary" data-aos="fade-right" data-aos-duration="500" data-aos-delay="500" style="font-size: 0.7rem;">
+            <p class="text-secondary mb-0" data-aos="fade-right" data-aos-duration="500" data-aos-delay="500" style="font-size: 0.7rem;">
               Posted on {{ $single_news->created_at->toDateString() }} &nbsp &nbsp
 
               @if(App\Models\Auth\User::where('id',$single_news->user_id)->first() !== null) 
@@ -32,14 +32,14 @@
           
             </p>
 
-            <div class="row mt-3">
+            <div class="row mt-2 mt-md-3">
               <div class="col-12" data-aos="fade-up" data-aos-duration="500" data-aos-delay="700">
-                <p>{!! $single_news->description !!}</p>
+                {!! $single_news->description !!}
               </div>
             </div>
           </div>
-          <div class="col-4">
-            <h1 class="mb-5 ps-2" data-aos="fade-down" data-aos-duration="500">Recent News</h1>
+          <div class="col-12 col-md-4">
+            <h1 class="mb-3 mb-md-5 ps-md-2" data-aos="fade-down" data-aos-duration="500">Recent News</h1>
 
             @if(count($latest_news) == 0)
               <h5 class="p-3 text-secondary" style="text-align: center">No Any Recent News</h5>

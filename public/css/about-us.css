@@ -20,3 +20,39 @@
     position: relative;
     top: -120px;
 }
+
+
+
+
+@media screen and (max-width: 576px) {
+    .banner {
+      padding: 1rem!important;
+      height: 275px;
+    }
+    .banner p {
+        line-height: 1.5rem!important;
+    }
+    .about-us {
+        margin-top: 3rem!important;
+    }
+    .what-we-do {
+        margin-top: 1rem!important;
+        margin-bottom: 3rem!important;
+    }
+    .banner-products {
+        background-image: none!important;
+        height: 100%!important; 
+    }
+    .motive-card {
+        width: 100%!important;
+        height: 17rem!important;
+    }
+    #statistics {
+        top: -60px!important;
+    }
+    #statistics .col-9 {
+        border-right: 1px solid gray!important;
+        border: 1px solid gray;
+    }
+   
+  }

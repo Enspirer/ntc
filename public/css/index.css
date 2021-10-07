@@ -45,57 +45,7 @@
 .banner-products h5 {
     margin-top: 8rem;
 }
-/* .product-range-1{
-    background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../img/frontend/index/rice-milling-machine.svg);
-    height: 18rem;
-} */
-/* .product-range-2 {
-    background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../img/frontend/index/rubber-rollers.svg);
-    height: 18rem;
-}
-.product-range-3 {
-    background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../img/frontend/index/electric-motors.svg);
-    height: 18rem;
-}
-.product-range-4 {
-    background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../img/frontend/index/spare-parts.svg);
-    height: 18rem;
-}
-.product-range-5 {
-    background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../img/frontend/index/other-machinery.svg);
-    height: 18rem;
-} */
-/* .product-range-1:hover {
-    background: url(../img/frontend/index/rice-milling-machine.svg);
-    color: black;
-    animation-name: fadein;
-    animation-duration: 0.5s;
-} */
-/* .product-range-2:hover {
-    background: url(../img/frontend/index/rubber-rollers.svg);
-    color: black;
-    animation-name: fadein;
-    animation-duration: 0.5s;
-}
-.product-range-3:hover {
-    background: url(../img/frontend/index/electric-motors.svg);
-    color: black;
-    animation-name: fadein;
-    animation-duration: 0.5s;
-}
-.product-range-4:hover {
-    background: url(../img/frontend/index/spare-parts.svg);
-    color: black;
-    animation-name: fadein;
-    animation-duration: 0.5s;
-    
-}
-.product-range-5:hover {
-    background: url(../img/frontend/index/other-machinery.svg);
-    color: black;
-    animation-name: fadein;
-    animation-duration: 0.5s;
-} */
+
 [class*="product-range"]:hover h5 {
     background-color: #68AE42;
     margin-top: 8rem;
@@ -216,7 +166,7 @@
 
 
 /* media-queries */
-@media screen and (max-width : 1200px) {
+/* @media screen and (max-width : 1200px) {
     .banner .container-md {
         text-align: center;
     }
@@ -271,4 +221,81 @@
     .ntc-eng-btn {
         padding: 10px 60px!important;
     }
-}
+} */
+
+
+
+@media screen and (max-width: 576px) {
+    .banner {
+        height: 300px!important;
+    }
+    .banner h2 {
+        font-size: 20px!important;
+    }
+    .banner .container-md {
+        text-align: center;
+    }
+    .banner-text {
+        float: none!important;
+        text-align: center;
+        top: 50px;
+        position: relative;
+        margin-top: 0;
+    }
+    .banner .float-end {
+        float: none!important;
+        top: 20px;
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+    }
+    .banner-carousel .carousel-inner {
+        width: 225px!important;
+        height: 245px!important;
+    }
+    .we-refine {
+        margin-top: 22rem!important;
+    }
+    .we-care-btn {
+        padding: 10px 90px!important;
+    }
+    .call-us {
+        margin-top: 2rem;
+    }
+    .banner-products {
+        background: none!important;
+        margin-top: 4rem!important;
+        height: 100%!important;
+    }
+    .banner-products h2 {
+        color: black!important;
+    }
+    .products {
+        padding-top: 0rem!important;
+        padding-bottom: 0rem!important;
+    }
+    .product-text a {
+        left: 8rem!important;
+    }
+    .we-care-btn {
+        padding: 10px 90px!important;
+    }
+    .we-care-btn {
+        padding: 10px 90px!important;
+    }
+    .ntc-engineering {
+        margin-top: 3rem!important;
+    }
+    .ntc-eng-btn {
+        padding: 10px 90px!important;
+    }
+    .new-ntc {
+        margin-top: 3rem!important;
+    }
+    .products-slider {
+        margin-top: 3rem!important;
+        margin-bottom: 1rem!important;
+    }
+
+   
+  }

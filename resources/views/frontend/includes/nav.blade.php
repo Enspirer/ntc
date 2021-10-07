@@ -12,19 +12,21 @@
         <li class="nav-item {{ Request::is('/') ? 'active' : '' }} mx-2" data-aos="fade-left" data-aos-duration="300">
           <a href="{{ url('/') }}" class="nav-link">Home</a>
         </li>
-        <li class="nav-item dropdown mx-2" data-aos="fade-left" data-aos-duration="600">
+
+        <li class="nav-item large-dropdown mx-2" data-aos="fade-left" data-aos-duration="600">
           <a class="nav-link {{ Request::segment(1)=='product' ? 'active' : '' }}" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">Products</a>
-          <div class="dropdown-menu" aria-labelledby="dropdown-menu">
+
+          <div class="dropdown-menu large-menu" aria-labelledby="dropdown-menu">
             <div class="container justify-content-center">
               <div class="row text-center">
 
 
               @foreach(App\Models\Category::where('status','=','Enabled')->get() as $key => $category)
                                   
-                  <div class="col">
+                  <div class="col-12 col-md">
                     <div class="card py-5" data-aos="flip-right" data-aos-duration="500">
                       <a href="{{ route('frontend.category.all_product',$category->id) }}" class="text-decoration-none">
-                      <img src="{{uploaded_asset($category->icon) }}" class="card-img-top px-5" alt="..." style="height: 6rem;" >
+                      <img src="{{uploaded_asset($category->icon) }}" class="card-img-top px-5 d-none d-md-block" alt="..." style="height: 6rem;" >
                       <div class="card-body">
                         <h5 class="card-title" style="color: #68AE42;">{{ $category->name }}</h5>
                       </div>
@@ -32,49 +34,22 @@
                     </div>
                   </div>
                 
-              @endforeach  
-
-                <!-- <div class="col">
-                  <div class="card py-5">
-                    <img src="{{ url('img/frontend/nav/nav-rubber.svg') }}" class="card-img-top" alt="..." style="height: 6rem;">
-                    <div class="card-body">
-                      <h5 class="card-title" style="color: #68AE42;">Rubber Rollers</h5>
-                      <p class="card-text">lorem ipsum
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card py-5">
-                    <img src="{{ url('img/frontend/nav/nav-electric.svg') }}" class="card-img-top" alt="..." style="height: 6rem;">
-                    <div class="card-body">
-                      <h5 class="card-title" style="color: #68AE42;">Electric Motors</h5>
-                      <p class="card-text">lorem ipsum
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card py-5">
-                    <img src="{{ url('img/frontend/nav/nav-spare.svg') }}" class="card-img-top" alt="..." style="height: 6rem;">
-                    <div class="card-body">
-                      <h5 class="card-title" style="color: #68AE42;">Spare Parts</h5>
-                      <p class="card-text">lorem ipsum
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card py-5">
-                    <img src="{{ url('img/frontend/nav/nav-other.svg') }}" class="card-img-top" alt="..." style="height: 6rem;">
-                    <div class="card-body">
-                      <h5 class="card-title" style="color: #68AE42;">Other Machineries</h5>
-                      <p class="card-text">lorem ipsum
-                    </div>
-                  </div>
-                </div> -->
-
+              @endforeach
               </div>
             </div>
           </div>
         </li>
+
+        <li class="nav-item dropdown small-dropdown mx-2" data-aos="fade-left" data-aos-duration="600">
+          <a class="nav-link {{ Request::segment(1)=='product' ? 'active' : '' }}" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;">Products</a>
+
+          <ul class="dropdown-menu px-0 small-menu" aria-labelledby="navbarDropdown">
+              @foreach(App\Models\Category::where('status','=','Enabled')->get() as $key => $category)
+                  <li><a href="{{ route('frontend.category.all_product',$category->id) }}" class="dropdown-item text-secondary">{{ $category->name }}</a></li>
+              @endforeach
+          </ul>
+        </li>
+
         <li class="nav-item {{ Request::segment(1)=='news' ? 'active' : '' }} mx-2" data-aos="fade-left" data-aos-duration="900">
           <a href="{{ url('news') }}" class="nav-link">News</a>
         </li>       
@@ -94,10 +69,10 @@
 
 @push('after-scripts')
   <script>
-      $('.dropdown').hover(function() {
-          $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeIn(100);
+      $('.large-dropdown').hover(function() {
+          $(this).find('.large-menu').stop(true, true).delay(100).fadeIn(100);
       }, function() {
-          $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut(100);
+          $(this).find('.large-menu').stop(true, true).delay(100).fadeOut(100);
       }); 
   </script>
 

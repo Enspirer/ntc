@@ -4,3 +4,18 @@
   color: black;
   font-weight: 500;
 }
+
+
+
+
+@media screen and (max-width: 576px) {
+  .all-news {
+    margin-top: 4rem!important;
+    margin-bottom: 4rem!important;
+  }
+  .all-news .card {
+    min-height: 350px!important;
+    max-height: 410px!important;
+  }
+ 
+}
