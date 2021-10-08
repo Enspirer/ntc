@@ -41,14 +41,14 @@
 
 
     <div class="container text-white">
-        <div class="row text-center">
+        <div class="row text-center mx-1 mx-md-0">
 
         <!-- {{ url('img/frontend/products/products-rice-milling-machine.svg') }} -->
 
         @foreach($categories as $key => $category)
        
           @if($category->id == $category_id)
-            <div class="col mx-2" data-aos="flip-left" data-aos-duration="500" style="background: linear-gradient(to bottom, rgba(104, 174, 66, 0.5), rgba(104, 174, 66, 0.5)),url({{ url(uploaded_asset($category->image)) }}); height: 18rem;">
+            <div class="col-12 col-md mx-md-2 product-category" data-aos="flip-left" data-aos-duration="500" style="background: linear-gradient(to bottom, rgba(104, 174, 66, 0.5), rgba(104, 174, 66, 0.5)),url({{ url(uploaded_asset($category->image)) }}); height: 18rem;">
               <a href="{{ route('frontend.category.all_product',$category->id) }}" style="text-decoration: none">
                 <div class="product-text" style="margin-top: 5rem;">
                     <img src="{{uploaded_asset($category->icon) }}" alt="" height="80" style="filter: brightness(50)">
@@ -57,7 +57,7 @@
               </a>  
             </div>  
           @else
-            <div class="col mx-2" data-aos="flip-left" data-aos-duration="500" data-aos-delay="400" style="background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url({{ url(uploaded_asset($category->image)) }}); height: 18rem;">
+            <div class="col-12 col-md mx-md-2 product-category" data-aos="flip-left" data-aos-duration="500" data-aos-delay="400" style="background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url({{ url(uploaded_asset($category->image)) }}); height: 18rem;">
               <a href="{{ route('frontend.category.all_product',$category->id) }}" style="text-decoration: none">
                 <div class="product-text">
                   <h5 class="fw-bold text-white">{{$category->name}}</h5>
@@ -67,54 +67,13 @@
           @endif   
 
         @endforeach
-
-          
-          <!-- <div class="col mx-2" data-aos="flip-left" data-aos-duration="500" data-aos-delay="200" style="background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../img/frontend/index/rubber-rollers.svg); height: 18rem;">
-            <div class="product-text">
-              <h5 class="fw-bold">Rubber Rollers</h5>
-            </div>
-          </div>
-          <div class="col mx-2" data-aos="flip-left" data-aos-duration="500" data-aos-delay="400" style="background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../img/frontend/index/electric-motors.svg); height: 18rem;">
-            <div class="product-text">
-              <h5 class="fw-bold">Electric Motors</h5>
-            </div>
-          </div>
-          <div class="col mx-2" data-aos="flip-left" data-aos-duration="500" data-aos-delay="600" style="background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../img/frontend/index/spare-parts.svg); height: 18rem;">
-            <div class="product-text">
-              <h5 class="fw-bold">Spare Motors</h5>
-            </div>
-          </div>
-          <div class="col mx-2" data-aos="flip-left" data-aos-duration="500" data-aos-delay="800" style="background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url(../img/frontend/index/other-machinery.svg); height: 18rem;">
-            <div class="product-text">
-              <h5 class="fw-bold">Other Machinery</h5>
-            </div>
-          </div> -->
-
         </div>
       </div>
 
 
-    <!--filter-->
-    <!-- <section id="filters">
-      <div class="container mt-5">
-          <div class="clearfix">
-              <div class="float-start">
-                  <p class="fw-bold">04 items found</p>
-              </div>
-              <div class="float-end filter">
-                  <label class="fw-bold" for="sort">Sort By:</label>
-                      <select name="sort" id="sort">
-                          <option value="latest">Latest</option>
-                      </select>
-              </div>
-          </div>
-      </div>
-    </section> -->
-
-
-    <div class="container mt-5" style="margin-bottom: 7rem;">
+    <div class="container mt-5 single-product" style="margin-bottom: 7rem;">
         <div class="row">
-            <div class="col-3" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">
+            <div class="col-12 col-md-3 mb-4 mb-md-0" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">
                 <div class="accordion" id="types">
 
                   <div class="accordion-item rounded p-1">
@@ -182,25 +141,25 @@
                 </div>
             </div>
 
-            <div class="col-9">
+            <div class="col-12 col-md-9">
                 <div class="row">
-                  <div class="col-7 text-center">
+                  <div class="col-12 col-md-7 text-center mb-4 mb-md-0">
                     <img src="{{uploaded_asset(json_decode($product->multiple_images)[0]->image1) }}" id="main-image" alt="" style="height: 30rem; object-fit:cover; width:400px;">
 
                     <div class="row justify-content-center mt-3">
-                      <div class="col-3">
+                      <div class="col-4 col-md-3">
                         <img src="{{uploaded_asset(json_decode($product->multiple_images)[0]->image1) }}" id="image1" alt="" style="height: 5rem; width: 80px; object-fit:cover; box-shadow: 0px 6px 12px #888888;">
                       </div>
-                      <div class="col-3">
+                      <div class="col-4 col-md-3">
                         <img src="{{uploaded_asset(json_decode($product->multiple_images)[1]->image2) }}" alt="" id="image2" style="height: 5rem; width: 80px; object-fit:cover; box-shadow: 0px 6px 12px #888888;">
                       </div>
-                      <div class="col-3">
+                      <div class="col-4 col-md-3">
                         <img src="{{uploaded_asset(json_decode($product->multiple_images)[2]->image3) }}" id="image3" alt="" style="height: 5rem; width: 80px; object-fit:cover; box-shadow: 0px 6px 12px #888888;">
                       </div>
                     </div>
                   </div>
 
-                  <div class="col-5">
+                  <div class="col-12 col-md-5">
                     <h1 class="fs-2 fw-bold">{{ $product->product_name }}</h1>
                     <h4 class="mt-2">{{ $product->model_number }}</h4>
 

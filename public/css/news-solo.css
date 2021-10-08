@@ -1,0 +1,23 @@
+@media screen and (max-width: 576px) {
+    .nav-link {
+        display: inline-block!important;
+    }
+    .navbar-nav {
+        text-align: center!important;
+    }
+    .large-dropdown {
+        display: none!important;
+    }
+    .small-dropdown {
+        display: block!important;
+    }
+
+    .small-dropdown a:hover .small-menu {
+        display: block;
+        left: -5rem;
+        font-size: 0.9rem;
+        border: none;
+    }
+
+   
+  }

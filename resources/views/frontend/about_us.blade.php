@@ -13,7 +13,7 @@
         <div class="container-md text-center text-white">
         <h2 data-aos="fade-down" data-aos-duration="500" data-aos-delay="700">Who we are</h2>
         <div class="row justify-content-center">
-            <div class="col-sm-6 mt-4" data-aos="fade-up" data-aos-duration="500" data-aos-delay="700">
+            <div class="col-12 col-md-6 mt-2 mt-md-4" data-aos="fade-up" data-aos-duration="500" data-aos-delay="700">
                 <p style="line-height: 2rem;">We are the leading Rice Mill Machinery, Agriculture &amp; Engineering Service provider in Sri Lanka.
                   Formed in 1975, NTC (Pvt) Ltd is an Organization where we thrive on bringing Quality,
                   Innovative Solutions; Focused on Sri Lankan Agriculture.
@@ -25,27 +25,27 @@
 
 
 
-    <div class="container" style="margin-top: 5rem;">
+    <div class="container about-us" style="margin-top: 5rem;">
       <div class="row justify-content-center">
-        <div class="col-sm-5" data-aos="fade-right" data-aos-duration="500">
+        <div class="col-12 col-md-5 mb-3 mb-md-0" data-aos="fade-right" data-aos-duration="500">
           <img src="{{ url('img/frontend/about/building.svg') }}" alt="" class="img-fluid" style="box-shadow: -5px 10px 10px #888888;">
         </div>
-        <div class="col-sm-5 px-5">
-          <h3 data-aos="fade-left" data-aos-duration="500">About Us</h3>
-          <p data-aos="fade-left" data-aos-duration="500">With over 48 Years of Experience, NTC is the preferred supplier and service provider for many Rice Mills in Sri Lanka. We provide Rice Milling Machinery, Rubber Rollers, Milling Spare Parts, Engineering and Repair Services to all types of Rice Extraction organizations. We help Rice Mills and undertake complete service and consultation from the initiation of factory and beyond.</p>
-          <p data-aos="fade-left" data-aos-duration="500">Our Main office is located in Colombo that supply Rice Refining and Milling Services to the country. We are the sole agent for Double Lion Rubber Rollers in Sri Lanka which is considered to value over 65% of the Market Share and we are the sole agent &amp; distributor for Dingxin China - a renowned supplier for rice mill machinery.</p>
-          <p data-aos="fade-left" data-aos-duration="500" data-aos-delay="100">We cater to the complete rice mill value chain including machinery, spares and engineering services. As a social responsible corporate citizen we constantly support the agriculture communities in the country by sharing our expert knowledge free of charge.</p>
-          <p data-aos="fade-left" data-aos-duration="500" data-aos-delay="200">We are the trusted supplier for the major rice mills in Sri Lanka. We strive to share our expert knowledge with startup rice mills and we provide consultancy in B2B business activities. We believe Our business helps to nourish and serve the Nation.</p>
+        <div class="col-12 col-md-5 px-md-5 mb-3 mb-md-0">
+          <h3 data-aos="fade-up" data-aos-duration="500">About Us</h3>
+          <p data-aos="fade-up" data-aos-duration="500">With over 48 Years of Experience, NTC is the preferred supplier and service provider for many Rice Mills in Sri Lanka. We provide Rice Milling Machinery, Rubber Rollers, Milling Spare Parts, Engineering and Repair Services to all types of Rice Extraction organizations. We help Rice Mills and undertake complete service and consultation from the initiation of factory and beyond.</p>
+          <p data-aos="fade-up" data-aos-duration="500">Our Main office is located in Colombo that supply Rice Refining and Milling Services to the country. We are the sole agent for Double Lion Rubber Rollers in Sri Lanka which is considered to value over 65% of the Market Share and we are the sole agent &amp; distributor for Dingxin China - a renowned supplier for rice mill machinery.</p>
+          <p data-aos="fade-up" data-aos-duration="500" data-aos-delay="100">We cater to the complete rice mill value chain including machinery, spares and engineering services. As a social responsible corporate citizen we constantly support the agriculture communities in the country by sharing our expert knowledge free of charge.</p>
+          <p data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">We are the trusted supplier for the major rice mills in Sri Lanka. We strive to share our expert knowledge with startup rice mills and we provide consultancy in B2B business activities. We believe Our business helps to nourish and serve the Nation.</p>
         </div>
       </div>
     </div>
 
 
 
-    <div class="container text-center" style="margin-top: 5rem;">
+    <div class="container text-center what-we-do" style="margin-top: 5rem;">
       <h1 data-aos="fade-up" data-aos-duration="500">What we do</h1>
       <div class="row justify-content-center">
-        <div class="col-6" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
+        <div class="col-12 col-md-6" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
           <p>We import, distribute, and service Rice Milling &amp; Agricultural Machinery and Accessories to all
             forms of growing industries in Sri Lanka. Our Network includes Over 120 Dealers and Agents
             Island-wide from Medium to Large Scale Rice Mills.</p>
@@ -56,9 +56,9 @@
 
 
     <div class="container-fluid text-white text-center banner-products border-0">
-        <div class="container p-5 mt-3">
+        <div class="container p-md-5 mt-3">
             <div class="row justify-content-center">
-                <div class="col-4" data-aos="fade-up-right" data-aos-duration="1000">
+                <div class="col-12 col-md-4 mb-3 mb-md-0" data-aos="fade-down" data-aos-duration="1000">
                     <div class="card motive-card shadow-lg" style="width: 22rem; height: 25rem;">
                         <div class="card-body">
                             <h3 class="card-title">Our Goal</h3>
@@ -66,7 +66,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4" data-aos="fade-up" data-aos-duration="1000">
+                <div class="col-12 col-md-4 mb-3 mb-md-0" data-aos="fade-up" data-aos-duration="1000">
                     <div class="card motive-card shadow-lg" style="width: 22rem; height: 25rem;">
                         <div class="card-body">
                             <h3 class="card-title">Our Vision</h3>
@@ -74,7 +74,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4" data-aos="fade-up-left" data-aos-duration="1000">
+                <div class="col-12 col-md-4 mb-3 mb-md-0" data-aos="fade-up-down" data-aos-duration="1000">
                     <div class="card motive-card shadow-lg" style="width: 22rem; height: 25rem;">
                         <div class="card-body">
                             <h3 class="card-title">Our Mission</h3>
@@ -88,24 +88,24 @@
 
 
     <!--statistics-->
-    <secttion id="statistics">
+    <section id="statistics">
         <div class="container text-center">
             <div class="row justify-content-center" style="margin-top: 4.5rem;">
-                <div class="col-3 border-end p-4 bg-white shadow-lg" data-aos="flip-right" data-aos-duration="500">
+                <div class="col-9 col-md-3 p-2 border-end-md-0 mb-3 mb-md-0 p-md-4 bg-white shadow-lg border-end" data-aos="flip-right" data-aos-duration="500">
                     <h1 class="fw-bold fs-1" style="color: #68AE42;">1200 +</h1>
-                    <p style="color: #999999;">Customers</p>
+                    <p class="mb-0" style="color: #999999;">Customers</p>
                 </div>
-                <div class="col-3 border-end p-4 bg-white shadow-lg" data-aos="flip-right" data-aos-duration="500" data-aos-delay="200">
+                <div class="col-9 col-md-3 p-2 mb-3 mb-md-0 p-md-4 bg-white shadow-lg border-end" data-aos="flip-right" data-aos-duration="500" data-aos-delay="200">
                     <h1 class="fw-bold fs-1" style="color: #68AE42;">200 +</h1>
-                    <p style="color: #999999;">Products</p>
+                    <p class="mb-0" style="color: #999999;">Products</p>
                 </div>
-                <div class="col-3 border-end p-4 bg-white shadow-lg" data-aos="flip-right" data-aos-duration="500" data-aos-delay="400">
+                <div class="col-9 col-md-3 p-2 mb-3 mb-md-0 p-md-4 bg-white shadow-lg border-end" data-aos="flip-right" data-aos-duration="500" data-aos-delay="400">
                     <h1 class="fw-bold fs-1" style="color: #68AE42;">500 +</h1>
-                    <p style="color: #999999;">Employers</p>
+                    <p class="mb-0" style="color: #999999;">Employers</p>
                 </div>
             </div>
         </div>
-    </secttion>
+    </section>
     
 
 @endsection

@@ -31,3 +31,42 @@
     background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-dash-lg' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z'/></svg>");
     background-size: 0.8rem !important;
 }
+
+
+
+
+
+
+@media screen and (max-width: 576px) {
+    .product-category {
+        height: 7rem!important;
+        background-repeat: no-repeat!important;
+        background-size: cover!important;
+        margin-bottom: 1rem!important;
+    }
+    .product-category img {
+        display: none!important;
+    }
+    .product-category .product-text {
+        margin-top: 3rem!important;
+    }
+    .all-products {
+        margin-bottom: 4rem!important;
+    }
+    .right-products {
+        margin-bottom: 1rem!important;
+    }
+    .right-products .card {
+        min-height: 200px!important;
+        max-height: 300px!important;
+    }
+    .right-products .card img {
+        height: 150px!important;
+    }
+    #main-image {
+        height: 15rem!important;
+        width: 100%!important;
+    }
+
+   
+}
