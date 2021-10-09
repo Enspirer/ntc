@@ -135,9 +135,9 @@
         <div class="col-12 col-md-6 col-lg-6" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">
           <h3>We Refine</h3>
           <h1>the Seeds that Feed the Nation</h1>
-          <p class="fw-normal mt-4 mb-0">Formed in 1975 as a trading partner to Nabeesa Group of Companies. We focus on importing Agricultural related equipment and graiin milling machineries.</p>
+          <p class="fw-normal mt-4 mb-0">The Grain of Seed that is nourished, grown and harvested, Rice is The Primary Nutrition for Our Nation. We at NTC look beyond the mere business but focus on preserving and sustaining the Rice Milling Industry in Sri Lanka.</p>
           <br>
-          <p class="fw-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique dolorem corrupti ipsum aspernatur repellendus nisi pariatur consequuntur ab officia, fugit facilis hic tempore porro, numquam rem in, deleniti vitae dolore?</p>
+          <p class="fw-normal">NTC serves the Rice Mill Industry with over 46 Years of Service Excellence. We Welcome You Into the business of Nourishing of Our Nation.</p>
           <div class="text-center text-md-left">
             <a href="{{ route('frontend.about_us') }}" class="btn mt-4 text-white we-care-btn" role="button" data-aos="fade-up" data-aos-duration="500" style="padding: 10px 150px; font-size: 20px; background-color: #68AE42;">Discover more</a>
           </div>
