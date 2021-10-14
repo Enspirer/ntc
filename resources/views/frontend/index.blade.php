@@ -9,20 +9,7 @@
 
 @section('content')
 
-  <!-- @foreach($categories as $key => $single_category)
-    <style>
-        .product-range-{{$single_category->id}}{
-            
-        }
-        .product-range-{{$single_category->id}}:hover {
-            background: url('{{url(uploaded_asset($single_category->image))}}');
-            color: black;
-            animation-name: fadein;
-            animation-duration: 0.5s;
-        }
-    </style>
-  @endforeach -->
-
+  
     <div class="container-fluid banner" data-aos="zoom-in" data-aos-duration="500" style="margin-top: 6.5rem;">
       <div class="container-md">
         <div class="clearfix">
@@ -55,55 +42,61 @@
               
                 @if($best_selling != null)
                   <div class="carousel-inner justify-content-center" style="width: 300px; height: 325px;" >
+                  
                     <div class="carousel-item active">
-                      <img src="{{uploaded_asset(json_decode($product1->multiple_images)[0]->image1) }}" height="270" width="270">
-                      <p class="carousel-caption mt-3">
-                        {{$product1->product_name}} 
-                        @if($product1->model_number != 'No Model Number')
-                          - {{$product1->model_number}}
-                        @endif
-                        
-                      </p>
+                      <a href="{{route('frontend.solo_product',$product1->id)}}">
+                        <img src="{{uploaded_asset(json_decode($product1->multiple_images)[0]->image1) }}" height="270" width="270">
+                          <p class="carousel-caption mt-3">
+                            {{$product1->product_name}} 
+                            @if($product1->model_number != 'No Model Number')
+                              - {{$product1->model_number}}
+                            @endif                        
+                          </p>
+                      </a>
                     </div>
                     <div class="carousel-item">
-                      <img src="{{uploaded_asset(json_decode($product2->multiple_images)[0]->image1) }}" height="270" width="270">
-                      <p class="carousel-caption mt-3">
-                        {{$product1->product_name}} 
-                        @if($product1->model_number != 'No Model Number')
-                          - {{$product1->model_number}}
-                        @endif
-                        
-                      </p>
+                      <a href="{{route('frontend.solo_product',$product2->id)}}">
+                        <img src="{{uploaded_asset(json_decode($product2->multiple_images)[0]->image1) }}" height="270" width="270">
+                        <p class="carousel-caption mt-3">
+                          {{$product2->product_name}} 
+                          @if($product2->model_number != 'No Model Number')
+                            - {{$product2->model_number}}
+                          @endif                        
+                        </p>
+                      </a>
                     </div>
                     <div class="carousel-item">
-                      <img src="{{uploaded_asset(json_decode($product3->multiple_images)[0]->image1) }}" height="270" width="270">
-                      <p class="carousel-caption mt-3">
-                        {{$product3->product_name}} 
-                        @if($product3->model_number != 'No Model Number')
-                          - {{$product3->model_number}}
-                        @endif
-                        
-                      </p>
+                      <a href="{{route('frontend.solo_product',$product3->id)}}">
+                        <img src="{{uploaded_asset(json_decode($product3->multiple_images)[0]->image1) }}" height="270" width="270">
+                        <p class="carousel-caption mt-3">
+                          {{$product3->product_name}} 
+                          @if($product3->model_number != 'No Model Number')
+                            - {{$product3->model_number}}
+                          @endif                        
+                        </p>
+                      </a>
                     </div>
                     <div class="carousel-item">
-                      <img src="{{uploaded_asset(json_decode($product4->multiple_images)[0]->image1) }}" height="270" width="270">
-                      <p class="carousel-caption mt-3">
-                        {{$product4->product_name}} 
-                        @if($product4->model_number != 'No Model Number')
-                          - {{$product4->model_number}}
-                        @endif
-                        
-                      </p>
+                      <a href="{{route('frontend.solo_product',$product4->id)}}">
+                        <img src="{{uploaded_asset(json_decode($product4->multiple_images)[0]->image1) }}" height="270" width="270">
+                        <p class="carousel-caption mt-3">
+                          {{$product4->product_name}} 
+                          @if($product4->model_number != 'No Model Number')
+                            - {{$product4->model_number}}
+                          @endif                        
+                        </p>
+                      </a>
                     </div>
                     <div class="carousel-item">
-                      <img src="{{uploaded_asset(json_decode($product5->multiple_images)[0]->image1) }}" height="270" width="270">
-                      <p class="carousel-caption mt-3">
-                        {{$product5->product_name}} 
-                        @if($product5->model_number != 'No Model Number')
-                          - {{$product5->model_number}}
-                        @endif
-                        
-                      </p>
+                      <a href="{{route('frontend.solo_product',$product5->id)}}">
+                        <img src="{{uploaded_asset(json_decode($product5->multiple_images)[0]->image1) }}" height="270" width="270">
+                        <p class="carousel-caption mt-3">
+                          {{$product5->product_name}} 
+                          @if($product5->model_number != 'No Model Number')
+                            - {{$product5->model_number}}
+                          @endif                        
+                        </p>
+                      </a>
                     </div>
                   </div> 
 
