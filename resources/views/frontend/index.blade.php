@@ -172,8 +172,23 @@
     <div class="container ntc-engineering" style="margin-top: 7rem;">
       <div class="row justify-content-center">
         <div class="col-12 col-md-5 mb-4 mb-md-0">
-          <h1 data-aos="fade-up" data-aos-duration="500">NTC</h1>
-          <h1 data-aos="fade-up" data-aos-duration="500">Engineering</h1>
+          
+
+          <div class="row">
+
+            <div class="col-6">
+              <h1 data-aos="fade-up" data-aos-duration="500">NTC</h1>
+              <h1 data-aos="fade-up" data-aos-duration="500">Engineering</h1>
+            </div>
+
+            <div class="col-6">
+              <div class="container d-flex justify-content-end ml-4 px-5">
+                <img src="{{ url('img/frontend/index/ntce.png') }}"  alt="ntce" height="70">
+              </div>              
+            </div>
+
+          </div>
+
           <p class="mt-3 mt-md-5" data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">Ensuring the Quality &amp; Efficiency of Your Rice Mill, NTC Engineering is ready to serve you 24 Hours
             Online.</p>
           <p class="mt-3 mb-5" data-aos="fade-up" data-aos-duration="500" data-aos-delay="400">We are Focused to give you Quick, Innovative Solutions Focused exclusively for you.</p>
@@ -256,7 +271,6 @@
       }
       changeText(); 
     </script>
-
 
 
     <script>
