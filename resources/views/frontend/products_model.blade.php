@@ -258,11 +258,18 @@
                     </div>
                     <div class="mb-2">
                       <label for="last-name" class="form-label">Last Name</label>
-                      <input type="text" class="form-control" name="last_name" required>
+                      <input type="text" class="form-control" name="last_name" >
                     </div>
                     <div class="mb-2">
                       <label for="contact-number" class="form-label">Contact Number</label>
-                      <input type="number" class="form-control" name="contact_number" required>
+                        <div class="row">
+                          <div class="col-2 pe-0 text-center">
+                            <input type="text" class="form-control" value="+94 " disabled>
+                          </div>
+                          <div class="col-10 ps-0">
+                            <input type="number" class="form-control" name="contact_number" required>
+                          </div>
+                        </div>
                     </div>
                     <div class="mb-2">
                       <label for="email" class="form-label">Email Address</label>
@@ -270,7 +277,7 @@
                     </div>
                     <div class="mb-2">
                       <label for="message" class="form-label">Message</label>
-                      <textarea class="form-control" name="message" cols="30" rows="5" required></textarea>
+                      <textarea class="form-control" name="message" cols="30" rows="5" ></textarea>
                     </div>
                 </div>
                 <div class="modal-footer justify-content-center">

@@ -29,19 +29,23 @@
                                                 <tr>
                                                     <td style="font-weight: 600; font-size:16px;">Name:</td>
                                                     <td style="font-size:16px;">{{ $inquire->first_name }} {{ $inquire->last_name }}</td>
-                                                </tr>
+                                                </tr>                                                
                                                 <tr>
                                                     <td style="font-weight: 600; font-size:16px;">Contact Number:</td>
                                                     <td style="font-size:16px;">{{ $inquire->contact_number }}</td>
                                                 </tr>
+                                                @if($inquire->email != null)
                                                 <tr>
                                                     <td style="font-weight: 600; font-size:16px;">Email:</td>
                                                     <td style="font-size:16px;">{{ $inquire->email }}</td>
                                                 </tr>
+                                                @endif
+                                                @if($inquire->message != null)
                                                 <tr>
                                                     <td style="font-weight: 600; font-size:16px;">Message:</td>
                                                     <td style="font-size:16px;">{{ $inquire->message }}</td>
                                                 </tr>
+                                                @endif
                                             </tbody>                                            
                                         </table>
                                     </div>                                            

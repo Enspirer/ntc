@@ -16,13 +16,13 @@ class CreateInquiresTable extends Migration
         Schema::create('inquires', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('user_id')->nullable();
-            $table->text('product_name');
-            $table->text('product_id');
-            $table->text('first_name');
-            $table->text('last_name');
-            $table->text('contact_number');
-            $table->text('email');
-            $table->text('message');
+            $table->text('product_name')->nullable();
+            $table->text('product_id')->nullable();
+            $table->text('first_name')->nullable();
+            $table->text('last_name')->nullable();
+            $table->text('contact_number')->nullable();
+            $table->text('email')->nullable();
+            $table->text('message')->nullable();
             $table->text('status');
             $table->timestamps();
         });
