@@ -35,8 +35,8 @@
                   <i class="bi bi-telephone-fill"></i>
                 </div>
                 <div class="col-10">
-                  <p class="mb-0">011-2942939</p>
-                  <p>0773344391</p>
+                  <p class="mb-0">+94 11-2942939</p>
+                  <p>+94 773344391</p>
                 </div>
               </div>
               <div class="row ml-1 ml-md-0">

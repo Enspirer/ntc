@@ -172,10 +172,12 @@ class ProductController extends Controller
 
         $add->first_name=$request->first_name;
         $add->last_name=$request->last_name;
-        $add->user_id=auth()->user()->id;
+        if(!empty( auth()->user()->id) === true ){
+            $add->user_id=auth()->user()->id;
+        } 
         $add->product_name=$request->product_name;
         $add->product_id=$request->product_id;
-        $add->contact_number='+94 '.$request->contact_number;
+        $add->contact_number=$request->contact_number;
         $add->email=$request->email;
         $add->message=$request->message;
         $add->status='Pending'; 
@@ -187,7 +189,7 @@ class ProductController extends Controller
             'last_name' => $request->last_name,
             'product_name' => $request->product_name,
             'product_id' => $request->product_id,
-            'contact_number' => '+94 '.$request->contact_number,
+            'contact_number' => $request->contact_number,
             'email' => $request->email,          
             'message' => $request->message,
         ];
