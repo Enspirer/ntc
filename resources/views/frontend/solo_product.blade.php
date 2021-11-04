@@ -224,7 +224,7 @@
                     <input type="text" class="form-control" name="last_name">
                   </div>
                   <div class="mb-2">
-                    <label for="contact-number" class="form-label">Contact Number</label>
+                    <label for="contact-number" class="form-label">Contact Number</label>   
                     <input type="number" class="form-control" name="contact_number" required>
                   </div>
                   <div class="mb-2">

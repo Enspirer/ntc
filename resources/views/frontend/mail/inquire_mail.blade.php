@@ -66,6 +66,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                 <hr>                
             </td>
         </tr>
+        @if($details['last_name'] != null)
         <tr>            
             <td width="20%" cellpadding="0" cellspacing="0">  
                 <p align="left"><b>Last Name:</b> </p>  
@@ -75,7 +76,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
                 <p align="left">{{ $details['last_name'] }}</p> 
                 <hr>                
             </td>
-        </tr>        
+        </tr>  
+        @endif      
         <tr>            
             <td width="20%" cellpadding="0" cellspacing="0">  
                 <p align="left"><b>Contact Number:</b> </p>  
@@ -96,6 +98,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                 <hr>                
             </td>
         </tr>
+        @if($details['message'] != null)
         <tr>            
             <td width="20%" cellpadding="0" cellspacing="0">
                 <p align="left"><b>Message:</b> </p>
@@ -104,6 +107,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
                 <p align="left">{{ $details['message'] }}</p>          
             </td>
         </tr>
+        @endif
     </table>
     <br><br>
 </body>

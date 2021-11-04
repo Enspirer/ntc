@@ -71,6 +71,9 @@ p {
     .nav-link {
         display: inline-block!important;
     }
+    .nav-item img {
+        display:none;
+    }
     .navbar-nav {
         text-align: center!important;
     }

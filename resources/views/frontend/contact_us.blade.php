@@ -15,7 +15,7 @@
             <h1 class="fs-2">Get in touch</h1>
             <div class="row px-2 px-md-0">
                 <div class="col-12 col-md-3">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis totam illo provident quaerat, obcaecati quod soluta explicabo non distinctio quia?</p>
+                    <p>For Any Inquiries & Assistance, Please Get In Touch With Us Anytime. We are happy to serve you.</p>
                 </div>
             </div>
             

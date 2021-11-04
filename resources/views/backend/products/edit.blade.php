@@ -264,12 +264,11 @@
                                 // $('#sub_category').append('<option value="" selected disabled>-- Select Sub Category --</option>'); 
                                 $.each(data, function(key, value){
                                     // console.log(value);
-                                    if(SubCatID == value.sub_category_id){
-                                        // console.log('selected');                                        
+                                    if(SubCatID == value.sub_category_id){                                       
                                         $('#sub_category').append('<option value="'+ value.sub_category_id +'">' + value.sub_category_name+ '</option>');
                                     }
                                     
-                                    $('select[name="sub_category"]').append('<option value="'+ value.sub_category_id +'">' + value.sub_category_name+ '</option>');
+                                    // $('select[name="sub_category"]').append('<option value="'+ value.sub_category_id +'">' + value.sub_category_name+ '</option>');
                                                                        
                                 
                                 });

@@ -9,20 +9,7 @@
 
 @section('content')
 
-  <!-- @foreach($categories as $key => $single_category)
-    <style>
-        .product-range-{{$single_category->id}}{
-            
-        }
-        .product-range-{{$single_category->id}}:hover {
-            background: url('{{url(uploaded_asset($single_category->image))}}');
-            color: black;
-            animation-name: fadein;
-            animation-duration: 0.5s;
-        }
-    </style>
-  @endforeach -->
-
+  
     <div class="container-fluid banner" data-aos="zoom-in" data-aos-duration="500" style="margin-top: 6.5rem;">
       <div class="container-md">
         <div class="clearfix">
@@ -55,55 +42,61 @@
               
                 @if($best_selling != null)
                   <div class="carousel-inner justify-content-center" style="width: 300px; height: 325px;" >
+                  
                     <div class="carousel-item active">
-                      <img src="{{uploaded_asset(json_decode($product1->multiple_images)[0]->image1) }}" height="270" width="270">
-                      <p class="carousel-caption mt-3">
-                        {{$product1->product_name}} 
-                        @if($product1->model_number != 'No Model Number')
-                          - {{$product1->model_number}}
-                        @endif
-                        
-                      </p>
+                      <a href="{{route('frontend.solo_product',$product1->id)}}">
+                        <img src="{{uploaded_asset(json_decode($product1->multiple_images)[0]->image1) }}" height="270" width="270">
+                          <p class="carousel-caption mt-3">
+                            {{$product1->product_name}} 
+                            @if($product1->model_number != 'No Model Number')
+                              - {{$product1->model_number}}
+                            @endif                        
+                          </p>
+                      </a>
                     </div>
                     <div class="carousel-item">
-                      <img src="{{uploaded_asset(json_decode($product2->multiple_images)[0]->image1) }}" height="270" width="270">
-                      <p class="carousel-caption mt-3">
-                        {{$product1->product_name}} 
-                        @if($product1->model_number != 'No Model Number')
-                          - {{$product1->model_number}}
-                        @endif
-                        
-                      </p>
+                      <a href="{{route('frontend.solo_product',$product2->id)}}">
+                        <img src="{{uploaded_asset(json_decode($product2->multiple_images)[0]->image1) }}" height="270" width="270">
+                        <p class="carousel-caption mt-3">
+                          {{$product2->product_name}} 
+                          @if($product2->model_number != 'No Model Number')
+                            - {{$product2->model_number}}
+                          @endif                        
+                        </p>
+                      </a>
                     </div>
                     <div class="carousel-item">
-                      <img src="{{uploaded_asset(json_decode($product3->multiple_images)[0]->image1) }}" height="270" width="270">
-                      <p class="carousel-caption mt-3">
-                        {{$product3->product_name}} 
-                        @if($product3->model_number != 'No Model Number')
-                          - {{$product3->model_number}}
-                        @endif
-                        
-                      </p>
+                      <a href="{{route('frontend.solo_product',$product3->id)}}">
+                        <img src="{{uploaded_asset(json_decode($product3->multiple_images)[0]->image1) }}" height="270" width="270">
+                        <p class="carousel-caption mt-3">
+                          {{$product3->product_name}} 
+                          @if($product3->model_number != 'No Model Number')
+                            - {{$product3->model_number}}
+                          @endif                        
+                        </p>
+                      </a>
                     </div>
                     <div class="carousel-item">
-                      <img src="{{uploaded_asset(json_decode($product4->multiple_images)[0]->image1) }}" height="270" width="270">
-                      <p class="carousel-caption mt-3">
-                        {{$product4->product_name}} 
-                        @if($product4->model_number != 'No Model Number')
-                          - {{$product4->model_number}}
-                        @endif
-                        
-                      </p>
+                      <a href="{{route('frontend.solo_product',$product4->id)}}">
+                        <img src="{{uploaded_asset(json_decode($product4->multiple_images)[0]->image1) }}" height="270" width="270">
+                        <p class="carousel-caption mt-3">
+                          {{$product4->product_name}} 
+                          @if($product4->model_number != 'No Model Number')
+                            - {{$product4->model_number}}
+                          @endif                        
+                        </p>
+                      </a>
                     </div>
                     <div class="carousel-item">
-                      <img src="{{uploaded_asset(json_decode($product5->multiple_images)[0]->image1) }}" height="270" width="270">
-                      <p class="carousel-caption mt-3">
-                        {{$product5->product_name}} 
-                        @if($product5->model_number != 'No Model Number')
-                          - {{$product5->model_number}}
-                        @endif
-                        
-                      </p>
+                      <a href="{{route('frontend.solo_product',$product5->id)}}">
+                        <img src="{{uploaded_asset(json_decode($product5->multiple_images)[0]->image1) }}" height="270" width="270">
+                        <p class="carousel-caption mt-3">
+                          {{$product5->product_name}} 
+                          @if($product5->model_number != 'No Model Number')
+                            - {{$product5->model_number}}
+                          @endif                        
+                        </p>
+                      </a>
                     </div>
                   </div> 
 
@@ -135,9 +128,9 @@
         <div class="col-12 col-md-6 col-lg-6" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">
           <h3>We Refine</h3>
           <h1>the Seeds that Feed the Nation</h1>
-          <p class="fw-normal mt-4 mb-0">Formed in 1975 as a trading partner to Nabeesa Group of Companies. We focus on importing Agricultural related equipment and graiin milling machineries.</p>
+          <p class="fw-normal mt-4 mb-0">The Grain of Seed that is nourished, grown and harvested, Rice is The Primary Nutrition for Our Nation. We at NTC look beyond the mere business but focus on preserving and sustaining the Rice Milling Industry in Sri Lanka.</p>
           <br>
-          <p class="fw-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique dolorem corrupti ipsum aspernatur repellendus nisi pariatur consequuntur ab officia, fugit facilis hic tempore porro, numquam rem in, deleniti vitae dolore?</p>
+          <p class="fw-normal">NTC serves the Rice Mill Industry with over 46 Years of Service Excellence. We Welcome You Into the business of Nourishing of Our Nation.</p>
           <div class="text-center text-md-left">
             <a href="{{ route('frontend.about_us') }}" class="btn mt-4 text-white we-care-btn" role="button" data-aos="fade-up" data-aos-duration="500" style="padding: 10px 150px; font-size: 20px; background-color: #68AE42;">Discover more</a>
           </div>
@@ -179,8 +172,23 @@
     <div class="container ntc-engineering" style="margin-top: 7rem;">
       <div class="row justify-content-center">
         <div class="col-12 col-md-5 mb-4 mb-md-0">
-          <h1 data-aos="fade-up" data-aos-duration="500">NTC</h1>
-          <h1 data-aos="fade-up" data-aos-duration="500">Engineering</h1>
+          
+
+          <div class="row">
+
+            <div class="col-6">
+              <h1 data-aos="fade-up" data-aos-duration="500">NTC</h1>
+              <h1 data-aos="fade-up" data-aos-duration="500">Engineering</h1>
+            </div>
+
+            <div class="col-6">
+              <div class="container d-flex justify-content-end ml-4 px-5">
+                <img src="{{ url('img/frontend/index/ntce.png') }}"  alt="ntce" height="70">
+              </div>              
+            </div>
+
+          </div>
+
           <p class="mt-3 mt-md-5" data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">Ensuring the Quality &amp; Efficiency of Your Rice Mill, NTC Engineering is ready to serve you 24 Hours
             Online.</p>
           <p class="mt-3 mb-5" data-aos="fade-up" data-aos-duration="500" data-aos-delay="400">We are Focused to give you Quick, Innovative Solutions Focused exclusively for you.</p>
@@ -263,7 +271,6 @@
       }
       changeText(); 
     </script>
-
 
 
     <script>

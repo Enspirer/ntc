@@ -172,7 +172,9 @@ class ProductController extends Controller
 
         $add->first_name=$request->first_name;
         $add->last_name=$request->last_name;
-        $add->user_id=auth()->user()->id;
+        if(!empty( auth()->user()->id) === true ){
+            $add->user_id=auth()->user()->id;
+        } 
         $add->product_name=$request->product_name;
         $add->product_id=$request->product_id;
         $add->contact_number=$request->contact_number;
