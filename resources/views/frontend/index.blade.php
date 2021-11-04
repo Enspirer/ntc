@@ -143,9 +143,9 @@
           </div>
           
         </div>
-        <div class="col-12 col-lg-1 text-center call-us" data-aos="fade-up" data-aos-duration="500" data-aos-delay="1000">
+        <!-- <div class="col-12 col-lg-1 text-center call-us" data-aos="fade-up" data-aos-duration="500" data-aos-delay="1000">
           <img src="{{ url('img/frontend/index/call-us.svg') }}" alt="" height="70">
-        </div>
+        </div> -->
       </div>
     </div>
 

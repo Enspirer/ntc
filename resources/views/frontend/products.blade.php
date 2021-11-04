@@ -87,7 +87,7 @@
                           </h2>
                       
                     
-                        <div id="collapseTwo{{ $sub_category['sub_category_id'] }}" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#types">
+                        <div id="collapseTwo{{ $sub_category['sub_category_id'] }}" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#types">
                             <div class="accordion-body">
 
                                 <div class="accordion" id="heavy-machinery">
@@ -158,7 +158,7 @@
                             @foreach($products as $key => $product)
                                
                               <div class="col-12 col-md-4 p-md-1 right-products">
-                                  <div class="card" style="min-height: 360px; max-height: 360px;">
+                                  <div class="card" style="min-height: 370px; max-height: 370px;">
                                   
                                     @if( App\Models\Products::where('product_name',$product->product_name)->where('feature_image','=','1')->first())
                                       
@@ -181,7 +181,13 @@
                                         </a>
                                       @endif
                                       
-                                        <p class="card-text" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;">{{ $product->description }}</p>
+                                        <p class="card-text mb-1" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;">{{ $product->description }}</p>
+
+                                        <div class="row justify-content-end">
+                                          <div class="col-2 text-end pe-1">
+                                            <a href="{{ route('frontend.product_model',$product->id) }}" class="text-decoration-none"><i class="bi bi-arrow-right-circle" style="font-size: 1.1rem;"></i></a>
+                                          </div>
+                                        </div>
                                                                                   
                                       </div>
                                   </div>

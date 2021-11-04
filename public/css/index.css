@@ -9,10 +9,10 @@
 
 
 .banner {
-    background-image: url('../img/frontend/index/banner.png');
+    background-image: url('../img/frontend/index/banner.jpg');
     background-repeat: no-repeat;
     width: 100%;
-    background-size: 100% 90%;
+    background-size: cover;
 }
 .banner-text {
     margin-top: 13.75rem;
@@ -37,10 +37,10 @@
 
 /* product range css */
 .banner-products {
-    background-image: url('../img/frontend/index/banner-1.png');
+    background-image: url('../img/frontend/index/banner-1.jpg');
     background-repeat: no-repeat;
     width: 100%;
-    background-size: 100% 100%;
+    background-size: cover;
 }
 .banner-products h5 {
     margin-top: 8rem;
