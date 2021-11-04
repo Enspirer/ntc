@@ -16,9 +16,9 @@
 
           <!--right side-->
           <div class="float-start text-white banner-text">
-            <div style="background:rgb(0,0,0, 0.8); filter: blur(6px); height: 150px; width: 615px"></div>
+            <div class="blur-div"></div>
 
-            <h2 class="fw-bold position-absolute" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500" style="top: 257px; left: 139px;"></h2>
+            <h2 class="fw-bold position-absolute sliding-head" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500"></h2>
             
             @if($category == null)
               <a href="#" class="btn mt-4 fw-bold text-white" role="button" data-aos="fade-up" data-aos-duration="500" data-aos-delay="800" style="padding: 10px 95px; background-color: #68AE42;">View our products</a>
@@ -28,9 +28,9 @@
           </div>
 
           <!--right side-->
-          <div class="float-end">
+          <div class="float-sm-end">
 
-            <div class="text-center text-white rounded px-5 pt-4 pb-5 banner-carousel" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700">
+            <div class="text-center text-white rounded px-2 px-md-5 pt-4 pb-5 banner-carousel" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700">
               <h2 class="fw-bold">Best Selling</h2>
 
               <div id="banner-carousel" class="carousel slide" data-ride="carousel">
@@ -48,7 +48,7 @@
                   
                     <div class="carousel-item active">
                       <a href="{{route('frontend.solo_product',$product1->id)}}">
-                        <img src="{{uploaded_asset(json_decode($product1->multiple_images)[0]->image1) }}" height="270" width="270">
+                        <img src="{{uploaded_asset(json_decode($product1->multiple_images)[0]->image1) }}" class="slider-img" style="height: 270px; width: 270px;" >
                           <p class="carousel-caption mt-3">
                             {{$product1->product_name}} 
                             @if($product1->model_number != 'No Model Number')
@@ -126,9 +126,9 @@
     <div class="container we-refine" style="margin-top: 7rem;">
       <div class="row">
         <div class="col-12 col-md-6 col-lg-5 mb-4 mb-md-0" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">
-          <img src="{{ url('img/frontend/index/rice.svg') }}" alt="" height="350" style="box-shadow: -5px 10px 10px #888888; mix-blend-mode: multiply;">
+          <img src="{{ url('img/frontend/index/rice.svg') }}" class="img-fluid w-100" alt="" height="350" style="box-shadow: -5px 10px 10px #888888; mix-blend-mode: multiply;">
         </div>
-        <div class="col-12 col-md-6 col-lg-6" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">
+        <div class="col-12 col-md-6 col-lg-7" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">
           <h3>We Refine</h3>
           <h1>the Seeds that Feed the Nation</h1>
           <p class="fw-normal mt-4 mb-0">The Grain of Seed that is nourished, grown and harvested, Rice is The Primary Nutrition for Our Nation. We at NTC look beyond the mere business but focus on preserving and sustaining the Rice Milling Industry in Sri Lanka.</p>
@@ -185,7 +185,7 @@
             </div>
 
             <div class="col-6">
-              <div class="container d-flex justify-content-end ml-4 px-5">
+              <div class="container ustify-content-end me-0 me-md-4 px-5">
                 <img src="{{ url('img/frontend/index/ntce.png') }}"  alt="ntce" height="70">
               </div>              
             </div>
