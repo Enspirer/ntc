@@ -16,7 +16,10 @@
 
           <!--right side-->
           <div class="float-start text-white banner-text">
-            <h2 class="fw-bold" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500"></h2>
+            <div style="background:rgb(0,0,0, 0.8); filter: blur(6px); height: 150px; width: 615px"></div>
+
+            <h2 class="fw-bold position-absolute" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500" style="top: 257px; left: 139px;"></h2>
+            
             @if($category == null)
               <a href="#" class="btn mt-4 fw-bold text-white" role="button" data-aos="fade-up" data-aos-duration="500" data-aos-delay="800" style="padding: 10px 95px; background-color: #68AE42;">View our products</a>
             @else

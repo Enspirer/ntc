@@ -194,7 +194,14 @@ class ProductController extends Controller
             'message' => $request->message,
         ];
 
-        \Mail::to([$request->email,'nihsaan.enspirer@gmail.com'])->send(new InquireMail($details));
+        // \Mail::to([$request->email,'nihsaan.enspirer@gmail.com'])->send(new InquireMail($details));
+
+        if($request->email != null) {
+            \Mail::to([$request->email,'nihsaan.enspirer@gmail.com'])->send(new InquireMail($details));
+        } else {
+            \Mail::to(['nihsaan.enspirer@gmail.com'])->send(new InquireMail($details));
+        }
+        
 
        
         session()->flash('message','Thanks!');
