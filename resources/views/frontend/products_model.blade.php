@@ -253,7 +253,7 @@
                       <input type="text" class="form-control" name="product_id" value="{{$product_model['model_number']}}" readonly>
                     </div>
                     <div class="mb-2">
-                      <label for="first-name" class="form-label">First Name *</label>
+                        <label for="first-name" class="form-label">First Name <span style="color: red">*</span></label>
                       <input type="text" class="form-control" name="first_name" required>
                     </div>
                     <div class="mb-2">
@@ -261,7 +261,7 @@
                       <input type="text" class="form-control" name="last_name">
                     </div>
                     <div class="mb-2">
-                      <label for="contact-number" class="form-label">Contact Number *</label>   
+                      <label for="contact-number" class="form-label">Contact Number <span style="color: red">*</span></label>
                       <input type="number" class="form-control" name="contact_number" required>
                     </div>
                     <div class="mb-2">
