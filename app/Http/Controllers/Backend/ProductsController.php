@@ -146,6 +146,7 @@ class ProductsController extends Controller
                             
                     $add->description=$request->description;
                     $add->status=$request->status;
+                    $add->order=$request->order;
                     $add->group_by_name=$request->group_by_name;
                     $add->category=$request->category;
                     $add->sub_category=$request->sub_category;
@@ -236,6 +237,7 @@ class ProductsController extends Controller
 
                     $update->description=$request->description;
                     $update->status=$request->status;
+                    $update->order=$request->order;
                     $update->group_by_name=$request->group_by_name;
                     $update->category=$request->category;
 

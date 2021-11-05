@@ -50,6 +50,11 @@
                                 <option value="Disabled">Disable</option>                                
                             </select>
                         </div>
+
+                        <div class="form-group">
+                            <label>Order</label>
+                            <input type="number" class="form-control" name="order" required>
+                        </div>
                         
                     </div>
                 </div>

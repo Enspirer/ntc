@@ -53,6 +53,11 @@
                                 <option value="Disabled" {{ $products->status == 'Disabled' ? "selected" : "" }}>Disable</option>                                
                             </select>
                         </div>
+
+                        <div class="form-group">
+                            <label>Order</label>
+                            <input type="number" class="form-control"  value="{{ $products->order }}" name="order" required>
+                        </div>
                         
                     </div>
                 </div>
