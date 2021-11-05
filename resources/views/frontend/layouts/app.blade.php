@@ -40,7 +40,7 @@
             @include('frontend.includes.footer')
 
             <div class="text-end call-us" style="position:fixed; bottom: 0.8rem; right:0.8rem">
-                <button class="border-0" style="background-color: transparent"><img src="{{ url('img/frontend/index/call-us.svg') }}" alt="" height="65"></button>
+                <a href="tel:+94773344391" type="button" class="border-0" style="background-color: transparent"><img src="{{ url('img/frontend/index/call-us.svg') }}" alt="" height="65"></a>
             </div>
 
             
