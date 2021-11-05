@@ -15,15 +15,15 @@
         <div class="clearfix">
 
           <!--right side-->
-          <div class="float-start text-white banner-text">
-            <div class="blur-div"></div>
+          <div class="float-start text-white banner-text position-relative">
+            <div class="blur-div "></div>
 
             <h2 class="fw-bold position-absolute sliding-head" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500"></h2>
             
             @if($category == null)
-              <a href="#" class="btn mt-4 fw-bold text-white" role="button" data-aos="fade-up" data-aos-duration="500" data-aos-delay="800" style="padding: 10px 95px; background-color: #68AE42;">View our products</a>
+              <a href="#" class="btn mt-4 fw-bold text-white" role="button" data-aos="fade-up" data-aos-duration="500" data-aos-delay="800" style="padding: 10px 95px; background-color: #68AE42; border: 1.5px solid black;">View our products</a>
             @else
-              <a href="{{ route('frontend.category.all_product',$category->id) }}" class="btn mt-4 fw-bold text-white" role="button" data-aos="fade-up" data-aos-duration="500" data-aos-delay="800" style="padding: 10px 95px; background-color: #68AE42;">View our products</a>
+              <a href="{{ route('frontend.category.all_product',$category->id) }}" class="btn mt-4 fw-bold text-white" role="button" data-aos="fade-up" data-aos-duration="500" data-aos-delay="800" style="padding: 10px 95px; background-color: #68AE42; border: 1.5px solid black;">View our products</a>
             @endif
           </div>
 
