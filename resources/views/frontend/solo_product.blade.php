@@ -87,7 +87,7 @@
                         </h2>
                     
                   
-                      <div id="collapseTwo{{ $sub_category['sub_category_id'] }}" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#types">
+                      <div id="collapseTwo{{ $sub_category['sub_category_id'] }}" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#types">
                           <div class="accordion-body">
 
                             <div class="accordion" id="heavy-machinery">
@@ -216,24 +216,24 @@
                     <input type="text" class="form-control" name="product_id" value="{{ $product->model_number }}" readonly>
                   </div>
                   <div class="mb-2">
-                    <label for="first-name" class="form-label">First Name</label>
+                    <label for="first-name" class="form-label">First Name *</label>
                     <input type="text" class="form-control" name="first_name" required>
                   </div>
                   <div class="mb-2">
                     <label for="last-name" class="form-label">Last Name</label>
-                    <input type="text" class="form-control" name="last_name" >
+                    <input type="text" class="form-control" name="last_name">
                   </div>
                   <div class="mb-2">
-                    <label for="contact-number" class="form-label">Contact Number</label>   
+                    <label for="contact-number" class="form-label">Contact Number *</label>   
                     <input type="number" class="form-control" name="contact_number" required>
                   </div>
                   <div class="mb-2">
                     <label for="email" class="form-label">Email Address</label>
-                    <input type="email" class="form-control" name="email" required>
+                    <input type="email" class="form-control" name="email">
                   </div>
                   <div class="mb-2">
                     <label for="message" class="form-label">Message</label>
-                    <textarea class="form-control" name="message" cols="30" rows="5" ></textarea>
+                    <textarea class="form-control" name="message" cols="30" rows="5"></textarea>
                   </div>
               </div>
               <div class="modal-footer justify-content-center">

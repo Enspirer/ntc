@@ -9,13 +9,23 @@
 
 
 .banner {
-    background-image: url('../img/frontend/index/banner.png');
+    background-image: url('../img/frontend/index/banner.jpg');
     background-repeat: no-repeat;
     width: 100%;
-    background-size: 100% 90%;
+    background-size: cover;
+}
+.blur-div {
+    background:rgb(0,0,0, 0.8);
+    filter: blur(6px);
+    height: 125px;
+    width: 615px;
+}
+.sliding-head {
+    top: 213px;
+    left: 139px;
 }
 .banner-text {
-    margin-top: 13.75rem;
+    margin-top: 12rem;
 }
 .banner-carousel {
     margin-top: 4rem;
@@ -37,10 +47,10 @@
 
 /* product range css */
 .banner-products {
-    background-image: url('../img/frontend/index/banner-1.png');
+    background-image: url('../img/frontend/index/banner-1.jpg');
     background-repeat: no-repeat;
     width: 100%;
-    background-size: 100% 100%;
+    background-size: cover;
 }
 .banner-products h5 {
     margin-top: 8rem;
@@ -232,6 +242,14 @@
     .banner h2 {
         font-size: 20px!important;
     }
+    .blur-div {
+        height: 100px;
+        width: 255px;
+    }
+    .sliding-head {
+        top: 12px;
+        left: 0px;
+    }
     .banner .container-md {
         text-align: center;
     }
@@ -250,7 +268,7 @@
         vertical-align: top;
     }
     .banner-carousel .carousel-inner {
-        width: 225px!important;
+        width: 100%!important;
         height: 245px!important;
     }
     .we-refine {
@@ -259,9 +277,9 @@
     .we-care-btn {
         padding: 10px 90px!important;
     }
-    .call-us {
+    /* .call-us {
         margin-top: 2rem;
-    }
+    } */
     .banner-products {
         background: none!important;
         margin-top: 4rem!important;
@@ -275,7 +293,8 @@
         padding-bottom: 0rem!important;
     }
     .product-text a {
-        left: 8rem!important;
+        left: 12.86rem!important;
+        top: 26.55rem!important;
     }
     .we-care-btn {
         padding: 10px 90px!important;
@@ -295,6 +314,13 @@
     .products-slider {
         margin-top: 3rem!important;
         margin-bottom: 1rem!important;
+    }
+    .slider-img {
+        height: 200px!important;
+        width: 100%!important;
+    }
+    .call-us {
+        right: 0rem!important;
     }
 
    

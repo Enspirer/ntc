@@ -67,16 +67,16 @@ body {font-family: Arial, Helvetica, sans-serif;}
             </td>
         </tr>
         @if($details['last_name'] != null)
-        <tr>            
-            <td width="20%" cellpadding="0" cellspacing="0">  
-                <p align="left"><b>Last Name:</b> </p>  
-                <hr>        
-            </td>
-            <td  cellpadding="0" cellspacing="0">  
-                <p align="left">{{ $details['last_name'] }}</p> 
-                <hr>                
-            </td>
-        </tr>  
+            <tr>            
+                <td width="20%" cellpadding="0" cellspacing="0">  
+                    <p align="left"><b>Last Name:</b> </p>  
+                    <hr>        
+                </td>
+                <td  cellpadding="0" cellspacing="0">  
+                    <p align="left">{{ $details['last_name'] }}</p> 
+                    <hr>                
+                </td>
+            </tr>  
         @endif      
         <tr>            
             <td width="20%" cellpadding="0" cellspacing="0">  
@@ -88,16 +88,18 @@ body {font-family: Arial, Helvetica, sans-serif;}
                 <hr>                
             </td>
         </tr>
-        <tr>            
-            <td width="20%" cellpadding="0" cellspacing="0">  
-                <p align="left"><b>Email:</b> </p>  
-                <hr>        
-            </td>
-            <td  cellpadding="0" cellspacing="0">  
-                <p align="left">{{ $details['email'] }}</p> 
-                <hr>                
-            </td>
-        </tr>
+        @if($details['email'] != null)
+            <tr>            
+                <td width="20%" cellpadding="0" cellspacing="0">  
+                    <p align="left"><b>Email:</b> </p>  
+                    <hr>        
+                </td>
+                <td  cellpadding="0" cellspacing="0">  
+                    <p align="left">{{ $details['email'] }}</p> 
+                    <hr>                
+                </td>
+            </tr>
+        @endif      
         @if($details['message'] != null)
         <tr>            
             <td width="20%" cellpadding="0" cellspacing="0">

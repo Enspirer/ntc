@@ -59,7 +59,7 @@
                     <div class="card-body">
                         <i class="bi bi-clock-fill fs-3 position-relative d-inline rounded-circle contact-icons"></i>
                         <h5 class="card-title mt-3">Opening Hours</h5>
-                        <p class="card-text mt-4">Open 09.00 AM - 05.00 PM</p>
+                        <p class="card-text mt-4">Open 09.00 AM - 06.00 PM</p>
                     </div>
                 </div>
             </div>
