@@ -24,6 +24,7 @@
                                 <th scope="col">Product Name</th>
                                 <th scope="col">Model Number</th>
                                 <th scope="col">Status</th>
+                                <th scope="col">Order</th>
                                 <th scope="col">Option</th>
                             </tr>
                         </thead>
@@ -79,6 +80,7 @@
                     {data: 'product_name', name: 'product_name'},
                     {data: 'model_number', name: 'model_number'},
                     {data: 'status', name: 'status'},
+                    {data: 'order', name: 'order'},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
             });

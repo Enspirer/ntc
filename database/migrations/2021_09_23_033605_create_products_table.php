@@ -25,6 +25,7 @@ class CreateProductsTable extends Migration
             $table->text('feature_image')->nullable()->comment('feature image in product page');
             $table->text('description');
             $table->text('status');
+            $table->integer('order')->nullable(); 
             $table->timestamps();
         });
     }
