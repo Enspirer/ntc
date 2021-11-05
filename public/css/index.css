@@ -13,6 +13,7 @@
     background-repeat: no-repeat;
     width: 100%;
     background-size: cover;
+    height: 460px;
 }
 .blur-div {
     height: 125px;
@@ -245,7 +246,7 @@
     }
     .blur-div {
         height: 100px;
-        width: 255px;
+        width: 300px;
     }
     .sliding-head {
         top: 12px;
@@ -267,6 +268,9 @@
         position: relative;
         display: inline-block;
         vertical-align: top;
+    }
+    .banner-carousel {
+        margin-top: 6rem;
     }
     .banner-carousel .carousel-inner {
         width: 100%!important;
@@ -294,8 +298,7 @@
         padding-bottom: 0rem!important;
     }
     .product-text a {
-        left: 12.86rem!important;
-        top: 26.55rem!important;
+        top: 7.55rem;
     }
     .we-care-btn {
         padding: 10px 90px!important;
