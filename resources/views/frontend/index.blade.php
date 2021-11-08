@@ -10,15 +10,16 @@
 @section('content')
 
   
-    <div class="container-fluid banner" data-aos="zoom-in" data-aos-duration="500" style="margin-top: 6.5rem;">
+    <div class="container-fluid banner position-relative p-0" data-aos="zoom-in" data-aos-duration="500" style="margin-top: 6.5rem;">
+      <div class="blur-div"></div>
       <div class="container-md">
         <div class="clearfix">
 
           <!--right side-->
           <div class="float-start text-white banner-text position-relative">
-            <div class="blur-div "></div>
+            
 
-            <h2 class="fw-bold position-absolute sliding-head" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500"></h2>
+            <h2 class="fw-bold" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500"></h2>
             
             @if($category == null)
               <a href="#" class="btn mt-4 fw-bold text-white" role="button" data-aos="fade-up" data-aos-duration="500" data-aos-delay="800" style="padding: 10px 95px; background-color: #68AE42; border: 1.5px solid black;">View our products</a>
@@ -146,7 +147,9 @@
     </div>
 
 
-    <div class="container-fluid text-white text-center banner-products border-0" data-aos="zoom-in" data-aos-duration="500" style="margin-top: 7rem;">
+    <div class="container-fluid text-white text-center banner-products border-0 p-0" data-aos="zoom-in" data-aos-duration="500" style="margin-top: 7rem;">
+      <div class="visible-div"></div>
+
       <div class="container p-2 p-md-5">
         <h2 class="fw-bold p-3 display-6" data-aos="fade-down" data-aos-duration="500" data-aos-delay="500">Get to Our Product Range</h2>
       </div>
@@ -155,7 +158,7 @@
         <div class="row text-center">
 
         @foreach($categories as $key => $single_category)
-          <div class="col-12 mb-3 mb-md-0 col-md m-md-2 p-md-0 product-range-{{$single_category->id}}" style="background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url('{{url(uploaded_asset($single_category->image))}}'); height: 18rem;" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
+          <div class="col-12 mb-3 mb-md-0 col-md m-md-2 p-md-0 product-range-{{$single_category->id}}" style="background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url('{{url(uploaded_asset($single_category->image))}}'); height: 18rem; background-repeat: no-repeat; background-size: 100% 100%;" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
             <div class="product-text position-relative">
               <h5 class="fw-bold">{{$single_category->name}}</h5>
               <div class="clearfix">
