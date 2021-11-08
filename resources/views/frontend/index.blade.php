@@ -151,7 +151,7 @@
       <div class="visible-div"></div>
 
       <div class="container p-2 p-md-5">
-        <h2 class="fw-bold p-3 display-6" data-aos="fade-down" data-aos-duration="500" data-aos-delay="500">Get to Our Product Range</h2>
+        <h2 class="fw-bold p-3 display-6" data-aos="fade-down" data-aos-duration="500" data-aos-delay="500">Our Product Range</h2>
       </div>
       
       <div class="container products" style="padding-top: 3rem ;padding-bottom: 7rem;">
