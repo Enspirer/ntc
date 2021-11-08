@@ -268,14 +268,18 @@
                       <label for="email" class="form-label">Email Address</label>
                       <input type="email" class="form-control" name="email">
                     </div>
-                    <div class="mb-2">
+                    <div class="mb-3">
                       <label for="message" class="form-label">Message</label>
                       <textarea class="form-control" name="message" cols="30" rows="5"></textarea>
+                    </div>
+
+                    <div class="col-12 col-md-10 text-center">
+                      <div class="g-recaptcha" data-callback="checked" data-sitekey="6LfGnB8dAAAAAH6Baz00Galvcr7s7aZyeGUYly4t" style="display: inline-block;"></div>
                     </div>
                 </div>
                 <div class="modal-footer justify-content-center">
                   <button type="button" class="btn" data-bs-dismiss="modal" style="color: #68AE42;">Cancel</button>
-                  <input type="submit" class="btn text-white px-5" style="background-color: #68AE42;" value="Send Request" />
+                  <input type="submit" class="submit-btn btn text-white px-5" style="background-color: #68AE42;" value="Send Request" disabled/>
                 </div>
             </form>  
           </div>
@@ -285,22 +289,13 @@
 @endsection
 
 @push('after-scripts')
-  <!--product image change-->
-    <!-- <script>
-      $(document).ready(function(){
-        $("#image1").click(function(){
-        $("#main-image").attr("src", "/img/frontend/index/TQSX85 Rice milling machine.svg");
-        });
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-        $("#image2").click(function(){
-        $("#main-image").attr("src", "/img/frontend/index/JQSX 10030.svg");
-        });
-
-        $("#image3").click(function(){
-        $("#main-image").attr("src", "/img/frontend/index/TQSX85 Rice milling machine.svg");
-        });
-      });
-    </script> -->
+  <script>
+      function checked() {
+      $('.submit-btn').removeAttr('disabled');
+  };
+  </script>
 @endpush
 
 
