@@ -22,7 +22,7 @@
                         </div>
                         <div class="form-group">
                             <label>Description</label>
-                            <textarea type="text" class="form-control" name="description" rows="6" required>{{ $products->description }}</textarea>
+                            <textarea type="text" class="form-control" name="description" rows="6">{{ $products->description }}</textarea>
                         </div>
 
                                                    
