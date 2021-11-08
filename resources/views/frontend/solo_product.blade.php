@@ -144,7 +144,7 @@
             <div class="col-12 col-md-9">
                 <div class="row">
                   <div class="col-12 col-md-7 text-center mb-4 mb-md-0">
-                    <img src="{{uploaded_asset(json_decode($product->multiple_images)[0]->image1) }}" id="main-image" alt="" style="height: 30rem; object-fit:cover; width:400px;">
+                    <img src="{{uploaded_asset(json_decode($product->multiple_images)[0]->image1) }}" id="main-image" alt="" style="height: 30rem; object-fit:contain; width:400px;">
 
                     <div class="row justify-content-center mt-3">
                       <div class="col-4 col-md-3">
@@ -216,7 +216,7 @@
                     <input type="text" class="form-control" name="product_id" value="{{ $product->model_number }}" readonly>
                   </div>
                   <div class="mb-2">
-                    <label for="first-name" class="form-label">First Name *</label>
+                    <label for="first-name" class="form-label">First Name <span class="text-danger">*</span></label>
                     <input type="text" class="form-control" name="first_name" required>
                   </div>
                   <div class="mb-2">
@@ -224,7 +224,7 @@
                     <input type="text" class="form-control" name="last_name">
                   </div>
                   <div class="mb-2">
-                    <label for="contact-number" class="form-label">Contact Number *</label>   
+                    <label for="contact-number" class="form-label">Contact Number <span class="text-danger">*</span></label>   
                     <input type="number" class="form-control" name="contact_number" required>
                   </div>
                   <div class="mb-2">
