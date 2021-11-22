@@ -130,8 +130,14 @@
               <label for="message" class="form-label" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">Message</label>
               <input type="text" class="form-control border-0" name="message" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500" style="background-color: #587d45;" required>
             </div>
+
+            <div class="row mb-4 justify-content-center">
+                <div class="col-12 text-center">
+                    <div class="g-recaptcha d-inline-block" data-callback="checked" data-sitekey="6Lel4Z4UAAAAAOa8LO1Q9mqKRUiMYl_00o5mXJrR"></div>
+                </div>
+            </div>
             <div class="mb-2 text-center" data-aos="flip-down" data-aos-duration="500" data-aos-delay="700">
-              <button type="submit" class="btn btn-secondary px-5">Apply</button>
+              <button type="submit" class="btn btn-secondary px-5" id="submit_btn" disabled>Apply</button>
             </div>
           </form>
         </div>
@@ -191,3 +197,15 @@
 @endif
 
 @endsection
+
+@push('after-scripts')
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<script>
+    function checked() {
+        $('#submit_btn').removeAttr('disabled');
+    };
+</script>
+
+
+@endpush
