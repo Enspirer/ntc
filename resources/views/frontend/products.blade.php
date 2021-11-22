@@ -162,9 +162,9 @@
                                   
                                     @if( App\Models\Products::where('product_name',$product->product_name)->where('feature_image','=','1')->first())
                                       
-                                      <img src="{{uploaded_asset(json_decode(App\Models\Products::where('product_name',$product->product_name)->where('feature_image','=','1')->first()->multiple_images)[0]->image1) }}" style="height: 200px; object-fit:cover;" class="card-img-top" alt="...">
+                                      <img src="{{uploaded_asset(json_decode(App\Models\Products::where('product_name',$product->product_name)->where('feature_image','=','1')->first()->multiple_images)[0]->image1) }}" style="height: 200px; object-fit:contain;" class="card-img-top" alt="...">
                                     @else
-                                      <img src="{{uploaded_asset(json_decode($product->multiple_images)[0]->image1) }}" style="height: 200px; object-fit:cover;" class="card-img-top" alt="...">
+                                      <img src="{{uploaded_asset(json_decode($product->multiple_images)[0]->image1) }}" style="height: 200px; object-fit:contain;" class="card-img-top" alt="...">
                                     @endif
                                       
                                       <div class="card-body">
