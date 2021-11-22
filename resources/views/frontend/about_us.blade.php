@@ -100,8 +100,8 @@
                     <p class="mb-0" style="color: #999999;">Products</p>
                 </div>
                 <div class="col-9 col-md-3 p-2 mb-3 mb-md-0 p-md-4 bg-white shadow-lg border-end" data-aos="flip-right" data-aos-duration="500" data-aos-delay="400">
-                    <h1 class="fw-bold fs-1" style="color: #68AE42;">500 +</h1>
-                    <p class="mb-0" style="color: #999999;">Employers</p>
+                    <h1 class="fw-bold fs-1" style="color: #68AE42;">12 Years +</h1>
+                    <p class="mb-0" style="color: #999999;">Experience</p>
                 </div>
             </div>
         </div>
