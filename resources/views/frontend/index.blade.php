@@ -259,7 +259,7 @@
     <script>
 
       var texts = new Array();
-      texts.push("46 Years of Experience, <br> Bringing the Finest Machinery to Market.");
+      texts.push("Decades of Experience, <br> Bringing the Finest Machinery to Market.");
       texts.push("High Quality, Rice Refining Machinery <br> &amp; Innovative Solutions.");
 
       var point = 0;
