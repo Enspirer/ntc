@@ -9,7 +9,7 @@
 @section('content')
 
     <section id="path">
-        <div class="container mb-3" style="margin-top: 6.5rem;">
+        <div class="container mb-3" style="margin-top: 8rem;">
             <p class="mb-0"><a href="{{url('/')}}" style="color:black;">Home</a> / News</p>
         </div>
     </section>

@@ -39,7 +39,7 @@
 
 
 
-    <div class="container" style="margin-top: 4rem;">
+    <div class="container" style="margin-top: 8rem;">
       <div class="row justify-content-center align-items-center">
         <div class="col-12 col-md-5 mb-3 mb-md-0" data-aos="fade-up" data-aos-duration="500">
           <video id="video" width="480" height="280" controls>
@@ -62,7 +62,7 @@
 
 
 
-    <div class="container latest" style="margin-top: 6rem; margin-bottom: 6rem">
+    <div class="container latest" style="margin-top: 8rem; margin-bottom: 8rem">
       <div class="row justify-content-between">
         <div class="col-sm-7">
           <h2 data-aos="fade-up" data-aos-duration="500">Latest</h2>

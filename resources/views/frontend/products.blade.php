@@ -27,7 +27,7 @@
 
     <!--navigation path-->
     <section id="path">
-        <div class="container mb-3" style="margin-top: 6.5rem;">
+        <div class="container mb-3" style="margin-top: 8rem;">
             <p class="mb-0">
               <a href="{{url('/')}}" style="color:black;">Home</a> / Products / 
               @foreach($categories as $key => $cat)
@@ -71,7 +71,7 @@
       </div>
 
 
-    <div class="container mt-5 all-products" style="margin-bottom: 7rem;">
+    <div class="container all-products" style="margin-top: 7rem; margin-bottom: 8rem;">
         <div class="row">
             <div class="col-12 col-md-3 mb-4 mb-md-0" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">
                 <div class="accordion" id="types">

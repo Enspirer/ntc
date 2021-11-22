@@ -25,7 +25,7 @@
 
 
 
-    <div class="container about-us" style="margin-top: 5rem;">
+    <div class="container about-us" style="margin-top: 8rem;">
       <div class="row justify-content-center">
         <div class="col-12 col-md-5 mb-3 mb-md-0" data-aos="fade-right" data-aos-duration="500">
           <img src="{{ url('img/frontend/about/building.svg') }}" alt="" class="img-fluid" style="box-shadow: -5px 10px 10px #888888;">
@@ -42,7 +42,7 @@
 
 
 
-    <div class="container text-center what-we-do" style="margin-top: 5rem;">
+    <div class="container text-center what-we-do" style="margin-top: 8rem;">
       <h1 data-aos="fade-up" data-aos-duration="500">What we do</h1>
       <div class="row justify-content-center">
         <div class="col-12 col-md-6" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
@@ -55,7 +55,7 @@
 
 
 
-    <div class="container-fluid text-white text-center banner-products border-0">
+    <div class="container-fluid text-white text-center banner-products border-0" style="margin-top: 4rem;">
         <div class="container p-md-5 mt-3">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-4 mb-3 mb-md-0" data-aos="fade-down" data-aos-duration="1000">

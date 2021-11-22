@@ -10,7 +10,7 @@
 
     <!--navigation path-->
     <section id="path">
-        <div class="container mb-3" style="margin-top: 6.5rem;">
+        <div class="container mb-3" style="margin-top: 8rem;">
             <p class="mb-0"><a href="{{url('/')}}" style="color:black;">Home</a> / News / {{$single_news->title}}</p>
         </div>
     </section>
@@ -18,7 +18,7 @@
 
     <!--content-->
     <section id="content">
-      <div class="container" style="margin-bottom: 5rem;">
+      <div class="container" style="margin-bottom: 8rem;">
         <div class="row justify-content-center">
           <div class="col-12 col-md-8 mb-4 mb-md-0">
             <img src="{{uploaded_asset($single_news->feature_image) }}" alt="" width="100%" height="350px" style="object-fit:cover;" data-aos="fade-right" data-aos-duration="500">
@@ -39,7 +39,7 @@
             </div>
           </div>
           <div class="col-12 col-md-4">
-            <h1 class="mb-3 mb-md-5 ps-md-2" data-aos="fade-down" data-aos-duration="500">Recent News</h1>
+            <h1 class="mb-3 ps-md-2" data-aos="fade-down" data-aos-duration="500">Recent News</h1>
 
             @if(count($latest_news) == 0)
               <h5 class="p-3 text-secondary" style="text-align: center">No Any Recent News</h5>

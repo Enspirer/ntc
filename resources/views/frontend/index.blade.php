@@ -124,7 +124,7 @@
       
 
 
-    <div class="container we-refine" style="margin-top: 9rem;">
+    <div class="container we-refine" style="margin-top: 13rem;">
       <div class="row">
         <div class="col-12 col-md-6 col-lg-5 mb-4 mb-md-0" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">
           <img src="{{ url('img/frontend/index/rice.svg') }}" class="img-fluid w-100" alt="" height="350" style="box-shadow: -5px 10px 10px #888888; mix-blend-mode: multiply;">
@@ -147,7 +147,7 @@
     </div>
 
 
-    <div class="container-fluid text-white text-center banner-products border-0 p-0" data-aos="zoom-in" data-aos-duration="500" style="margin-top: 9rem;">
+    <div class="container-fluid text-white text-center banner-products border-0 p-0" data-aos="zoom-in" data-aos-duration="500" style="margin-top: 13rem;">
       <div class="visible-div"></div>
 
       <div class="container p-2 p-md-5">
@@ -175,7 +175,7 @@
     
 
 
-    <div class="container ntc-engineering" style="margin-top: 9rem;">
+    <div class="container ntc-engineering" style="margin-top: 13rem;">
       <div class="row justify-content-center">
         <div class="col-12 col-md-5 mb-4 mb-md-0">
           
@@ -209,7 +209,7 @@
     
   @if(count($news) != 0)
 
-    <div class="container text-center new-ntc" data-aos="fade-up" data-aos-duration="500" style="margin-top: 9rem;">
+    <div class="container text-center new-ntc" data-aos="fade-up" data-aos-duration="500" style="margin-top: 10rem;">
       <h1>What's new on NTC</h1>
       <div class="row justify-content-center">
         <div class="col-12 col-md-6" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">
@@ -240,13 +240,13 @@
       </div>
     </div>    
 
-    <div class="container text-center justify-content-center" data-aos="fade-up" data-aos-duration="700" style="margin-bottom: 4rem;">
+    <div class="container text-center justify-content-center" data-aos="fade-up" data-aos-duration="700" style="margin-bottom: 7rem;">
       <a href="{{ route('frontend.news') }}" class="btn text-white m-md-5 ntc-eng-btn" style="padding: 10px 150px; font-size: 20px; background-color: #68AE42;">Discover More</a>
     </div>
 
   @else  
 
-    <div class="container text-white" style="margin-bottom: 4rem;"></div>
+    <div class="container text-white" style="margin-bottom: 7rem;"></div>
 
   @endif
     
