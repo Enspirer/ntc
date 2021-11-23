@@ -10,7 +10,7 @@
       
 
     <div class="container-fluid banner" data-aos="zoom-out" data-aos-duration="500" style="margin-top: 6.5rem;">
-        <div class="container-md text-center text-white">
+        <div class="container text-center text-white" style="padding-top: 7.5rem;">
         <h2 data-aos="fade-down" data-aos-duration="500" data-aos-delay="700">Who we are</h2>
         <div class="row justify-content-center">
             <div class="col-12 col-md-6 mt-2 mt-md-4" data-aos="fade-up" data-aos-duration="500" data-aos-delay="700">
@@ -55,7 +55,7 @@
 
 
 
-    <div class="container-fluid text-white text-center banner-products border-0" style="margin-top: 4rem;">
+    <div class="container-fluid text-white text-center banner-products border-0" style="margin-top: 4rem; margin-bottom: 16rem;">
         <div class="container p-md-5 mt-3">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-4 mb-3 mb-md-0" data-aos="fade-down" data-aos-duration="1000">
@@ -83,14 +83,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-
-    <!--statistics-->
-    <section id="statistics">
-        <div class="container text-center">
-            <div class="row justify-content-center" style="margin-top: 4.5rem;">
+            <div class="row justify-content-center position-relative statistics">
                 <div class="col-9 col-md-3 p-2 border-end-md-0 mb-3 mb-md-0 p-md-4 bg-white shadow-lg border-end" data-aos="flip-right" data-aos-duration="500">
                     <h1 class="fw-bold fs-1" style="color: #68AE42;">1200 +</h1>
                     <p class="mb-0" style="color: #999999;">Customers</p>
@@ -105,7 +99,24 @@
                 </div>
             </div>
         </div>
-    </section>
-    
+    </div>
+
 
 @endsection
+
+
+@push('after-scripts')
+
+    <script>
+        $(window).resize(function() {
+            var width = $(window).width();
+            if (width < 576){
+               $('.statistics div').removeClass('border-end');
+            }
+            else {
+                $('.statistics div').addClass('border-end');
+            }
+        });
+    </script>
+
+@endpush
