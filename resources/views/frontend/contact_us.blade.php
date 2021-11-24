@@ -24,7 +24,7 @@
 
 
 
-    <div class="container text-center contact-information" style="margin-bottom: 7rem; margin-top: 5rem;">
+    <div class="container text-center contact-information" style="margin-bottom: 8rem; margin-top: 8rem;">
         <h1 style="margin-bottom: 4rem;" data-aos="fade-down" data-aos-duration="500">Contact Information</h1>
         <div class="row mt-5 justify-content-center">
             <div class="col-12 col-lg-3">

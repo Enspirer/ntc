@@ -2,8 +2,9 @@
     background: linear-gradient(to bottom, rgba(0,0,0, 0), rgba(0,0,0, 100) ),url(../img/frontend/about/banner.png);
     background-repeat: no-repeat;
     width: 100%;
-    background-size: 100% 90%;
-    padding: 10rem;
+    background-size: cover;
+    /* padding: 10rem; */
+    height: 450px;
 }
 .banner-products {
     background-image: url(../img/frontend/about/banner-1.png);
@@ -16,9 +17,8 @@
     background-color: #313131;
     opacity: 85%;
 }
-#statistics {
-    position: relative;
-    top: -120px;
+.statistics {
+    top: -4rem;
 }
 
 
@@ -28,6 +28,9 @@
     .banner {
       padding: 1rem!important;
       height: 275px;
+    }
+    .banner .container {
+        padding-top: 1rem!important;
     }
     .banner p {
         line-height: 1.5rem!important;
@@ -45,14 +48,13 @@
     }
     .motive-card {
         width: 100%!important;
-        height: 17rem!important;
+        height: 18rem!important;
     }
-    #statistics {
-        top: -60px!important;
+    .statistics {
+        top: 2rem;
     }
-    #statistics .col-9 {
-        border-right: 1px solid gray!important;
-        border: 1px solid gray;
+    .banner-products {
+        margin-bottom: 8rem!important;
     }
    
   }

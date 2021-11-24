@@ -26,7 +26,7 @@
 
     <!--navigation path-->
     <section id="path">
-        <div class="container mb-3" style="margin-top: 6.5rem;">
+        <div class="container mb-3" style="margin-top: 8rem;">
             <p class="mb-0">
             <a href="{{url('/')}}" style="color:black;">Home</a> / Products / 
                 @foreach($categories as $key => $cat)
@@ -148,13 +148,13 @@
 
                     <div class="row justify-content-center mt-3">
                       <div class="col-4 col-md-3">
-                        <img src="{{uploaded_asset(json_decode($product->multiple_images)[0]->image1) }}" id="image1" alt="" style="height: 5rem; width: 80px; object-fit:cover; box-shadow: 0px 6px 12px #888888;">
+                        <img src="{{uploaded_asset(json_decode($product->multiple_images)[0]->image1) }}" id="image1" alt="" style="height: 5rem; width: 80px; object-fit:contain; box-shadow: 0px 6px 12px #888888;">
                       </div>
                       <div class="col-4 col-md-3">
-                        <img src="{{uploaded_asset(json_decode($product->multiple_images)[1]->image2) }}" alt="" id="image2" style="height: 5rem; width: 80px; object-fit:cover; box-shadow: 0px 6px 12px #888888;">
+                        <img src="{{uploaded_asset(json_decode($product->multiple_images)[1]->image2) }}" alt="" id="image2" style="height: 5rem; width: 80px; object-fit:contain; box-shadow: 0px 6px 12px #888888;">
                       </div>
                       <div class="col-4 col-md-3">
-                        <img src="{{uploaded_asset(json_decode($product->multiple_images)[2]->image3) }}" id="image3" alt="" style="height: 5rem; width: 80px; object-fit:cover; box-shadow: 0px 6px 12px #888888;">
+                        <img src="{{uploaded_asset(json_decode($product->multiple_images)[2]->image3) }}" id="image3" alt="" style="height: 5rem; width: 80px; object-fit:contain; box-shadow: 0px 6px 12px #888888;">
                       </div>
                     </div>
                   </div>

@@ -199,7 +199,7 @@
                             @foreach($output_array_model as $key => $product_model)
                               <div class="col-4 p-1">
                                   <div class="card" style="min-height: 365px; max-height: 365px;">
-                                  <img src="{{uploaded_asset($product_model['product_image']) }}" style="height: 200px; object-fit:cover;" class="card-img-top" alt="...">
+                                  <img src="{{uploaded_asset($product_model['product_image']) }}" style="height: 200px; object-fit:contain;" class="card-img-top" alt="...">
                                       <div class="card-body">
                                         <h5 class="card-title" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; font-size:18px;">{{ $product_model['model_number'] }}</h5>
                                         <p class="card-text" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">{{ $product_model['description'] }}</p>
