@@ -79,11 +79,11 @@
             @foreach($jobs as $key=> $job)
               <div class="accordion-item mb-3 rounded p-2" style="box-shadow: 0px 5px 10px #888888">
                 <h2 class="accordion-header" id="headingTwo">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo{{$job->id}}" aria-expanded="false" aria-controls="collapseTwo">
+                  <h5 class="collapsed p-3" type="button" data-bs-target="#collapseTwo{{$job->id}}" aria-expanded="false" aria-controls="collapseTwo">
                       {{$job->title}}
-                  </button>
+                  </h5>
                 </h2>
-                <div id="collapseTwo{{$job->id}}" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#jobs">
+                <div id="collapseTwo{{$job->id}}" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#jobs">
                   <div class="accordion-body">
                     <div class="mb-3" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">{!!$job->description!!}</div>
                     
