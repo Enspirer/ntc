@@ -42,14 +42,14 @@
 
 
     <div class="container text-white">
-        <div class="row text-center">
+        <div class="row text-center mx-1 mx-md-0">
 
         <!-- {{ url('img/frontend/products/products-rice-milling-machine.svg') }} -->
 
         @foreach($categories as $key => $category)
        
           @if($category->id == $category_id)
-            <div class="col mx-2" data-aos="flip-left" data-aos-duration="500" style="background: linear-gradient(to bottom, rgba(104, 174, 66, 0.5), rgba(104, 174, 66, 0.5)),url({{ url(uploaded_asset($category->image)) }}); height: 18rem;">
+            <div class="col-12 col-md mx-md-2 product-category" data-aos="flip-left" data-aos-duration="500" style="background: linear-gradient(to bottom, rgba(104, 174, 66, 0.5), rgba(104, 174, 66, 0.5)),url({{ url(uploaded_asset($category->image)) }}); height: 18rem;">
               <a href="{{ route('frontend.category.all_product',$category->id) }}" style="text-decoration: none">
                 <div class="product-text" style="margin-top: 5rem;">
                     <img src="{{uploaded_asset($category->icon) }}" alt="" height="80" style="filter: brightness(50)">
@@ -58,7 +58,7 @@
               </a>  
             </div>  
           @else
-            <div class="col mx-2" data-aos="flip-left" data-aos-duration="500" data-aos-delay="400" style="background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url({{ url(uploaded_asset($category->image)) }}); height: 18rem;">
+            <div class="col-12 col-md mx-md-2 product-category" data-aos="flip-left" data-aos-duration="500" data-aos-delay="400" style="background: linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0, 100)),url({{ url(uploaded_asset($category->image)) }}); height: 18rem;">
               <a href="{{ route('frontend.category.all_product',$category->id) }}" style="text-decoration: none">
                 <div class="product-text">
                   <h5 class="fw-bold text-white">{{$category->name}}</h5>
@@ -113,9 +113,9 @@
     </section> -->
 
 
-    <div class="container mt-5" style="margin-bottom: 7rem;">
+    <div class="container mt-5 single-product" style="margin-bottom: 7rem;">
         <div class="row">
-            <div class="col-3" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">
+            <div class="col-12 col-md-3 mb-4 mb-md-0" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">
                 <div class="accordion" id="types">
 
                     <div class="accordion-item rounded p-1">
@@ -186,7 +186,7 @@
             </div>
 
             
-            <div class="col-9">
+            <div class="col-12 col-md-9">
                   <div class="tab-content">
                       <div class="tab-pane fade active show" id="destoner" aria-labelledby="destoner-tab">
                           <div class="row align-items-center">
@@ -197,7 +197,7 @@
                             @else
 
                             @foreach($output_array_model as $key => $product_model)
-                              <div class="col-4 p-1">
+                              <div class="col-12 col-md-4 p-md-1 mb-3 mb-md-0">
                                   <div class="card" style="min-height: 365px; max-height: 365px;">
                                   <img src="{{uploaded_asset($product_model['product_image']) }}" style="height: 200px; object-fit:contain;" class="card-img-top" alt="...">
                                       <div class="card-body">
