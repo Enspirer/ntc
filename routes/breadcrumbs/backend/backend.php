@@ -79,5 +79,10 @@ Breadcrumbs::for('admin.news.edit', function ($trail) {
 });
 
 
-
+Breadcrumbs::for('admin.contact_us.index', function ($trail) {
+    $trail->push('Contact Us', route('admin.contact_us.index'));
+});
+Breadcrumbs::for('admin.contact_us.edit', function ($trail) {
+    $trail->push('Edit Contact Us', route('admin.contact_us.edit',1));
+});
 
