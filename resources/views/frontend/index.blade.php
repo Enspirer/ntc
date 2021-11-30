@@ -127,7 +127,7 @@
     <div class="container we-refine" style="margin-top: 13rem;">
       <div class="row">
         <div class="col-12 col-md-6 col-lg-5 mb-4 mb-md-0" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">
-          <img src="{{ url('img/frontend/index/rice.svg') }}" class="img-fluid w-100" alt="" height="350" style="box-shadow: -5px 10px 10px #888888; mix-blend-mode: multiply;">
+          <img src="{{ url('img/frontend/index/rice.jpg') }}" class="img-fluid w-100" alt="" height="350" style="box-shadow: -5px 10px 10px #888888; mix-blend-mode: multiply;">
         </div>
         <div class="col-12 col-md-6 col-lg-7" data-aos="fade-up" data-aos-duration="500" data-aos-delay="500">
           <h3>We Refine</h3>
@@ -202,7 +202,7 @@
         </div>
 
           <div class="col-12 col-md-5 text-center" data-aos="fade-up" data-aos-duration="500" data-aos-delay="400">
-            <img src="{{ url('img/frontend/index/team.svg') }}" alt="" class="img-fluid" style="box-shadow: -5px 10px 10px #888888; height: 400px;">
+            <img src="{{ url('img/frontend/index/team.jpg') }}" alt="" class="img-fluid" style="box-shadow: -5px 10px 10px #888888; height: 400px;">
           </div>
       </div>
     </div>
