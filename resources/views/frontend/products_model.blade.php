@@ -274,7 +274,8 @@
                     </div>
 
                     <div class="col-12 col-md-10 text-center">
-                      <div class="g-recaptcha" data-callback="checked" data-sitekey="6LfGnB8dAAAAAH6Baz00Galvcr7s7aZyeGUYly4t" style="display: inline-block;"></div>
+                      <!-- <div class="g-recaptcha" data-callback="checked" data-sitekey="6LfGnB8dAAAAAH6Baz00Galvcr7s7aZyeGUYly4t" style="display: inline-block;"></div> -->
+                      <div class="g-recaptcha d-inline-block" data-callback="checked" data-sitekey="6Lel4Z4UAAAAAOa8LO1Q9mqKRUiMYl_00o5mXJrR"></div>
                     </div>
                 </div>
                 <div class="modal-footer justify-content-center">
