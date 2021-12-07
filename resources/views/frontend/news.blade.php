@@ -23,7 +23,7 @@
                 <div class="col-12 col-md-5 p-md-5">
                     <h1 data-aos="fade-down-left" data-aos-duration="500" data-aos-delay="300">{{ $featured_news->title }}</h1>
                     <div style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical;">
-                        {{strip_tags($featured_news->description)}}
+                        {!! $featured_news->description !!}
                     </div>
                     <div class="clearfix">
                         <div class="text-center float-md-end mt-4">
@@ -54,7 +54,8 @@
                                     </div>
                                 </a>
                                 <div style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">
-                                    {!! $new->description !!}</p>
+                                    {{strip_tags($new->description)}}
+                                
                                 </div>
                             </div>
                         </div>
