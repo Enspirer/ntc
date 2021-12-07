@@ -86,7 +86,7 @@
                 <div id="collapseTwo{{$job->id}}" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#jobs">
                   <div class="accordion-body">
                     <div class="mb-3 iphone-txt-fix" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;position:relative;overflow-x:hidden;">
-                    {{$job->description}}
+                    {!!$job->description!!}
                   </div>
                     
                     <div class="clearfix">
