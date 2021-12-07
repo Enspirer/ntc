@@ -85,7 +85,10 @@
                 </h2>
                 <div id="collapseTwo{{$job->id}}" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#jobs">
                   <div class="accordion-body">
-                    <div class="mb-3 iphone-txt-fix" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;position:relative;overflow-x:hidden;">{!!$job->description!!}</div>
+                    <div class="mb-3 iphone-txt-fix" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;position:relative;overflow-x:hidden;">
+                    <!-- {!!$job->description!!} -->
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  </div>
                     
                     <div class="clearfix">
                       <div class="float-end">
